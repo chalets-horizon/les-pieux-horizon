@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Pieux Horizon — Spécialiste fondations vissées zone alpine</title>
+  <meta name="description" content="Fondations vissées sans béton en Isère, Savoie, Haute-Savoie, Drôme et Ardèche. Poseur agréé Weasyfix. Terrasses, pergolas, constructions. Devis sous 48h.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.les-pieux-horizon.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;600;700;900&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0D1A12;
+      --bg-2: #111E15;
+      --text: #E8E4DC;
+      --muted: #8A9E8A;
+      --green: #1B5E3B;
+      --green-dark: #134A2D;
+      --green-light: rgba(27,94,59,0.12);
+      --border: rgba(255,255,255,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Darker Grotesque', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+
+    /* NAV */
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; }
+    .logo-main { font-size: 18px; font-weight: 900; letter-spacing: 0.04em; color: var(--text); text-transform: uppercase; display: block; }
+    .logo-sub { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { font-size: 14px; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { background: var(--green); color: white; border: none; padding: 11px 22px; font-family: 'Darker Grotesque', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.05em; cursor: pointer; border-radius: 2px; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--green-dark); }
+
+    /* HERO */
+    .hero { padding: 100px 48px 80px; position: relative; overflow: hidden; max-width: 1200px; margin: 0 auto; }
+    .hero::before { content: ''; position: absolute; top: -100px; right: -80px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(74,140,92,0.1) 0%, transparent 70%); pointer-events: none; }
+    .hero-tag { display: inline-block; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); border: 0.5px solid var(--green); padding: 5px 14px; border-radius: 2px; margin-bottom: 28px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(48px, 6vw, 80px); font-weight: 400; line-height: 1.05; color: var(--text); margin-bottom: 20px; }
+    .hero-title em { font-style: italic; color: var(--green); }
+    .hero-sub { font-size: 19px; color: var(--muted); max-width: 560px; margin-bottom: 44px; line-height: 1.65; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 80px; }
+    .btn-primary { background: var(--green); color: white; border: none; padding: 16px 32px; font-family: 'Darker Grotesque', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.03em; cursor: pointer; border-radius: 2px; text-decoration: none; display: inline-block; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--green-dark); }
+    .btn-ghost { background: transparent; color: var(--text); border: 0.5px solid rgba(255,255,255,0.25); padding: 16px 32px; font-family: 'Darker Grotesque', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; border-radius: 2px; text-decoration: none; display: inline-block; transition: border-color 0.2s; }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
+    .hero-stats { display: flex; gap: 48px; padding-top: 48px; border-top: 0.5px solid var(--border); flex-wrap: wrap; }
+    .stat-val { font-size: 40px; font-weight: 900; color: var(--text); line-height: 1; }
+    .stat-label { font-size: 13px; color: var(--muted); letter-spacing: 0.05em; margin-top: 6px; }
+
+    /* SECTION LABELS */
+    .section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+
+    /* PROBLÈME */
+    .problem { padding: 80px 48px; background: var(--bg-2); }
+    .problem-inner { max-width: 1200px; margin: 0 auto; }
+    .problem-title { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-bottom: 36px; }
+    .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: rgba(255,255,255,0.06); border: 0.5px solid rgba(255,255,255,0.06); }
+    .problem-item { background: var(--bg-2); padding: 32px 28px; }
+    .problem-icon { font-size: 32px; margin-bottom: 16px; }
+    .problem-text { font-size: 17px; font-weight: 600; color: var(--text); line-height: 1.4; }
+    .problem-answer { font-size: 14px; color: var(--green); margin-top: 10px; font-weight: 600; }
+
+    /* SOLUTION */
+    .solution { padding: 80px 48px; }
+    .solution-inner { max-width: 1200px; margin: 0 auto; }
+    .solution-title { font-family: 'Playfair Display', serif; font-size: 40px; color: var(--text); margin-bottom: 48px; max-width: 520px; line-height: 1.2; }
+    .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .solution-card { background: var(--bg-2); border: 0.5px solid var(--border); padding: 28px; border-radius: 2px; }
+    .solution-num { font-size: 11px; color: var(--green); letter-spacing: 0.12em; margin-bottom: 16px; font-weight: 700; }
+    .solution-name { font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .solution-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
+    .solution-badge { display: inline-block; font-size: 11px; color: var(--green); border: 0.5px solid var(--green); padding: 4px 10px; border-radius: 2px; margin-top: 16px; letter-spacing: 0.05em; }
+
+    /* QUALIFICATEUR */
+    .qualifier { padding: 80px 48px; background: var(--bg-2); }
+    .qualifier-inner { max-width: 1200px; margin: 0 auto; }
+    .qualifier-title { font-family: 'Playfair Display', serif; font-size: 40px; color: var(--text); margin-bottom: 12px; }
+    .qualifier-sub { font-size: 16px; color: var(--muted); margin-bottom: 48px; }
+    .q-title { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 10px; }
+    .q-section { margin-bottom: 28px; }
+    .q-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+    .q-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .q-card { background: var(--bg); border: 0.5px solid rgba(255,255,255,0.1); border-radius: 2px; padding: 14px 16px; cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+    .q-card:hover { border-color: rgba(255,255,255,0.25); }
+    .q-card.sel { border: 1.5px solid var(--green); background: rgba(74,140,92,0.1); }
+    .q-card.sel-no { border: 1.5px solid #E24B4A; background: rgba(226,75,74,0.08); }
+    .q-card.sel-warn { border: 1.5px solid #BA7517; background: rgba(186,117,23,0.08); }
+    .q-card-label { font-size: 13px; font-weight: 700; color: var(--text); margin: 0 0 3px; }
+    .q-card-sub { font-size: 12px; color: var(--muted); margin: 0; }
+    .q-card.sel .q-card-label { color: var(--green); }
+    .q-card.sel-no .q-card-label { color: #E24B4A; }
+    .q-card.sel-warn .q-card-label { color: #BA7517; }
+    .q-result { border-radius: 4px; padding: 24px 28px; margin-top: 32px; }
+    .q-result.ok { background: rgba(74,140,92,0.1); border: 0.5px solid rgba(74,140,92,0.4); }
+    .q-result.info { background: rgba(24,95,165,0.1); border: 0.5px solid rgba(24,95,165,0.4); }
+    .q-result.warn { background: rgba(186,117,23,0.1); border: 0.5px solid rgba(186,117,23,0.4); }
+    .q-result.block { background: rgba(226,75,74,0.08); border: 0.5px solid rgba(226,75,74,0.3); }
+    .q-result.contact { background: rgba(186,117,23,0.1); border: 0.5px solid rgba(186,117,23,0.4); }
+    .q-result-title { font-size: 18px; font-weight: 700; margin: 0 0 8px; }
+    .q-result.ok .q-result-title { color: var(--green); }
+    .q-result.info .q-result-title { color: #5BA3D4; }
+    .q-result.warn .q-result-title { color: #EF9F27; }
+    .q-result.block .q-result-title { color: #E24B4A; }
+    .q-result.contact .q-result-title { color: #EF9F27; }
+    .q-result-body { font-size: 14px; margin: 0 0 16px; line-height: 1.65; color: var(--muted); }
+    .q-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+    .q-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; }
+    .q-tag.green { background: rgba(74,140,92,0.15); color: var(--green); }
+    .q-tag.amber { background: rgba(186,117,23,0.15); color: #EF9F27; }
+    .q-tag.blue { background: rgba(24,95,165,0.15); color: #5BA3D4; }
+    .q-tag.red { background: rgba(226,75,74,0.1); color: #E24B4A; }
+    .q-divider { border: none; border-top: 0.5px solid rgba(255,255,255,0.08); margin: 16px 0; }
+    .q-cta { display: flex; gap: 10px; flex-wrap: wrap; }
+    .q-btn { padding: 10px 20px; border-radius: 2px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'Darker Grotesque', sans-serif; text-decoration: none; display: inline-block; transition: background 0.2s; }
+    .q-btn.green { background: var(--green); color: white; border: none; }
+    .q-btn.green:hover { background: var(--green-dark); }
+    .q-btn.amber { background: #BA7517; color: white; border: none; }
+    .q-btn.blue { background: #185FA5; color: white; border: none; }
+    .q-btn.red { background: #A32D2D; color: white; border: none; }
+    .q-btn.ghost { background: transparent; color: var(--text); border: 0.5px solid rgba(255,255,255,0.2); }
+    .q-btn.ghost:hover { border-color: rgba(255,255,255,0.4); }
+    #surface-section { transition: opacity 0.2s; }
+
+    /* CHEMINS */
+    .paths { padding: 80px 48px; }
+    .paths-inner { max-width: 1200px; margin: 0 auto; }
+    .paths-title { font-family: 'Playfair Display', serif; font-size: 40px; color: var(--text); margin-bottom: 36px; }
+    .paths-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .path { border: 0.5px solid rgba(255,255,255,0.1); padding: 32px 28px; border-radius: 2px; transition: border-color 0.2s; }
+    .path:hover { border-color: rgba(74,140,92,0.5); }
+    .path.featured { border-color: var(--green); background: rgba(74,140,92,0.06); }
+    .path-title { font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .path-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
+    .path-arrow { font-size: 14px; color: var(--green); font-weight: 700; text-decoration: none; }
+
+    /* ZONE */
+    .zone { padding: 80px 48px; background: var(--bg-2); }
+    .zone-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .zone-title { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--text); margin-bottom: 20px; line-height: 1.2; }
+    .zone-text { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; }
+    .depts { display: flex; flex-wrap: wrap; gap: 8px; }
+    .dept { background: rgba(74,140,92,0.12); border: 0.5px solid var(--green); color: var(--green); padding: 7px 16px; font-size: 13px; font-weight: 700; border-radius: 2px; }
+    .zone-visual { background: var(--bg); border: 0.5px solid var(--border); border-radius: 4px; padding: 32px; }
+    .zone-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 0.5px solid rgba(255,255,255,0.05); }
+    .zone-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .zone-city { font-size: 15px; font-weight: 600; color: var(--text); }
+    .zone-dept { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .zone-time { font-size: 14px; color: var(--green); font-weight: 700; }
+
+    /* CTA */
+    .cta-section { padding: 100px 48px; text-align: center; border-top: 0.5px solid var(--border); }
+    .cta-title { font-family: 'Playfair Display', serif; font-size: 52px; color: var(--text); margin-bottom: 16px; line-height: 1.1; }
+    .cta-sub { font-size: 18px; color: var(--muted); margin-bottom: 36px; }
+    .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta-phone { font-size: 26px; font-weight: 900; color: var(--green); letter-spacing: 0.05em; margin-top: 28px; display: block; }
+
+    /* FOOTER */
+    footer { padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 12px; }
+    .footer-logo { font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: 0.05em; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 12px; color: rgba(138,158,138,0.6); text-decoration: none; }
+    .footer-copy { font-size: 12px; color: rgba(138,158,138,0.4); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero, .problem, .solution, .qualifier, .paths, .zone, .cta-section { padding-left: 20px; padding-right: 20px; }
+      .solution-grid, .paths-grid { grid-template-columns: 1fr; }
+      .zone-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-stats { gap: 28px; }
+      footer { padding: 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" style="display:block;">
+      <img src="logo.png" alt="Les Pieux Horizon" style="height:48px;width:auto;filter:brightness(0) invert(1);">
+    </a>
+    <div class="nav-links">
+      <a href="#prestations">Nos prestations</a>
+      <a href="#zone">Zone d'intervention</a>
+      <a href="#qualifier">Qualifier mon projet</a>
+    </div>
+    <a href="tel:0769737961" class="nav-cta">Devis gratuit</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-tag">Zone alpine &amp; Vallée du Rhône</div>
+    <h1 class="hero-title">Le béton n'est<br>pas <em>une fatalité.</em></h1>
+    <p class="hero-sub">Fondations vissées posées en une journée — sans excavation, sans béton, terrain préservé. Isère, Savoie, Haute-Savoie, Drôme, Ardèche.</p>
+    <div class="hero-actions">
+      <a href="#qualifier" class="btn-primary">Qualifier mon projet</a>
+      <a href="#prestations" class="btn-ghost">Découvrir la solution</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-val">1 jour</div><div class="stat-label">Durée de pose</div></div>
+      <div><div class="stat-val">5 dép.</div><div class="stat-label">Zone couverte</div></div>
+      <div><div class="stat-val">0 béton</div><div class="stat-label">Sans excavation</div></div>
+      <div><div class="stat-val">48h</div><div class="stat-label">Délai de devis</div></div>
+    </div>
+  </section>
+
+  <section class="problem">
+    <div class="problem-inner">
+      <div class="problem-title">Vous vous reconnaissez ?</div>
+      <div class="problem-grid">
+        <div class="problem-item">
+          <div class="problem-icon">⛰</div>
+          <div class="problem-text">Mon terrain est en pente — impossible de couler une dalle.</div>
+          <div class="problem-answer">→ On pose partout, même à 30 % de dénivelé.</div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">🌿</div>
+          <div class="problem-text">Je ne veux pas de chantier invasif dans mon jardin.</div>
+          <div class="problem-answer">→ Zéro excavation, terrain naturel préservé.</div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">📐</div>
+          <div class="problem-text">Mon accès est trop étroit pour une bétonnière.</div>
+          <div class="problem-answer">→ Nos outils passent partout.</div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">⏱</div>
+          <div class="problem-text">Je ne peux pas attendre 28 jours de séchage béton.</div>
+          <div class="problem-answer">→ Posé le matin, structure montée l'après-midi.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="solution" id="prestations">
+    <div class="solution-inner">
+      <div class="section-label">Notre approche</div>
+      <h2 class="solution-title">Le spécialiste du pieu vissé en zone alpine</h2>
+      <div class="solution-grid">
+        <div class="solution-card">
+          <div class="solution-num">01 — WEASYFIX</div>
+          <div class="solution-name">Structures légères</div>
+          <div class="solution-desc">Terrasses, pergolas, carports, studios de jardin, clôtures, panneaux solaires. Jusqu'à 900 kg par vis.</div>
+          <div class="solution-badge">Poseur agréé — 07, 26, 38, 73</div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-num">02 — VISTECH</div>
+          <div class="solution-name">Structures lourdes</div>
+          <div class="solution-desc">Chalets, maisons ossature bois, constructions avec plancher, jacuzzis, conteneurs. Pieux hydrauliques haute capacité.</div>
+          <div class="solution-badge">ATec CSTB en cours</div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-num">03 — EXPERTISE</div>
+          <div class="solution-name">Dimensionnement inclus</div>
+          <div class="solution-desc">Calepinage, descentes de charges, rapport de pose. Aucun chiffrage sans analyse préalable du terrain et de la structure.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="qualifier" id="qualifier">
+    <div class="qualifier-inner">
+      <div class="section-label">Qualification de projet</div>
+      <h2 class="qualifier-title">Quel est votre projet ?</h2>
+      <p class="qualifier-sub">Répondez à quelques questions — on vous indique la marche à suivre.</p>
+
+      <div class="q-section">
+        <p class="q-title">Type de structure</p>
+        <div class="q-grid" id="struct-grid">
+          <div class="q-card sel" data-val="terrasse-bois" data-surface="1" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Terrasse bois</p><p class="q-card-sub">pin, douglas, mélèze</p></div>
+          <div class="q-card" data-val="terrasse-composite" data-surface="1" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Terrasse composite</p><p class="q-card-sub">lames composites</p></div>
+          <div class="q-card" data-val="terrasse-gres" data-surface="1" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Terrasse grès cérame</p><p class="q-card-sub">sur structure acier</p></div>
+          <div class="q-card" data-val="pergola" data-surface="1" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Pergola / carport</p><p class="q-card-sub">structure légère</p></div>
+          <div class="q-card" data-val="construction-plancher" data-surface="1" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Construction avec plancher</p><p class="q-card-sub">chalets, studios, MOB</p></div>
+          <div class="q-card" data-val="construction-sans-plancher" data-surface="1" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Construction sans plancher</p><p class="q-card-sub">abris ouverts, préaux</p></div>
+          <div class="q-card" data-val="jacuzzi" data-surface="0" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Jacuzzi / conteneur</p><p class="q-card-sub">charge ponctuelle lourde</p></div>
+          <div class="q-card" data-val="solaire" data-surface="0" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Panneaux solaires</p><p class="q-card-sub">structure au sol</p></div>
+          <div class="q-card" data-val="cloture" data-surface="0" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Clôture</p><p class="q-card-sub">panneaux rigides, bois</p></div>
+          <div class="q-card" data-val="poteau" data-surface="0" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Poteau isolé</p><p class="q-card-sub">portail, enseigne, éclairage</p></div>
+        </div>
+      </div>
+
+      <div class="q-section" id="surface-section">
+        <p class="q-title">Surface au sol</p>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <input type="range" min="4" max="80" value="20" step="1" id="surface-slider" oninput="qupdate()" style="flex:1;accent-color:#4A8C5C;">
+          <span style="font-size:28px;font-weight:900;color:#E8E4DC;min-width:50px;" id="surface-val">20</span>
+          <span style="font-size:15px;color:#8A9E8A;">m²</span>
+        </div>
+      </div>
+
+      <div class="q-section">
+        <p class="q-title">Nature du sol</p>
+        <div class="q-grid" id="sol-grid">
+          <div class="q-card sel" data-val="normal" onclick="qsel(this,'sol-grid')"><p class="q-card-label">Terre / limon</p><p class="q-card-sub">sol standard</p></div>
+          <div class="q-card" data-val="argile" onclick="qsel(this,'sol-grid')"><p class="q-card-label">Argile</p><p class="q-card-sub">sol plastique</p></div>
+          <div class="q-card" data-val="sable" onclick="qsel(this,'sol-grid')"><p class="q-card-label">Sable / remblai</p><p class="q-card-sub">portance réduite</p></div>
+          <div class="q-card" data-val="rocher" onclick="qsel(this,'sol-grid')"><p class="q-card-label">Rocher / grave</p><p class="q-card-sub">sol dur</p></div>
+        </div>
+      </div>
+
+      <div class="q-section">
+        <p class="q-title">Le sol est-il stabilisé depuis au moins 18 mois ?</p>
+        <div class="q-grid-2" id="stabilise-grid">
+          <div class="q-card sel" data-val="oui" onclick="qbin(this,'stabilise-grid','oui')"><p class="q-card-label">Oui</p><p class="q-card-sub">sol naturel ou remblai ancien</p></div>
+          <div class="q-card" data-val="non" onclick="qbin(this,'stabilise-grid','non')"><p class="q-card-label">Non / je ne sais pas</p><p class="q-card-sub">remblai récent ou incertain</p></div>
+        </div>
+      </div>
+
+      <div class="q-section">
+        <p class="q-title">Déclivité du terrain</p>
+        <div class="q-grid" id="pente-grid">
+          <div class="q-card sel" data-val="plat" onclick="qsel(this,'pente-grid')"><p class="q-card-label">Plat</p><p class="q-card-sub">0 à 5 %</p></div>
+          <div class="q-card" data-val="legere" onclick="qsel(this,'pente-grid')"><p class="q-card-label">Légère</p><p class="q-card-sub">5 à 15 %</p></div>
+          <div class="q-card" data-val="forte" onclick="qsel(this,'pente-grid')"><p class="q-card-label">Forte</p><p class="q-card-sub">15 à 30 %</p></div>
+          <div class="q-card" data-val="extreme" onclick="qsel(this,'pente-grid')"><p class="q-card-label">Très forte</p><p class="q-card-sub">30 %+</p></div>
+        </div>
+      </div>
+
+      <div class="q-section">
+        <p class="q-title">Zone</p>
+        <div class="q-grid" id="zone-grid">
+          <div class="q-card sel" data-val="plaine" onclick="qsel(this,'zone-grid')"><p class="q-card-label">Plaine / vallée</p><p class="q-card-sub">26, 07, 38 bas</p></div>
+          <div class="q-card" data-val="mi-altitude" onclick="qsel(this,'zone-grid')"><p class="q-card-label">Mi-altitude</p><p class="q-card-sub">400 à 1000 m</p></div>
+          <div class="q-card" data-val="altitude" onclick="qsel(this,'zone-grid')"><p class="q-card-label">Altitude</p><p class="q-card-sub">1000 m et plus</p></div>
+        </div>
+      </div>
+
+      <div class="q-section">
+        <p class="q-title">Avez-vous un plan ou un calepinage de votre structure ?</p>
+        <div class="q-grid-2" id="plan-grid">
+          <div class="q-card sel" data-val="oui" onclick="qbin(this,'plan-grid','oui')"><p class="q-card-label">Oui, je l'ai</p><p class="q-card-sub">plan, notice, croquis coté</p></div>
+          <div class="q-card" data-val="non" onclick="qbin(this,'plan-grid','non')"><p class="q-card-label">Non, pas encore</p><p class="q-card-sub">projet en cours de définition</p></div>
+        </div>
+      </div>
+
+      <div id="q-result"></div>
+    </div>
+  </section>
+
+  <section class="paths">
+    <div class="paths-inner">
+      <h2 class="paths-title">Trois façons de travailler avec nous</h2>
+      <div class="paths-grid">
+        <div class="path featured">
+          <div class="path-title">Je fais poser</div>
+          <div class="path-desc">Visite terrain, dimensionnement, fourniture et pose clé en main. Devis sous 48h sur transmission du calepinage.</div>
+          <a href="#qualifier" class="path-arrow">Qualifier mon projet →</a>
+        </div>
+        <div class="path">
+          <div class="path-title">Je pose moi-même</div>
+          <div class="path-desc">Location de visseuse, vente de vis Weasyfix, guide de pose. Livraison sur zone 07-26-38-73-74.</div>
+          <a href="tel:0769737961" class="path-arrow">Nous appeler →</a>
+        </div>
+        <div class="path">
+          <div class="path-title">Je suis professionnel</div>
+          <div class="path-desc">Fabricants, distributeurs, paysagistes, piscinistes. Partenariats pose et prescription sur toute la France.</div>
+          <a href="tel:0769737961" class="path-arrow">Nous contacter →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="zone" id="zone">
+    <div class="zone-inner">
+      <div>
+        <div class="section-label">Zone d'intervention</div>
+        <h2 class="zone-title">Du fond de vallée aux terrains d'altitude</h2>
+        <p class="zone-text">Nous intervenons sur 5 départements alpins et rhodaniens. Terrains plats, en pente, en altitude, accès difficiles — c'est notre quotidien depuis L'Albenc en Isère.</p>
+        <div class="depts">
+          <span class="dept">38 — Isère</span>
+          <span class="dept">73 — Savoie</span>
+          <span class="dept">74 — Haute-Savoie</span>
+          <span class="dept">26 — Drôme</span>
+          <span class="dept">07 — Ardèche</span>
+        </div>
+      </div>
+      <div class="zone-visual">
+        <div class="zone-item"><div><div class="zone-city">Grenoble</div><div class="zone-dept">Isère — 38</div></div><div class="zone-time">30 min</div></div>
+        <div class="zone-item"><div><div class="zone-city">Chambéry</div><div class="zone-dept">Savoie — 73</div></div><div class="zone-time">45 min</div></div>
+        <div class="zone-item"><div><div class="zone-city">Annecy</div><div class="zone-dept">Haute-Savoie — 74</div></div><div class="zone-time">1h</div></div>
+        <div class="zone-item"><div><div class="zone-city">Valence</div><div class="zone-dept">Drôme — 26</div></div><div class="zone-time">1h</div></div>
+        <div class="zone-item"><div><div class="zone-city">Privas</div><div class="zone-dept">Ardèche — 07</div></div><div class="zone-time">1h15</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2 class="cta-title">Votre projet en 48h.</h2>
+    <p class="cta-sub">Qualifiez votre projet en 2 minutes — on revient vers vous rapidement.</p>
+    <div class="cta-actions">
+      <a href="#qualifier" class="btn-primary">Qualifier mon projet</a>
+      <a href="tel:0769737961" class="btn-ghost">Nous appeler</a>
+    </div>
+    <a href="tel:0769737961" class="cta-phone">07 69 73 79 61</a>
+  </section>
+
+  <footer>
+    <div><img src="logo.png" alt="Les Pieux Horizon" style="height:32px;width:auto;filter:brightness(0) invert(0.6);"></div>
+    <div class="footer-links">
+      <a href="#">Mentions légales</a>
+      <a href="#">Politique de confidentialité</a>
+    </div>
+    <div class="footer-copy">© 2025 Les Pieux Horizon — Chalets Horizon SAS</div>
+  </footer>
+
+  <script>
+    const qstate = { stabilise: 'oui', plan: 'oui' };
+
+    function qsel(el, gridId) {
+      document.getElementById(gridId).querySelectorAll('.q-card').forEach(c => c.classList.remove('sel','sel-no','sel-warn'));
+      el.classList.add('sel');
+      const hasSurf = el.dataset.surface === '1';
+      document.getElementById('surface-section').style.display = hasSurf ? 'block' : 'none';
+      qupdate();
+    }
+
+    function qbin(el, gridId, val) {
+      document.getElementById(gridId).querySelectorAll('.q-card').forEach(c => c.classList.remove('sel','sel-no','sel-warn'));
+      const key = gridId === 'stabilise-grid' ? 'stabilise' : 'plan';
+      qstate[key] = val;
+      if (val === 'oui') el.classList.add('sel');
+      else if (key === 'stabilise') el.classList.add('sel-no');
+      else el.classList.add('sel-warn');
+      qupdate();
+    }
+
+    function qgetval(gridId) {
+      const s = document.getElementById(gridId).querySelector('.sel,.sel-no,.sel-warn');
+      return s ? s.dataset.val : '';
+    }
+
+    function qgetlabel(gridId) {
+      const s = document.getElementById(gridId).querySelector('.sel,.sel-no,.sel-warn');
+      return s ? s.querySelector('.q-card-label').textContent : '';
+    }
+
+    function qhasSurface() {
+      const s = document.getElementById('struct-grid').querySelector('.sel');
+      return s ? s.dataset.surface === '1' : true;
+    }
+
+    function qualify() {
+      const struct = qgetval('struct-grid');
+      const sol = qgetval('sol-grid');
+      const pente = qgetval('pente-grid');
+      const zone = qgetval('zone-grid');
+      const s = parseInt(document.getElementById('surface-slider').value);
+      const flags = [];
+      let score = 0;
+
+      if (sol === 'rocher') { score += 3; flags.push({ t: 'sol rocheux', c: 'amber' }); }
+      if (sol === 'sable') { score += 2; flags.push({ t: 'sol sableux', c: 'amber' }); }
+      if (sol === 'argile') { score += 1; flags.push({ t: 'sol argileux', c: 'amber' }); }
+      if (pente === 'extreme') { score += 3; flags.push({ t: 'pente > 30 %', c: 'amber' }); }
+      if (pente === 'forte') { score += 2; flags.push({ t: 'pente forte', c: 'amber' }); }
+      if (pente === 'legere') { score += 1; flags.push({ t: 'terrain en pente', c: 'blue' }); }
+      if (zone === 'altitude') { score += 1; flags.push({ t: 'zone altitude', c: 'blue' }); }
+      if (struct === 'construction-plancher') { score += 2; flags.push({ t: 'construction avec plancher', c: 'blue' }); }
+      if (struct === 'terrasse-gres') { score += 1; flags.push({ t: 'grès cérame / structure acier', c: 'blue' }); }
+      if (struct === 'jacuzzi') { score += 2; flags.push({ t: 'charge lourde ponctuelle', c: 'amber' }); }
+      if (qhasSurface() && s > 40) { score += 1; flags.push({ t: 'grande surface', c: 'blue' }); }
+      if (flags.length === 0) flags.push({ t: 'conditions standard', c: 'green' });
+      return { score, flags };
+    }
+
+    function qupdate() {
+      const s = parseInt(document.getElementById('surface-slider').value);
+      document.getElementById('surface-val').textContent = s;
+
+      const { score, flags } = qualify();
+      const struct = qgetval('struct-grid');
+      const sLabel = qgetlabel('struct-grid');
+      const solLabel = qgetlabel('sol-grid');
+      const penteLabel = qgetlabel('pente-grid');
+      const zoneLabel = qgetlabel('zone-grid');
+      const surfStr = qhasSurface() ? ' de ' + s + ' m²' : '';
+      const prompt = sLabel + surfStr + ', sol ' + solLabel.toLowerCase() + ', pente ' + penteLabel.toLowerCase() + ', zone ' + zoneLabel.toLowerCase();
+      const tagsHtml = flags.map(f => `<span class="q-tag ${f.c}">${f.t}</span>`).join('');
+
+      let html = '';
+
+      if (qstate.stabilise === 'non') {
+        html = `<div class="q-result block">
+          <div class="q-result-title">Sol non stabilisé — intervention impossible</div>
+          <div class="q-result-body">Un sol remblayé ou modifié depuis moins de 18 mois n'offre pas une portance suffisante. Contactez-nous pour évaluer les options selon votre calendrier de projet.</div>
+          <div class="q-tags"><span class="q-tag red">sol non stabilisé</span></div>
+          <hr class="q-divider">
+          <div class="q-cta"><a href="tel:0769737961" class="q-btn red">Nous appeler — 07 69 73 79 61</a></div>
+        </div>`;
+      } else if (qstate.plan === 'non') {
+        html = `<div class="q-result contact">
+          <div class="q-result-title">Pas de plan — contactez-nous d'abord</div>
+          <div class="q-result-body">Le calepinage de votre structure est indispensable pour établir un devis fiable. Appelez-nous, nous vous guidons pour préparer les éléments nécessaires.</div>
+          <div class="q-tags">${tagsHtml}</div>
+          <hr class="q-divider">
+          <div class="q-cta"><a href="tel:0769737961" class="q-btn amber">Nous appeler — 07 69 73 79 61</a></div>
+        </div>`;
+      } else if (score <= 1) {
+        html = `<div class="q-result ok">
+          <div class="q-result-title">Projet standard — devis sous 48h</div>
+          <div class="q-result-body">Votre projet ne présente pas de complexité particulière. Envoyez-nous votre plan et nous revenons vers vous sous 48h.</div>
+          <div class="q-tags">${tagsHtml}</div>
+          <hr class="q-divider">
+          <div class="q-cta">
+            <a href="mailto:a.ouzeau@gmail.com?subject=Demande de devis — ${encodeURIComponent(prompt)}" class="q-btn green">Envoyer ma demande</a>
+            <a href="tel:0769737961" class="q-btn ghost">Nous appeler</a>
+          </div>
+        </div>`;
+      } else if (score <= 3) {
+        html = `<div class="q-result info">
+          <div class="q-result-title">Projet avec spécificités — parlons-en</div>
+          <div class="q-result-body">Votre terrain présente quelques points d'attention. Transmettez-nous votre plan avec votre demande et nous revenons vers vous rapidement.</div>
+          <div class="q-tags">${tagsHtml}</div>
+          <hr class="q-divider">
+          <div class="q-cta">
+            <a href="tel:0769737961" class="q-btn blue">Être rappelé — 07 69 73 79 61</a>
+            <a href="mailto:a.ouzeau@gmail.com?subject=Projet spécifique — ${encodeURIComponent(prompt)}" class="q-btn ghost">Envoyer un mail</a>
+          </div>
+        </div>`;
+      } else {
+        html = `<div class="q-result warn">
+          <div class="q-result-title">Projet complexe — visite terrain recommandée</div>
+          <div class="q-result-body">Votre terrain nécessite une visite préalable pour garantir un dimensionnement fiable et un prix sans mauvaise surprise.</div>
+          <div class="q-tags">${tagsHtml}</div>
+          <hr class="q-divider">
+          <div class="q-cta">
+            <a href="tel:0769737961" class="q-btn amber">Planifier une visite — 07 69 73 79 61</a>
+          </div>
+        </div>`;
+      }
+
+      document.getElementById('q-result').innerHTML = html;
+    }
+
+    qupdate();
+  </script>
+
+</body>
+</html>
