@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Les Pieux Horizon — Spécialiste fondations vissées zone alpine</title>
-  <meta name="description" content="Fondations vissées sans béton en Isère, Savoie, Haute-Savoie, Drôme et Ardèche. Poseur agréé Weasyfix. Terrasses, pergolas, constructions. Devis sous 48h.">
+  <meta name="description" content="Fondations vissées sans béton en Isère, Savoie, Haute-Savoie, Drôme et Ardèche. Poseur référent Weasyfix. Terrasses, pergolas, constructions. Devis sous 48h.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.les-pieux-horizon.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,7 @@
     .nav-cta:hover { background: var(--green-dark); }
 
     /* HERO */
-    .hero { padding: 100px 48px 80px; position: relative; overflow: hidden; max-width: 1200px; margin: 0 auto; }
+    .hero { padding: 80px 48px; position: relative; overflow: hidden; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
     .hero::before { content: ''; position: absolute; top: -100px; right: -80px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(74,140,92,0.1) 0%, transparent 70%); pointer-events: none; }
     .hero-tag { display: inline-block; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); border: 0.5px solid var(--green); padding: 5px 14px; border-radius: 2px; margin-bottom: 28px; }
     .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(48px, 6vw, 80px); font-weight: 400; line-height: 1.05; color: var(--text); margin-bottom: 20px; }
@@ -69,7 +69,9 @@
     .solution-inner { max-width: 1200px; margin: 0 auto; }
     .solution-title { font-family: 'Playfair Display', serif; font-size: 40px; color: var(--text); margin-bottom: 48px; max-width: 520px; line-height: 1.2; }
     .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .solution-card { background: var(--bg-2); border: 0.5px solid var(--border); padding: 28px; border-radius: 2px; }
+    .solution-card { background: var(--bg-2); border: 0.5px solid var(--border); padding: 28px; border-radius: 2px; text-decoration: none; display: block; transition: border-color 0.2s, background 0.2s; }
+    .solution-card:hover { border-color: var(--green); background: rgba(27,94,59,0.08); }
+    .solution-card-arrow { font-size: 13px; color: var(--green); font-weight: 700; margin-top: 16px; display: block; }
     .solution-num { font-size: 11px; color: var(--green); letter-spacing: 0.12em; margin-bottom: 16px; font-weight: 700; }
     .solution-name { font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
     .solution-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
@@ -174,230 +176,14 @@
       .zone-inner { grid-template-columns: 1fr; gap: 40px; }
       .hero-stats { gap: 28px; }
       footer { padding: 20px; flex-direction: column; align-items: flex-start; }
-    }:root{
-  --bg:#07140d;
-  --bg-2:#0d1d13;
-  --text:#f4efe6;
-  --muted:#a8b7a6;
-  --green:#2f8a5a;
-  --green-dark:#145032;
-  --green-light:rgba(119,185,140,.14);
-  --gold:#d8b56d;
-  --border:rgba(255,255,255,.12);
-}
-
-body{
-  background:
-    radial-gradient(circle at 80% 0%, rgba(47,138,90,.24), transparent 35%),
-    radial-gradient(circle at 10% 30%, rgba(216,181,109,.10), transparent 30%),
-    linear-gradient(180deg,#07140d,#0b1a11 45%,#07140d);
-}
-
-nav{
-  background:rgba(7,20,13,.82);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border);
-  padding:16px 56px;
-}
-
-nav img{
-  filter:brightness(0) invert(1);
-}
-
-.nav-cta,
-.btn-primary{
-  border-radius:999px;
-  background:linear-gradient(135deg,var(--green),var(--green-dark));
-  box-shadow:0 14px 35px rgba(47,138,90,.28);
-  transition:.2s ease;
-}
-
-.nav-cta:hover,
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 20px 45px rgba(47,138,90,.38);
-}
-
-.btn-ghost{
-  border-radius:999px;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.18);
-}
-
-.hero{
-  padding-top:130px;
-}
-
-.hero-title{
-  font-size:clamp(56px,8vw,104px);
-  letter-spacing:-.045em;
-}
-
-.hero-title em{
-  color:var(--gold);
-}
-
-.hero-sub{
-  font-size:clamp(20px,2vw,25px);
-  color:#d8cfbf;
-}
-
-.hero-stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:1px;
-  border:1px solid var(--border);
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 24px 80px rgba(0,0,0,.35);
-  background:rgba(255,255,255,.08);
-}
-
-.hero-stats > div{
-  background:rgba(13,29,19,.78);
-  padding:28px;
-}
-
-.problem-item,
-.solution-card,
-.path,
-.zone-visual,
-.q-card,
-.q-result{
-  border-radius:22px;
-  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
-  border:1px solid var(--border);
-  box-shadow:0 18px 60px rgba(0,0,0,.18);
-}
-
-.problem-item,
-.solution-card,
-.path{
-  transition:.2s ease;
-}
-
-.problem-item:hover,
-.solution-card:hover,
-.path:hover{
-  transform:translateY(-5px);
-  border-color:rgba(119,185,140,.45);
-}
-
-.section-label,
-.hero-tag,
-.problem-title{
-  border-radius:999px;
-  color:#77b98c;
-  border:1px solid rgba(119,185,140,.35);
-  background:rgba(119,185,140,.09);
-  padding:7px 15px;
-}
-
-.solution-title,
-.qualifier-title,
-.paths-title,
-.zone-title,
-.cta-title{
-  letter-spacing:-.03em;
-}
-
-.qualifier-inner{
-  background:rgba(7,20,13,.45);
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:34px;
-  padding:48px;
-  box-shadow:0 24px 80px rgba(0,0,0,.35);
-}
-
-.q-card{
-  padding:18px;
-}
-
-.q-card.sel{
-  border-color:#77b98c;
-  background:rgba(47,138,90,.18);
-}
-
-.q-card-label{
-  font-size:17px;
-}
-
-.q-card-sub{
-  font-size:14px;
-}
-
-.path.featured{
-  background:linear-gradient(180deg,rgba(47,138,90,.18),rgba(255,255,255,.04));
-  border-color:rgba(119,185,140,.55);
-}
-
-.dept{
-  border-radius:999px;
-  color:#77b98c;
-  border-color:rgba(119,185,140,.35);
-}
-
-.cta-section{
-  background:
-    radial-gradient(circle at 50% 0%, rgba(47,138,90,.22), transparent 45%),
-    linear-gradient(180deg,transparent,rgba(255,255,255,.03));
-}
-
-.cta-phone{
-  color:#77b98c;
-  text-decoration:none;
-}
-
-footer{
-  background:#06110b;
-}
-
-footer img{
-  filter:brightness(0) invert(.72);
-}
-
-@media(max-width:980px){
-  .problem-grid,
-  .solution-grid,
-  .paths-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .hero-stats{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-@media(max-width:768px){
-  nav{
-    padding:14px 20px;
-  }
-
-  .problem-grid,
-  .solution-grid,
-  .paths-grid,
-  .hero-stats,
-  .q-grid-2{
-    grid-template-columns:1fr;
-  }
-
-  .hero-actions a,
-  .cta-actions a{
-    width:100%;
-  }
-
-  .qualifier-inner{
-    padding:24px 18px;
-    border-radius:24px;
-  }
-}
+    }
   </style>
 </head>
 <body>
 
   <nav>
     <a href="#" style="display:block;">
-      <img src="logo.png" alt="Les Pieux Horizon" style="height:48px;width:auto;filter:brightness(0) invert(1);">
+      <img src="logo.png" alt="Les Pieux Horizon" style="height:52px;width:auto;border-radius:2px;">
     </a>
     <div class="nav-links">
       <a href="#prestations">Nos prestations</a>
@@ -408,18 +194,24 @@ footer img{
   </nav>
 
   <section class="hero">
-    <div class="hero-tag">Zone alpine &amp; Vallée du Rhône</div>
-    <h1 class="hero-title">Le béton n'est<br>pas <em>une fatalité.</em></h1>
-    <p class="hero-sub">Fondations vissées posées en une journée — sans excavation, sans béton, terrain préservé. Isère, Savoie, Haute-Savoie, Drôme, Ardèche.</p>
-    <div class="hero-actions">
-      <a href="#qualifier" class="btn-primary">Qualifier mon projet</a>
-      <a href="#prestations" class="btn-ghost">Découvrir la solution</a>
+    <div>
+      <div class="hero-tag">Zone alpine &amp; Vallée du Rhône</div>
+      <h1 class="hero-title">Le béton n'est<br>pas <em>une fatalité.</em></h1>
+      <p class="hero-sub">Fondations vissées posées en une journée — sans excavation, sans béton, terrain préservé. Isère, Savoie, Haute-Savoie, Drôme, Ardèche.</p>
+      <div class="hero-actions">
+        <a href="#qualifier" class="btn-primary">Qualifier mon projet</a>
+        <a href="#prestations" class="btn-ghost">Découvrir la solution</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-val">1 jour</div><div class="stat-label">Durée de pose</div></div>
+        <div><div class="stat-val">5 dép.</div><div class="stat-label">Zone couverte</div></div>
+        <div><div class="stat-val">0 béton</div><div class="stat-label">Sans excavation</div></div>
+        <div><div class="stat-val">48h</div><div class="stat-label">Délai de devis</div></div>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div><div class="stat-val">1 jour</div><div class="stat-label">Durée de pose</div></div>
-      <div><div class="stat-val">5 dép.</div><div class="stat-label">Zone couverte</div></div>
-      <div><div class="stat-val">0 béton</div><div class="stat-label">Sans excavation</div></div>
-      <div><div class="stat-val">48h</div><div class="stat-label">Délai de devis</div></div>
+    <div style="position:relative;">
+      <img src="photo-hero.jpg" alt="Signalétique Mont-Dauphin UNESCO sur fondations vissées Weasyfix — Les Pieux Horizon" style="width:100%;height:560px;object-fit:cover;border-radius:4px;display:block;">
+      <div style="position:absolute;bottom:16px;left:16px;background:rgba(13,26,18,0.85);backdrop-filter:blur(4px);padding:10px 16px;border-radius:2px;font-size:12px;color:var(--muted);letter-spacing:0.05em;">Mont-Dauphin (05) — Signalétique UNESCO sur pieux vissés Weasyfix</div>
     </div>
   </section>
 
@@ -456,22 +248,76 @@ footer img{
       <div class="section-label">Notre approche</div>
       <h2 class="solution-title">Le spécialiste du pieu vissé en zone alpine</h2>
       <div class="solution-grid">
-        <div class="solution-card">
+        <a href="weasyfix.html" class="solution-card">
           <div class="solution-num">01 — WEASYFIX</div>
           <div class="solution-name">Structures légères</div>
-          <div class="solution-desc">Terrasses, pergolas, carports, studios de jardin, clôtures, panneaux solaires. Jusqu'à 900 kg par vis.</div>
-          <div class="solution-badge">Poseur agréé — 07, 26, 38, 73</div>
-        </div>
-        <div class="solution-card">
+          <div class="solution-desc">Terrasses, pergolas, carports, studios de jardin, clôtures, panneaux solaires. Pieux de <strong>55 cm à 175 cm</strong> — charge recommandée 750 kg/vis (DTU 51.4).</div>
+          <div class="solution-badge">Poseur référent — 07, 26, 38, 73</div>
+          <span class="solution-card-arrow">Découvrir la solution →</span>
+        </a>
+        <a href="vistech.html" class="solution-card">
           <div class="solution-num">02 — VISTECH</div>
           <div class="solution-name">Structures lourdes</div>
-          <div class="solution-desc">Chalets, maisons ossature bois, constructions avec plancher, jacuzzis, conteneurs. Pieux hydrauliques haute capacité.</div>
+          <div class="solution-desc">Chalets, maisons ossature bois, constructions avec plancher, jacuzzis, conteneurs. Pieux hydrauliques de <strong>2 m à 30 m</strong> — pour les terrains que Weasyfix ne peut pas couvrir.</div>
           <div class="solution-badge">ATec CSTB en cours</div>
-        </div>
+          <span class="solution-card-arrow">Découvrir la solution →</span>
+        </a>
         <div class="solution-card">
           <div class="solution-num">03 — EXPERTISE</div>
           <div class="solution-name">Dimensionnement inclus</div>
           <div class="solution-desc">Calepinage, descentes de charges, rapport de pose. Aucun chiffrage sans analyse préalable du terrain et de la structure.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE RÉALISATIONS -->
+  <section style="padding:80px 48px;background:var(--bg);">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);margin-bottom:16px;">Nos réalisations</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:38px;color:var(--text);margin-bottom:48px;line-height:1.2;">Quelques chantiers récents</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+        <div style="position:relative;border-radius:4px;overflow:hidden;">
+          <img src="weasyfix-yourte-erp.jpg" alt="Yourte ERP sur fondations Weasyfix" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:20px 16px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text);">Structure ERP — Yourte</div>
+            <div style="font-size:12px;color:var(--muted);">Maison d'assistance maternelle · Weasyfix</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:4px;overflow:hidden;">
+          <img src="weasyfix-piscine-apres.jpg" alt="Terrasse grès cérame sur fondations Weasyfix" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:20px 16px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text);">Terrasse grès cérame</div>
+            <div style="font-size:12px;color:var(--muted);">Pool house & terrasse piscine · Weasyfix</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:4px;overflow:hidden;">
+          <img src="photo-hero.jpg" alt="Signalétique UNESCO Mont-Dauphin sur fondations Weasyfix" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:20px 16px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text);">Signalétique UNESCO</div>
+            <div style="font-size:12px;color:var(--muted);">Mont-Dauphin (05) · Weasyfix</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:4px;overflow:hidden;">
+          <img src="weasyfix-terrasse.jpg" alt="Terrasse bois sur fondations Weasyfix" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:20px 16px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text);">Terrasse bois</div>
+            <div style="font-size:12px;color:var(--muted);">Isère · Weasyfix</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:4px;overflow:hidden;">
+          <img src="weasyfix-chantier-vis.jpg" alt="Pose de vis Weasyfix pour construction avec plancher" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:20px 16px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text);">Construction avec plancher</div>
+            <div style="font-size:12px;color:var(--muted);">38 vis posées en 1 journée · Weasyfix</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:4px;overflow:hidden;">
+          <img src="weasyfix-signaletique-alpine.jpg" alt="Signalétique alpine sur fondations Weasyfix" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:20px 16px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text);">Signalétique alpine</div>
+            <div style="font-size:12px;color:var(--muted);">Mont-Dauphin (05) · Weasyfix</div>
+          </div>
         </div>
       </div>
     </div>
@@ -615,7 +461,7 @@ footer img{
   </section>
 
   <footer>
-    <div><img src="logo.png" alt="Les Pieux Horizon" style="height:32px;width:auto;filter:brightness(0) invert(0.6);"></div>
+    <div><img src="logo.png" alt="Les Pieux Horizon" style="height:36px;width:auto;border-radius:2px;opacity:0.85;"></div>
     <div class="footer-links">
       <a href="#">Mentions légales</a>
       <a href="#">Politique de confidentialité</a>

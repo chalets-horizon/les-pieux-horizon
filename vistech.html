@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solution Vistech — Fondations sur pieux hydrauliques | Les Pieux Horizon</title>
+  <meta name="description" content="Les Pieux Horizon, installateur exclusif Vistech en Isère, Savoie et Haute-Savoie. Pieux hydrauliques de 2m à 30m pour structures lourdes. Devis gratuit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;600;700;900&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#0D1A12;--bg-2:#111E15;--text:#E8E4DC;--muted:#8A9E8A;--green:#1B5E3B;--green-dark:#134A2D;--border:rgba(255,255,255,0.08)}
+    body{font-family:'Darker Grotesque',sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100}
+    .nav-links{display:flex;gap:32px}
+    .nav-links a{font-size:14px;color:var(--muted);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-cta{background:var(--green);color:white;border:none;padding:11px 22px;font-family:'Darker Grotesque',sans-serif;font-size:14px;font-weight:700;cursor:pointer;border-radius:2px;text-decoration:none}
+    .breadcrumb{padding:16px 48px;font-size:13px;color:var(--muted);border-bottom:0.5px solid var(--border)}
+    .breadcrumb a{color:var(--muted);text-decoration:none}
+    .breadcrumb span{margin:0 8px}
+    .hero-wrap{background:var(--bg-2);border-bottom:0.5px solid var(--border)}
+    .hero{padding:80px 48px 60px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .hero-tag{display:inline-block;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);border:0.5px solid var(--green);padding:5px 14px;border-radius:2px;margin-bottom:24px}
+    .hero-title{font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,56px);font-weight:400;line-height:1.1;color:var(--text);margin-bottom:20px}
+    .hero-title em{font-style:italic;color:var(--green)}
+    .hero-sub{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:28px}
+    .hero-badge{display:block;background:rgba(27,94,59,0.15);border:0.5px solid var(--green);padding:10px 16px;border-radius:2px;font-size:13px;color:var(--green);font-weight:700;margin-bottom:10px}
+    .hero-visual{background:var(--bg);border:0.5px solid var(--border);border-radius:4px;padding:40px}
+    .hero-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .hero-stat{text-align:center;padding:20px;background:var(--bg-2);border-radius:2px;border:0.5px solid var(--border)}
+    .hero-stat-val{font-size:28px;font-weight:900;color:var(--text);line-height:1}
+    .hero-stat-label{font-size:12px;color:var(--muted);margin-top:6px;letter-spacing:0.05em}
+    .btn-primary{background:var(--green);color:white;border:none;padding:14px 28px;font-family:'Darker Grotesque',sans-serif;font-size:15px;font-weight:700;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;margin-right:12px;margin-top:16px}
+    .btn-ghost{background:transparent;color:var(--text);border:0.5px solid rgba(255,255,255,0.2);padding:14px 28px;font-family:'Darker Grotesque',sans-serif;font-size:15px;font-weight:600;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;margin-top:16px}
+    .section{padding:80px 48px}
+    .section.dark{background:var(--bg-2)}
+    .section-inner{max-width:1200px;margin:0 auto}
+    .section-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+    .section-title{font-family:'Playfair Display',serif;font-size:38px;color:var(--text);margin-bottom:16px;line-height:1.2}
+    .section-sub{font-size:16px;color:var(--muted);margin-bottom:48px;max-width:600px;line-height:1.7}
+    .distingo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
+    .distingo-card{padding:28px;border-radius:2px}
+    .distingo-card.w{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.1)}
+    .distingo-card.v{background:rgba(27,94,59,0.1);border:1.5px solid var(--green)}
+    .d-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;font-weight:700}
+    .distingo-card.w .d-label{color:var(--muted)}
+    .distingo-card.v .d-label{color:var(--green)}
+    .d-title{font-size:18px;font-weight:700;color:var(--text);margin-bottom:12px}
+    .d-range{font-size:32px;font-weight:900;margin-bottom:8px}
+    .distingo-card.w .d-range{color:var(--muted)}
+    .distingo-card.v .d-range{color:var(--green)}
+    .d-desc{font-size:14px;color:var(--muted);line-height:1.65}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+    .card{border-radius:2px;padding:28px}
+    .card-bg{background:var(--bg);border:0.5px solid var(--border)}
+    .card-bg2{background:var(--bg-2);border:0.5px solid var(--border)}
+    .card-icon{font-size:32px;margin-bottom:16px}
+    .card-num{font-size:11px;color:var(--green);letter-spacing:0.1em;margin-bottom:12px;font-weight:700}
+    .card-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:10px}
+    .card-desc{font-size:14px;color:var(--muted);line-height:1.65}
+    .card-flex{display:flex;gap:16px;align-items:flex-start}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+    .process-grid::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:0.5px;background:var(--green);opacity:0.4}
+    .process-step{text-align:center;padding:0 20px;position:relative}
+    .process-num{width:56px;height:56px;border-radius:50%;background:var(--green);color:white;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative;z-index:1}
+    .process-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px}
+    .process-desc{font-size:13px;color:var(--muted);line-height:1.6}
+    .zone-block{background:rgba(27,94,59,0.08);border:0.5px solid rgba(27,94,59,0.3);border-radius:4px;padding:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;margin-top:48px}
+    .depts{display:flex;flex-wrap:wrap;gap:8px}
+    .dept{background:rgba(27,94,59,0.15);border:0.5px solid var(--green);color:var(--green);padding:6px 14px;font-size:13px;font-weight:700;border-radius:2px}
+    .cta-section{padding:100px 48px;text-align:center;border-top:0.5px solid var(--border)}
+    .cta-title{font-family:'Playfair Display',serif;font-size:48px;color:var(--text);margin-bottom:16px}
+    .cta-sub{font-size:17px;color:var(--muted);margin-bottom:36px}
+    .cta-phone{font-size:24px;font-weight:900;color:var(--green);letter-spacing:0.05em;margin-top:24px;display:block;text-decoration:none}
+    footer{padding:28px 48px;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid rgba(255,255,255,0.05);flex-wrap:wrap;gap:12px}
+    .footer-links{display:flex;gap:24px}
+    .footer-links a{font-size:12px;color:rgba(138,158,138,0.6);text-decoration:none}
+    .footer-copy{font-size:12px;color:rgba(138,158,138,0.4)}
+    @media(max-width:768px){
+      nav,.breadcrumb,.section{padding-left:20px;padding-right:20px}
+      .hero{grid-template-columns:1fr;padding:48px 20px;gap:40px}
+      .distingo,.grid3{grid-template-columns:1fr}
+      .process-grid{grid-template-columns:1fr 1fr;gap:32px}
+      .process-grid::before{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html"><img src="logo.png" alt="Les Pieux Horizon" style="height:52px;width:auto;border-radius:2px;"></a>
+  <div class="nav-links">
+    <a href="index.html#prestations">Nos prestations</a>
+    <a href="index.html#zone">Zone d'intervention</a>
+    <a href="index.html#qualifier">Qualifier mon projet</a>
+  </div>
+  <a href="tel:0769737961" class="nav-cta">Devis gratuit</a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Accueil</a><span>›</span>
+  <a href="#">Nos solutions</a><span>›</span>
+  Solution Vistech
+</div>
+
+<div class="hero-wrap">
+  <div class="hero">
+    <div>
+      <div class="hero-tag">Installateur exclusif — 38, 73, 74</div>
+      <h1 class="hero-title">La fondation vissée <em>hydraulique</em> pour les structures lourdes et terrains difficiles</h1>
+      <p class="hero-sub">Quand Weasyfix ne suffit plus — terrain instable, charges importantes, profondeur nécessaire supérieure à 175 cm — Vistech prend le relais. Des pieux hydrauliques de 2 m à 30 m, posés en une journée, sans béton, sans excavation.</p>
+      <div class="hero-badge">✓ Installateur exclusif Vistech — Isère (38), Savoie (73), Haute-Savoie (74)</div>
+      <div class="hero-badge" style="background:rgba(27,94,59,0.06);">⚡ Weasyfix 55–175 cm · Vistech 2–30 m — toutes profondeurs couvertes</div>
+      <a href="index.html#qualifier" class="btn-primary">Qualifier mon projet</a>
+      <a href="tel:0769737961" class="btn-ghost">07 69 73 79 61</a>
+    </div>
+    <div style="position:relative;border-radius:4px;overflow:hidden;">
+      <img src="vistech-machine.webp" alt="Machine hydraulique Vistech en action — pose de pieux vissés" style="width:100%;height:480px;object-fit:cover;display:block;">
+      <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.92));padding:20px 16px;">
+        <div style="font-size:13px;font-weight:700;color:var(--text);">Machine hydraulique Vistech en action</div>
+        <div style="font-size:12px;color:var(--muted);">Pieux de 2 m à 30 m — posés en quelques heures, sans excavation</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DISTINGO -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Choisir le bon système</div>
+    <h2 class="section-title">Weasyfix ou Vistech — comment choisir ?</h2>
+    <p class="section-sub">La profondeur de pieu nécessaire est le critère principal. Nous maîtrisons les deux systèmes — vous avez toujours la bonne solution quelle que soit la situation.</p>
+    <div class="distingo">
+      <div class="distingo-card w">
+        <div class="d-label">Weasyfix — structures légères</div>
+        <div class="d-title">Terrasses, pergolas, clôtures, studios légers</div>
+        <div class="d-range">55 cm — 175 cm</div>
+        <div class="d-desc">Sol standard, profondeur de gel classique. Charge recommandée 750 kg/vis. Rapide, économique, réversible. Solution idéale pour la majorité des projets extérieurs résidentiels.</div>
+      </div>
+      <div class="distingo-card v">
+        <div class="d-label">Vistech — structures lourdes</div>
+        <div class="d-title">Chalets, MOB, extensions, conteneurs, ERP</div>
+        <div class="d-range">2 m — 30 m</div>
+        <div class="d-desc">Terrain instable, profondeur importante, charges lourdes. Pieux hydrauliques galvanisés à chaud. Solution pour les cas que Weasyfix ne peut pas couvrir — y compris ERP et terrains complexes.</div>
+      </div>
+    </div>
+    <div style="background:rgba(27,94,59,0.06);border:0.5px solid rgba(27,94,59,0.2);border-radius:2px;padding:20px 24px;font-size:14px;color:var(--muted);line-height:1.7;">
+      <strong style="color:var(--text);">Notre valeur ajoutée</strong> — Nous sommes la seule entreprise sur la zone 38-73-74 à maîtriser les deux systèmes. Si votre projet nécessite les deux, nous intervenons en une seule fois. Pas besoin de coordonner deux prestataires.
+    </div>
+  </div>
+</section>
+
+<!-- AVANTAGES -->
+<section class="section dark">
+  <div class="section-inner">
+    <div class="section-label">Pourquoi Vistech</div>
+    <h2 class="section-title">Les atouts des pieux vissés hydrauliques</h2>
+    <p class="section-sub">Vistech, c'est 30 ans d'expérience, 1,6 million de pieux installés dans le monde, et une garantie qui va au-delà de 25 ans.</p>
+    <div class="grid3">
+      <div class="card card-bg">
+        <div class="card-icon">⚡</div>
+        <div class="card-title">Rapidité d'installation</div>
+        <div class="card-desc">Quelques heures seulement pour la majorité des chantiers. Machines hydrauliques silencieuses et légères. La construction peut démarrer immédiatement après — pas d'attente de séchage béton.</div>
+      </div>
+      <div class="card card-bg">
+        <div class="card-icon">🏔</div>
+        <div class="card-title">Tous terrains, toutes conditions</div>
+        <div class="card-desc">Posés dans toutes les conditions météo, tous types de sols, accès difficiles. En zone alpine — pente, altitude, sol gelé, rocher — c'est souvent la seule solution viable.</div>
+      </div>
+      <div class="card card-bg">
+        <div class="card-icon">🌿</div>
+        <div class="card-title">Sans dégâts</div>
+        <div class="card-desc">Aucune excavation, aucune machinerie lourde, aucun béton. Terrain intact. Vous êtes prêts à construire dans un environnement propre dès la fin de notre intervention.</div>
+      </div>
+      <div class="card card-bg">
+        <div class="card-icon">🔩</div>
+        <div class="card-title">Galvanisation à chaud</div>
+        <div class="card-desc">Procédé métallurgique normé. Résistance maximale à la corrosion, durée de vie estimée à plus de 75 ans. Acier réutilisable et recyclable — un choix écoresponsable.</div>
+      </div>
+      <div class="card card-bg">
+        <div class="card-icon">❄️</div>
+        <div class="card-title">Garantie gel-dégel</div>
+        <div class="card-desc">Garantie explicite contre les mouvements causés par le gel ou le dégel — critique en zone alpine. Fini les fondations qui bougent avec les cycles thermiques hivernaux.</div>
+      </div>
+      <div class="card card-bg">
+        <div class="card-icon">🔧</div>
+        <div class="card-title">Sur mesure si nécessaire</div>
+        <div class="card-desc">Vistech fabrique sur mesure pour les besoins spécifiques — longueurs particulières, têtes adaptées, configurations spéciales. Aucun projet n'est trop complexe.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Domaines d'application</div>
+    <h2 class="section-title">Pour quels projets ?</h2>
+    <p class="section-sub">Vistech couvre les structures nécessitant une profondeur d'ancrage supérieure à 175 cm — charges lourdes, terrains instables, structures permanentes.</p>
+    <div class="grid-auto">
+      <div class="card card-bg" style="padding:20px;">
+        <div class="card-icon" style="font-size:28px;margin-bottom:10px;">🏠</div>
+        <div class="card-title" style="font-size:15px;margin-bottom:6px;">Chalets et résidences</div>
+        <div class="card-desc" style="font-size:13px;">Fondations de chalets bois, résidences secondaires, maisons de montagne sur terrains en pente ou sols complexes.</div>
+      </div>
+      <div class="card card-bg" style="padding:20px;">
+        <div class="card-icon" style="font-size:28px;margin-bottom:10px;">🏗</div>
+        <div class="card-title" style="font-size:15px;margin-bottom:6px;">Maisons ossature bois</div>
+        <div class="card-desc" style="font-size:13px;">Constructions MOB sur pieux vissés — alternative moderne aux fondations béton traditionnelles.</div>
+      </div>
+      <div class="card card-bg" style="padding:20px;">
+        <div class="card-icon" style="font-size:28px;margin-bottom:10px;">🏢</div>
+        <div class="card-title" style="font-size:15px;margin-bottom:6px;">Extensions et agrandissements</div>
+        <div class="card-desc" style="font-size:13px;">Agrandissements, solariums, vérandas lourdes. Fondations précises sans toucher aux structures existantes.</div>
+      </div>
+      <div class="card card-bg" style="padding:20px;">
+        <div class="card-icon" style="font-size:28px;margin-bottom:10px;">🏫</div>
+        <div class="card-title" style="font-size:15px;margin-bottom:6px;">Structures ERP</div>
+        <div class="card-desc" style="font-size:13px;">Crèches, écoles, structures d'accueil. Nous posons pour des fabricants de structures ERP partout en France.</div>
+      </div>
+      <div class="card card-bg" style="padding:20px;">
+        <div class="card-icon" style="font-size:28px;margin-bottom:10px;">📦</div>
+        <div class="card-title" style="font-size:15px;margin-bottom:6px;">Conteneurs et modules lourds</div>
+        <div class="card-desc" style="font-size:13px;">Conteneurs maritimes reconvertis, modules lourds. Charges ponctuelles importantes nécessitant un ancrage profond.</div>
+      </div>
+      <div class="card card-bg" style="padding:20px;">
+        <div class="card-icon" style="font-size:28px;margin-bottom:10px;">🔧</div>
+        <div class="card-title" style="font-size:15px;margin-bottom:6px;">Réparation de fondation</div>
+        <div class="card-desc" style="font-size:13px;">Reprise en sous-œuvre de fondations défaillantes. Stabilisation d'une structure qui bouge sans démolition.</div>
+      </div>
+      <div class="card card-bg" style="padding:20px;">
+        <div class="card-icon" style="font-size:28px;margin-bottom:10px;">🌊</div>
+        <div class="card-title" style="font-size:15px;margin-bottom:6px;">Terrains instables</div>
+        <div class="card-desc" style="font-size:13px;">Sols argileux gonflants, terrains humides, remblais anciens. Les pieux atteignent la couche portante là où Weasyfix ne peut pas.</div>
+      </div>
+      <div class="card card-bg" style="padding:20px;">
+        <div class="card-icon" style="font-size:28px;margin-bottom:10px;">🛁</div>
+        <div class="card-title" style="font-size:15px;margin-bottom:6px;">Jacuzzis et spas lourds</div>
+        <div class="card-desc" style="font-size:13px;">Charges élevées nécessitant un ancrage profond et robuste. Répartition précise sur plusieurs pieux.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GAMME -->
+<section class="section dark">
+  <div class="section-inner">
+    <div class="section-label">La gamme Vistech</div>
+    <h2 class="section-title">Un système complet et certifié</h2>
+    <p class="section-sub">Pieux, extensions, adaptateurs, têtes fixes et ajustables — chaque composant conçu pour s'adapter à votre projet avec précision.</p>
+    <div class="grid3">
+      <div class="card card-bg2"><div class="card-num">01 — PIEUX VISSÉS</div><div class="card-title">Pieux hélicoïdaux</div><div class="card-desc">Plaques hélicoïdales sur axe central. Vissés hydrauliquement de 2 m à 30 m. Acier galvanisé à chaud, durée de vie estimée 75 ans.</div></div>
+      <div class="card card-bg2"><div class="card-num">02 — EXTENSIONS</div><div class="card-title">Extensions de pieux</div><div class="card-desc">Permettent d'atteindre la profondeur de portance en ajoutant des segments. Toutes profondeurs jusqu'à 30 m.</div></div>
+      <div class="card card-bg2"><div class="card-num">03 — ADAPTATEURS</div><div class="card-title">Adaptateurs de connexion</div><div class="card-desc">Liaison pieu-structure. Compatibles avec toutes les configurations — bois, acier, béton préfabriqué.</div></div>
+      <div class="card card-bg2"><div class="card-num">04 — TÊTES FIXES</div><div class="card-title">Têtes de pieux fixes</div><div class="card-desc">Pour les fixations rigides et définitives. Différents modèles selon le type de structure et les charges.</div></div>
+      <div class="card card-bg2"><div class="card-num">05 — TÊTES AJUSTABLES</div><div class="card-title">Têtes réglables</div><div class="card-desc">Mise à niveau millimétrique même sur terrain en pente. Indispensables pour l'horizontalité parfaite en zone alpine.</div></div>
+      <div class="card card-bg2"><div class="card-num">06 — SUR MESURE</div><div class="card-title">Fabrication spéciale</div><div class="card-desc">Pour les besoins non couverts par la gamme standard. Longueurs, diamètres, configurations particulières sur commande.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSUS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Notre processus</div>
+    <h2 class="section-title">De la demande à la pose en 4 étapes</h2>
+    <p class="section-sub" style="margin-bottom:60px;">Un processus rigoureux pour des fondations sur lesquelles vous pouvez compter sur le long terme.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div class="process-title">Consultation</div>
+        <div class="process-desc">Échange sur votre projet — type de structure, charges, terrain, accès. On détermine si Vistech est la bonne solution ou si Weasyfix suffit.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div class="process-title">Évaluation terrain</div>
+        <div class="process-desc">Analyse du site — nature du sol, profondeur de portance, contraintes d'accès. Dimensionnement précis du nombre et du type de pieux nécessaires.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div class="process-title">Devis gratuit</div>
+        <div class="process-desc">Estimation complète fourniture + pose, sans obligation. Délai sous 48h. Prix fixé avant chantier — aucune surprise en cours d'intervention.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <div class="process-title">Installation</div>
+        <div class="process-desc">Pose hydraulique en une journée pour la majorité des chantiers. Rapport d'intervention remis à l'issue. Votre structure peut être montée dès le lendemain.</div>
+      </div>
+    </div>
+
+    <div class="zone-block">
+      <div>
+        <div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;">Zone d'exclusivité Vistech — Les Pieux Horizon</div>
+        <div style="font-size:14px;color:var(--muted);">Premier et unique installateur Vistech sur ces trois départements</div>
+      </div>
+      <div class="depts">
+        <span class="dept">38 — Isère</span>
+        <span class="dept">73 — Savoie</span>
+        <span class="dept">74 — Haute-Savoie</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIES -->
+<section class="section dark">
+  <div class="section-inner">
+    <div class="section-label">Garanties & certifications</div>
+    <h2 class="section-title">Bâtir sur du solide depuis 1995</h2>
+    <p class="section-sub">Vistech c'est 30 ans d'existence, 1,6 million de pieux installés, une garantie au-delà de 25 ans. Un système éprouvé, pas un produit nouveau.</p>
+    <div class="grid3">
+      <div class="card card-bg card-flex">
+        <div class="card-icon" style="font-size:28px;flex-shrink:0;">🛡</div>
+        <div><div class="card-title" style="font-size:15px;margin-bottom:6px;">Garantie +25 ans</div><div class="card-desc" style="font-size:13px;">Garantie contre les défauts de fabrication, les mouvements gel-dégel, et l'incapacité à soutenir la structure pendant sa durée de vie utile.</div></div>
+      </div>
+      <div class="card card-bg card-flex">
+        <div class="card-icon" style="font-size:28px;flex-shrink:0;">🔩</div>
+        <div><div class="card-title" style="font-size:15px;margin-bottom:6px;">Galvanisation à chaud normée</div><div class="card-desc" style="font-size:13px;">Protection maximale contre la corrosion. Durée de vie estimée à plus de 75 ans — au-delà des constructions qu'ils soutiennent.</div></div>
+      </div>
+      <div class="card card-bg card-flex">
+        <div class="card-icon" style="font-size:28px;flex-shrink:0;">♻️</div>
+        <div><div class="card-title" style="font-size:15px;margin-bottom:6px;">Acier recyclable & réutilisable</div><div class="card-desc" style="font-size:13px;">Choix écoresponsable. Les pieux sont réutilisables et recyclables. Aucun béton, aucun déchet de chantier.</div></div>
+      </div>
+      <div class="card card-bg card-flex">
+        <div class="card-icon" style="font-size:28px;flex-shrink:0;">📋</div>
+        <div><div class="card-title" style="font-size:15px;margin-bottom:6px;">ATec CSTB en cours</div><div class="card-desc" style="font-size:13px;">Avis Technique CSTB en cours d'obtention pour la France. En attendant, Vistech intervient sur les projets hors permis de construire — la majorité des cas résidentiels.</div></div>
+      </div>
+      <div class="card card-bg card-flex">
+        <div class="card-icon" style="font-size:28px;flex-shrink:0;">🌍</div>
+        <div><div class="card-title" style="font-size:15px;margin-bottom:6px;">Réseau mondial éprouvé</div><div class="card-desc" style="font-size:13px;">1,6 million de pieux installés, 217 000+ projets, présence dans 10 pays. Testé dans des conditions climatiques plus extrêmes que la zone alpine française.</div></div>
+      </div>
+      <div class="card card-bg card-flex">
+        <div class="card-icon" style="font-size:28px;flex-shrink:0;">🛡</div>
+        <div><div class="card-title" style="font-size:15px;margin-bottom:6px;">Décennale installateur</div><div class="card-desc" style="font-size:13px;">Notre prestation est couverte par notre assurance décennale — 10 ans de protection sur la qualité de l'installation, en plus de la garantie fabricant.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="cta-title">Votre projet Vistech en zone alpine.</h2>
+  <p class="cta-sub">Premier installateur exclusif Vistech en Isère, Savoie et Haute-Savoie. Devis gratuit sous 48h.</p>
+  <div>
+    <a href="index.html#qualifier" class="btn-primary">Qualifier mon projet</a>
+    <a href="tel:0769737961" class="btn-ghost">Nous appeler</a>
+  </div>
+  <a href="tel:0769737961" class="cta-phone">07 69 73 79 61</a>
+  <p style="font-size:13px;color:var(--muted);margin-top:16px;">Zones 38 — 73 — 74 · L'Albenc, Isère · Réponse sous 2h</p>
+</section>
+
+<footer>
+  <div><img src="logo.png" alt="Les Pieux Horizon" style="height:32px;width:auto;border-radius:2px;opacity:0.8;"></div>
+  <div class="footer-links"><a href="#">Mentions légales</a><a href="#">Politique de confidentialité</a></div>
+  <div class="footer-copy">© 2025 Les Pieux Horizon — Chalets Horizon SAS</div>
+</footer>
+
+</body>
+</html>

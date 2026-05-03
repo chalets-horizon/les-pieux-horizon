@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solution Weasyfix — Fondations vissées légères | Les Pieux Horizon</title>
+  <meta name="description" content="Les Pieux Horizon, poseur référent Weasyfix sur 07-26-38-73. Terrasses, pergolas, clôtures, studios de jardin, panneaux solaires. Fondations sans béton en zone alpine.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;600;700;900&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0D1A12;
+      --bg-2: #111E15;
+      --text: #E8E4DC;
+      --muted: #8A9E8A;
+      --green: #1B5E3B;
+      --green-dark: #134A2D;
+      --border: rgba(255,255,255,0.08);
+    }
+    body { font-family: 'Darker Grotesque', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+
+    /* NAV */
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { background: var(--green); color: white; border: none; padding: 11px 22px; font-family: 'Darker Grotesque', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; border-radius: 2px; text-decoration: none; }
+
+    /* BREADCRUMB */
+    .breadcrumb { padding: 16px 48px; font-size: 13px; color: var(--muted); border-bottom: 0.5px solid var(--border); }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { margin: 0 8px; }
+
+    /* HERO */
+    .hero { padding: 80px 48px 60px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .hero-tag { display: inline-block; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); border: 0.5px solid var(--green); padding: 5px 14px; border-radius: 2px; margin-bottom: 24px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 4vw, 56px); font-weight: 400; line-height: 1.1; color: var(--text); margin-bottom: 20px; }
+    .hero-title em { font-style: italic; color: var(--green); }
+    .hero-sub { font-size: 17px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(27,94,59,0.15); border: 0.5px solid var(--green); padding: 10px 16px; border-radius: 2px; font-size: 13px; color: var(--green); font-weight: 700; margin-bottom: 16px; }
+    .hero-visual { background: var(--bg-2); border: 0.5px solid var(--border); border-radius: 4px; padding: 40px; }
+    .hero-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .hero-stat { text-align: center; padding: 20px; background: var(--bg); border-radius: 2px; border: 0.5px solid var(--border); }
+    .hero-stat-val { font-size: 32px; font-weight: 900; color: var(--text); line-height: 1; }
+    .hero-stat-label { font-size: 12px; color: var(--muted); margin-top: 6px; letter-spacing: 0.05em; }
+    .btn-primary { background: var(--green); color: white; border: none; padding: 14px 28px; font-family: 'Darker Grotesque', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; border-radius: 2px; text-decoration: none; display: inline-block; margin-right: 12px; }
+    .btn-ghost { background: transparent; color: var(--text); border: 0.5px solid rgba(255,255,255,0.2); padding: 14px 28px; font-family: 'Darker Grotesque', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; border-radius: 2px; text-decoration: none; display: inline-block; }
+
+    /* SECTION COMMUNE */
+    .section { padding: 80px 48px; }
+    .section.dark { background: var(--bg-2); }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 38px; color: var(--text); margin-bottom: 16px; line-height: 1.2; }
+    .section-sub { font-size: 16px; color: var(--muted); margin-bottom: 48px; max-width: 600px; line-height: 1.7; }
+
+    /* AVANTAGES */
+    .avantages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .avantage-card { background: var(--bg); border: 0.5px solid var(--border); padding: 28px; border-radius: 2px; }
+    .avantage-icon { font-size: 32px; margin-bottom: 16px; }
+    .avantage-title { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .avantage-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+    /* APPLICATIONS */
+    .appli-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+    .appli-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: 2px; padding: 20px; transition: border-color 0.2s; }
+    .appli-card:hover { border-color: var(--green); }
+    .appli-icon { font-size: 28px; margin-bottom: 10px; }
+    .appli-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .appli-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* PRODUITS */
+    .produits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .produit-card { background: var(--bg-2); border: 0.5px solid var(--border); padding: 24px; border-radius: 2px; }
+    .produit-num { font-size: 11px; color: var(--green); letter-spacing: 0.1em; margin-bottom: 12px; font-weight: 700; }
+    .produit-name { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .produit-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* PROCESSUS */
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+    .process-grid::before { content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 0.5px; background: var(--green); opacity: 0.4; }
+    .process-step { text-align: center; padding: 0 20px; position: relative; }
+    .process-num { width: 56px; height: 56px; border-radius: 50%; background: var(--green); color: white; font-size: 20px; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; position: relative; z-index: 1; }
+    .process-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .process-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* CERTIFICATIONS */
+    .certif-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .certif-card { background: var(--bg); border: 0.5px solid var(--border); padding: 24px; border-radius: 2px; display: flex; gap: 16px; align-items: flex-start; }
+    .certif-icon { font-size: 28px; flex-shrink: 0; }
+    .certif-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .certif-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* ZONE */
+    .zone-block { background: rgba(27,94,59,0.08); border: 0.5px solid rgba(27,94,59,0.3); border-radius: 4px; padding: 32px; margin-top: 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .zone-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .zone-sub { font-size: 14px; color: var(--muted); }
+    .depts { display: flex; flex-wrap: wrap; gap: 8px; }
+    .dept { background: rgba(27,94,59,0.15); border: 0.5px solid var(--green); color: var(--green); padding: 6px 14px; font-size: 13px; font-weight: 700; border-radius: 2px; }
+
+    /* CTA */
+    .cta-section { padding: 100px 48px; text-align: center; border-top: 0.5px solid var(--border); }
+    .cta-title { font-family: 'Playfair Display', serif; font-size: 48px; color: var(--text); margin-bottom: 16px; }
+    .cta-sub { font-size: 17px; color: var(--muted); margin-bottom: 36px; }
+    .cta-phone { font-size: 24px; font-weight: 900; color: var(--green); letter-spacing: 0.05em; margin-top: 24px; display: block; text-decoration: none; }
+
+    /* FOOTER */
+    footer { padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 12px; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 12px; color: rgba(138,158,138,0.6); text-decoration: none; }
+    .footer-copy { font-size: 12px; color: rgba(138,158,138,0.4); }
+
+    @media (max-width: 768px) {
+      nav, .breadcrumb, .section { padding-left: 20px; padding-right: 20px; }
+      .hero { grid-template-columns: 1fr; padding: 48px 20px; gap: 40px; }
+      .avantages-grid, .produits-grid, .certif-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .process-grid::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">
+      <img src="logo.png" alt="Les Pieux Horizon" style="height:52px;width:auto;border-radius:2px;">
+    </a>
+    <div class="nav-links">
+      <a href="index.html#prestations">Nos prestations</a>
+      <a href="index.html#zone">Zone d'intervention</a>
+      <a href="index.html#qualifier">Qualifier mon projet</a>
+    </div>
+    <a href="tel:0769737961" class="nav-cta">Devis gratuit</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="index.html">Accueil</a>
+    <span>›</span>
+    <a href="#">Nos solutions</a>
+    <span>›</span>
+    Solution Weasyfix
+  </div>
+
+  <!-- HERO -->
+  <div style="background: var(--bg-2); border-bottom: 0.5px solid var(--border);">
+    <div class="hero">
+      <div>
+        <div class="hero-tag">Poseur référent — 07, 26, 38, 73</div>
+        <h1 class="hero-title">La fondation vissée <em>légère</em> pour toutes vos constructions extérieures</h1>
+        <p class="hero-sub">Le système Weasyfix remplace la dalle béton par des vis vissées mécaniquement dans le sol — de 55 cm à 175 cm de profondeur selon le terrain. Pas de béton, pas d'excavation, pas d'attente. Une journée de pose, une structure prête à monter.</p>
+        <div class="hero-badge" style="margin-bottom:8px;">✓ Poseur référent Weasyfix — départements 07, 26, 38, 73</div><br>
+        <div class="hero-badge" style="background:rgba(27,94,59,0.08);margin-bottom:16px;">⚡ Weasyfix 55–175 cm · Vistech 2–30 m — toutes profondeurs couvertes</div>
+        <a href="index.html#qualifier" class="btn-primary">Qualifier mon projet</a>
+        <a href="tel:0769737961" class="btn-ghost">07 69 73 79 61</a>
+      </div>
+      <div style="position:relative;border-radius:4px;overflow:hidden;">
+        <img src="weasyfix-piscine-apres.jpg" alt="Terrasse grès cérame sur fondations vissées Weasyfix — pool house alpin" style="width:100%;height:480px;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:20px 16px;">
+          <div style="font-size:13px;font-weight:700;color:var(--text);">Terrasse grès cérame & pool house</div>
+          <div style="font-size:12px;color:var(--muted);">Isère — fondations Weasyfix, terrain préservé</div>
+        </div>
+      </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AVANTAGES -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">Pourquoi Weasyfix</div>
+      <h2 class="section-title">Six raisons de choisir les fondations vissées</h2>
+      <p class="section-sub">Weasyfix a réinventé la fondation pour constructions extérieures — sans béton, sans engin lourd, sans délai de séchage.</p>
+      <div class="avantages-grid">
+        <div class="avantage-card">
+          <div class="avantage-icon">⚡</div>
+          <div class="avantage-title">Rapidité</div>
+          <div class="avantage-desc">Pas de temps de séchage béton (28 jours économisés). Les vis se vissent en quelques minutes, les platines se mettent à niveau immédiatement. Votre structure peut être montée le jour même.</div>
+        </div>
+        <div class="avantage-card">
+          <div class="avantage-icon">🌿</div>
+          <div class="avantage-title">Écologique</div>
+          <div class="avantage-desc">Zéro béton, zéro évacuation de terre, zéro excavation. Les vis sont en acier recyclable et réutilisable. Le terrain naturel est préservé — sol, végétation, eau de pluie.</div>
+        </div>
+        <div class="avantage-card">
+          <div class="avantage-icon">🎯</div>
+          <div class="avantage-title">Précision</div>
+          <div class="avantage-desc">Les platines réglables permettent une mise à niveau millimétrique, même sur terrain en pente. Finitions soignées, espace environnant intact, résultat professionnel garanti.</div>
+        </div>
+        <div class="avantage-card">
+          <div class="avantage-icon">🔄</div>
+          <div class="avantage-title">Réversibilité</div>
+          <div class="avantage-desc">Une vis se dévisse. Si votre projet évolue — agrandissement, déplacement, suppression — les fondations se retirent sans laisser de trace. Impossible avec du béton.</div>
+        </div>
+        <div class="avantage-card">
+          <div class="avantage-icon">⛰</div>
+          <div class="avantage-title">Terrain difficile</div>
+          <div class="avantage-desc">Pente, sol rocheux, accès limité, altitude — le système Weasyfix s'adapte là où le béton est impossible ou inadapté. Notre spécialité en zone alpine et vallée du Rhône.</div>
+        </div>
+        <div class="avantage-card">
+          <div class="avantage-icon">❄️</div>
+          <div class="avantage-title">Résistance au gel</div>
+          <div class="avantage-desc">Les vis sont ancrées sous la profondeur de gel locale. Elles ne bougent pas avec les cycles gel-dégel, contrairement aux plots béton posés en surface — critiques en zone alpine.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section dark">
+    <div class="section-inner">
+      <div class="section-label">Domaines d'application</div>
+      <h2 class="section-title">Pour quels projets ?</h2>
+      <p class="section-sub">Le système Weasyfix couvre une large gamme de constructions extérieures légères. Charge recommandée : 750 kg par vis avec marge de sécurité (DTU 51.4 — 1 vis pour max. 3 m² de terrasse en usage privé).</p>
+      <div class="appli-grid">
+        <div class="appli-card">
+          <div class="appli-icon">🪵</div>
+          <div class="appli-title">Terrasse bois</div>
+          <div class="appli-desc">Pin, douglas, mélèze. Structure porteuse sur fondations vissées, sans dalle.</div>
+        </div>
+        <div class="appli-card">
+          <div class="appli-icon">🔲</div>
+          <div class="appli-title">Terrasse composite</div>
+          <div class="appli-desc">Lames composites sur lambourdes bois. Même principe, durabilité accrue.</div>
+        </div>
+        <div class="appli-card">
+          <div class="appli-icon">◼</div>
+          <div class="appli-title">Terrasse grès cérame</div>
+          <div class="appli-desc">Dalles sur structure acier vissée au sol. Rendu minéral sans dalle coulée.</div>
+        </div>
+        <div class="appli-card">
+          <div class="appli-icon">🏠</div>
+          <div class="appli-title">Pergola / carport</div>
+          <div class="appli-desc">Structures légères d'ombrage et d'abri. Ancrage sur vis sans embase béton.</div>
+        </div>
+        <div class="appli-card">
+          <div class="appli-icon">🌞</div>
+          <div class="appli-title">Panneaux solaires</div>
+          <div class="appli-desc">Structures photovoltaïques au sol. Ancrage rapide, terrain préservé.</div>
+        </div>
+        <div class="appli-card">
+          <div class="appli-icon">🚧</div>
+          <div class="appli-title">Clôtures</div>
+          <div class="appli-desc">Panneaux rigides, palissades bois. Poteaux sur vis — droits, stables, durables.</div>
+        </div>
+        <div class="appli-card">
+          <div class="appli-icon">🏗</div>
+          <div class="appli-title">Poteaux isolés</div>
+          <div class="appli-desc">Portails, enseignes, éclairage extérieur. Un pieu par poteau, mise à niveau précise.</div>
+        </div>
+        <div class="appli-card">
+          <div class="appli-icon">🛖</div>
+          <div class="appli-title">Construction sans plancher</div>
+          <div class="appli-desc">Abris ouverts, préaux, pergolas couvertes. Poteaux sur fondations vissées.</div>
+        </div>
+        <div class="appli-card">
+          <div class="appli-icon">🏡</div>
+          <div class="appli-title">Abri de jardin / piscine</div>
+          <div class="appli-desc">Pool house, abri de jardin, local technique. Fondations légères et propres.</div>
+        </div>
+        <div class="appli-card">
+          <div class="appli-icon">🌊</div>
+          <div class="appli-title">Jacuzzi / spa</div>
+          <div class="appli-desc">Terrasse d'accueil autour du jacuzzi. Charges ponctuelles bien réparties sur vis.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAMME PRODUITS -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">La gamme</div>
+      <h2 class="section-title">Un système complet et cohérent</h2>
+      <p class="section-sub">Weasyfix a développé l'ensemble des composants pour que chaque élément soit compatible avec les autres — vis, connecteurs, outillage, profilés, fixations.</p>
+      <div class="produits-grid">
+        <div class="produit-card">
+          <div class="produit-num">01 — FONDATIONS</div>
+          <div class="produit-name">Vis de fondation & embases</div>
+          <div class="produit-desc">Pieux de 55 cm à 175 cm de profondeur selon la nature du sol et la profondeur de gel. Charge recommandée 750 kg par vis avec marge de sécurité (norme NF P 94-150-1, DTU 51.4).</div>
+        </div>
+        <div class="produit-card">
+          <div class="produit-num">02 — CONNECTEURS</div>
+          <div class="produit-name">Connecteurs réglables</div>
+          <div class="produit-desc">Solidarisent les vis de fondation avec tout type de structures en permettant des réglages larges — hauteur, inclinaison, niveau. La clé de la précision de pose, même sur terrain en pente.</div>
+        </div>
+        <div class="produit-card">
+          <div class="produit-num">03 — OUTILLAGE</div>
+          <div class="produit-name">Outillage de pose</div>
+          <div class="produit-desc">Garantit un travail rapide, adapté aux circonstances, dans le respect de la santé des utilisateurs. Adaptateur pneumatique ou hydraulique selon les contextes de chantier.</div>
+        </div>
+        <div class="produit-card">
+          <div class="produit-num">04 — PROFILÉS</div>
+          <div class="produit-name">Profilés acier</div>
+          <div class="produit-desc">Une gamme de profilés acier pour compléter ou remplacer avantageusement les structures bois. Compatibles avec l'ensemble du système Weasyfix.</div>
+        </div>
+        <div class="produit-card">
+          <div class="produit-num">05 — FIXATIONS</div>
+          <div class="produit-name">Fixations & assemblage</div>
+          <div class="produit-desc">L'ensemble des produits qui permettent de fixer les composants Weasyfix entre eux — boulons, vis, connecteurs. Normes qualité WEASYFIX très exigeantes.</div>
+        </div>
+        <div class="produit-card">
+          <div class="produit-num">06 — ACCESSOIRES</div>
+          <div class="produit-name">Accessoires</div>
+          <div class="produit-desc">Assurent une liberté créative et garantissent la compatibilité entre les éléments constructifs. Pour chaque type de projet, une solution complète économique et efficace.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVANT APRÈS -->
+  <section class="section dark">
+    <div class="section-inner">
+      <div class="section-label">Avant / Après</div>
+      <h2 class="section-title">Le même chantier, avant et après</h2>
+      <p class="section-sub">Terrasse grès cérame sur structure acier, pool house bois — zone alpine, Isère.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div style="position:relative;border-radius:4px;overflow:hidden;">
+          <img src="weasyfix-piscine-avant.jpg" alt="Chantier avant pose terrasse grès cérame" style="width:100%;height:360px;object-fit:cover;display:block;">
+          <div style="position:absolute;top:12px;left:12px;background:rgba(13,26,18,0.85);padding:6px 12px;border-radius:2px;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;">Avant</div>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:16px;">
+            <div style="font-size:13px;color:var(--muted);">Vis posées, structure acier en attente — chantier propre, pas d'excavation</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:4px;overflow:hidden;">
+          <img src="weasyfix-piscine-apres.jpg" alt="Terrasse grès cérame terminée sur fondations Weasyfix" style="width:100%;height:360px;object-fit:cover;display:block;">
+          <div style="position:absolute;top:12px;left:12px;background:rgba(27,94,59,0.9);padding:6px 12px;border-radius:2px;font-size:12px;font-weight:700;color:white;letter-spacing:0.1em;text-transform:uppercase;">Après</div>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:16px;">
+            <div style="font-size:13px;color:var(--muted);">Terrasse grès cérame & pool house bois — résultat en 2 jours</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSUS D'INTERVENTION -->
+  <section class="section dark">
+    <div class="section-inner">
+      <div class="section-label">Notre processus</div>
+      <h2 class="section-title">De la demande à la pose en 4 étapes</h2>
+      <p class="section-sub" style="margin-bottom: 60px;">Un processus clair, sans mauvaise surprise. Vous savez à chaque étape où vous en êtes.</p>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <div class="process-title">Qualification</div>
+          <div class="process-desc">Vous renseignez votre projet via notre outil en ligne — type de structure, surface, terrain, zone. On identifie la complexité et on vous rappelle sous 2h.</div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <div class="process-title">Dimensionnement</div>
+          <div class="process-desc">Sur transmission de votre calepinage, nous calculons le nombre et le type de vis selon les abaques Weasyfix. Devis sous 48h, prix garanti 24 mois.</div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">3</div>
+          <div class="process-title">Pose</div>
+          <div class="process-desc">Intervention sur chantier en une journée. Vissage mécanique, mise à niveau des platines, rapport de pose remis. Votre structure peut être montée dans la foulée.</div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">4</div>
+          <div class="process-title">Réception</div>
+          <div class="process-desc">Vérification finale de l'horizontalité et de la stabilité. Vous validez, nous remettons le rapport de pose. La garantie décennale s'applique sur notre prestation.</div>
+        </div>
+      </div>
+
+      <!-- ZONE D'INTERVENTION -->
+      <div class="zone-block">
+        <div>
+          <div class="zone-title">Notre zone d'intervention Weasyfix</div>
+          <div class="zone-sub">Poseur référent sur 4 départements — interventions sous 2 semaines</div>
+        </div>
+        <div class="depts">
+          <span class="dept">07 — Ardèche</span>
+          <span class="dept">26 — Drôme</span>
+          <span class="dept">38 — Isère</span>
+          <span class="dept">73 — Savoie</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">Garanties & certifications</div>
+      <h2 class="section-title">Ce qui vous protège</h2>
+      <p class="section-sub">Weasyfix est un système certifié. Nous intervenons en conformité avec toutes les règles techniques et réglementaires.</p>
+      <div class="certif-grid">
+        <div class="certif-card">
+          <div class="certif-icon">📋</div>
+          <div>
+            <div class="certif-title">Certification NF P 94-150-1</div>
+            <div class="certif-desc">5 essais de chargement statique réalisés par le CSTC/BBRI (organisme indépendant certifié ISO 9001, réseau ENBRI dont fait partie le CSTB France). Rapport n° DE 641X394. Charges de rupture géotechnique testées de 15,5 à 32 kN selon le type de vis.</div>
+          </div>
+        </div>
+        <div class="certif-card">
+          <div class="certif-icon">🔩</div>
+          <div>
+            <div class="certif-title">Normes qualité Weasyfix</div>
+            <div class="certif-desc">Les produits Weasyfix sont développés et contrôlés selon des normes qualité très exigeantes — acier galvanisé, résistance à la corrosion, tenue dans le temps.</div>
+          </div>
+        </div>
+        <div class="certif-card">
+          <div class="certif-icon">🛡</div>
+          <div>
+            <div class="certif-title">Garantie décennale</div>
+            <div class="certif-desc">Notre prestation de pose est couverte par notre assurance décennale. Weasyfix est responsable de la conformité de ses produits dès lors que la pose respecte leurs prescriptions.</div>
+          </div>
+        </div>
+        <div class="certif-card">
+          <div class="certif-icon">📐</div>
+          <div>
+            <div class="certif-title">Rapport de pose</div>
+            <div class="certif-desc">À l'issue de chaque chantier, nous remettons un rapport de pose documenté — positions des vis, profondeurs, niveaux. Traçabilité complète de l'intervention.</div>
+          </div>
+        </div>
+        <div class="certif-card">
+          <div class="certif-icon">💰</div>
+          <div>
+            <div class="certif-title">Prix garanti 24 mois</div>
+            <div class="certif-desc">Tout projet déclaré par écrit bénéficie d'un prix garanti sur les produits Weasyfix pendant 24 mois. Vos devis restent valables même si les coûts matières évoluent.</div>
+          </div>
+        </div>
+        <div class="certif-card">
+          <div class="certif-icon">🌱</div>
+          <div>
+            <div class="certif-title">Matériaux recyclables</div>
+            <div class="certif-desc">Les vis Weasyfix sont en acier galvanisé recyclable et réutilisable. En cas de démontage, elles peuvent être réemployées sur un autre projet.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE RÉALISATIONS -->
+  <section class="section dark">
+    <div class="section-inner">
+      <div class="section-label">Nos réalisations</div>
+      <h2 class="section-title">Chantiers récents</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px;">
+        <div style="position:relative;border-radius:4px;overflow:hidden;">
+          <img src="weasyfix-yourte-erp.jpg" alt="Yourte ERP sur fondations Weasyfix" style="width:100%;height:240px;object-fit:cover;display:block;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:14px 12px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text);">Yourte ERP</div>
+            <div style="font-size:12px;color:var(--muted);">Maison d'assistance maternelle</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:4px;overflow:hidden;">
+          <img src="weasyfix-terrasse.jpg" alt="Terrasse bois sur fondations Weasyfix" style="width:100%;height:240px;object-fit:cover;display:block;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:14px 12px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text);">Terrasse bois</div>
+            <div style="font-size:12px;color:var(--muted);">Terrain naturel préservé · Isère</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:4px;overflow:hidden;">
+          <img src="weasyfix-chantier-vis.jpg" alt="Pose de vis Weasyfix construction avec plancher" style="width:100%;height:240px;object-fit:cover;display:block;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:14px 12px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text);">Construction avec plancher</div>
+            <div style="font-size:12px;color:var(--muted);">38 vis · 1 journée de pose</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div style="position:relative;border-radius:4px;overflow:hidden;">
+          <img src="weasyfix-signaletique-village.jpg" alt="Signalétique sur fondations Weasyfix — Place Vauban" style="width:100%;height:240px;object-fit:cover;display:block;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:14px 12px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text);">Signalétique urbaine</div>
+            <div style="font-size:12px;color:var(--muted);">Mont-Dauphin UNESCO · Poteaux sur vis</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:4px;overflow:hidden;">
+          <img src="weasyfix-signaletique-alpine.jpg" alt="Signalétique alpine sur fondations Weasyfix" style="width:100%;height:240px;object-fit:cover;display:block;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,26,18,0.9));padding:14px 12px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text);">Signalétique alpine</div>
+            <div style="font-size:12px;color:var(--muted);">Mont-Dauphin (05) · Massif enneigé</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIY - JE POSE MOI-MÊME -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">Vous êtes bricoleur ?</div>
+      <h2 class="section-title">Je pose moi-même — on vous équipe</h2>
+      <p class="section-sub">Vous avez les compétences, l'envie de faire vous-même et le temps. On vous fournit le matériel, les produits et le support technique à distance. Vous posez, on est joignables si besoin.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;">
+
+        <div class="solution-card">
+          <div class="solution-num">01 — PRODUITS</div>
+          <div class="solution-name">Vente de vis Weasyfix</div>
+          <div class="solution-desc">Vis de fondation, connecteurs, platines, accessoires — la gamme complète Weasyfix. Vous commandez selon votre calepinage, on livre sur votre chantier. Pas besoin de se déplacer.</div>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-num">02 — MATÉRIEL</div>
+          <div class="solution-name">Location de visseuse</div>
+          <div class="solution-desc">Livraison de la visseuse sur votre site, vous posez à votre rythme, vous nous la retournez. Accès à nos tutoriels vidéo pour la prise en main. Simple, rapide, sans formation obligatoire.</div>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-num">03 — SUPPORT</div>
+          <div class="solution-name">Accompagnement à distance</div>
+          <div class="solution-desc">Avant la pose, on valide votre calepinage et on vous confirme les bons types de vis. Pendant la pose, support téléphonique et visio disponible. Vous n'êtes jamais seul face à un problème.</div>
+        </div>
+
+      </div>
+
+      <div style="background:rgba(27,94,59,0.08);border:0.5px solid rgba(27,94,59,0.3);border-radius:4px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+        <div>
+          <div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:12px;">Ce qu'on vous demande avant de commencer</div>
+          <div style="font-size:14px;color:var(--muted);line-height:1.8;">
+            ✓ Votre calepinage ou plan de pose<br>
+            ✓ La nature de votre sol<br>
+            ✓ La profondeur de gel de votre zone<br>
+            ✓ Le type et la surface de votre structure<br>
+            ✓ Sol stabilisé depuis au moins 18 mois
+          </div>
+        </div>
+        <div>
+          <div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:12px;">Ce qu'on vous garantit</div>
+          <div style="font-size:14px;color:var(--muted);line-height:1.8;">
+            ✓ Dimensionnement validé avant commande<br>
+            ✓ Livraison des produits sur votre site<br>
+            ✓ Visseuse livrée prête à l'emploi<br>
+            ✓ Tutoriels vidéo accessibles 24h/24<br>
+            ✓ Support téléphonique et visio pendant la pose
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:40px;">
+        <a href="tel:0769737961" class="btn-primary">Préparer ma commande — 07 69 73 79 61</a>
+        <a href="index.html#qualifier" class="btn-ghost" style="margin-left:12px;">Qualifier mon projet</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section">
+    <h2 class="cta-title">Votre projet Weasyfix en 48h.</h2>
+    <p class="cta-sub">Transmettez-nous votre calepinage — on revient vers vous avec un devis précis sous 48h.</p>
+    <div>
+      <a href="index.html#qualifier" class="btn-primary">Qualifier mon projet</a>
+      <a href="tel:0769737961" class="btn-ghost">Nous appeler</a>
+    </div>
+    <a href="tel:0769737961" class="cta-phone">07 69 73 79 61</a>
+    <p style="font-size:13px;color:var(--muted);margin-top:16px;">Zones 07 — 26 — 38 — 73 · L'Albenc, Isère · Réponse sous 2h</p>
+  </section>
+
+  <footer>
+    <div><img src="logo.png" alt="Les Pieux Horizon" style="height:32px;width:auto;border-radius:2px;opacity:0.8;"></div>
+    <div class="footer-links">
+      <a href="#">Mentions légales</a>
+      <a href="#">Politique de confidentialité</a>
+    </div>
+    <div class="footer-copy">© 2025 Les Pieux Horizon — Chalets Horizon SAS</div>
+  </footer>
+
+</body>
+</html>
