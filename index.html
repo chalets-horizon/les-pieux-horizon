@@ -189,7 +189,7 @@
       <a href="#zone">Zone d'intervention</a>
       <a href="#qualifier">Qualifier mon projet</a>
     </div>
-    <a href="tel:0769737961" class="nav-cta">Devis gratuit</a>
+    <a href="#" onclick="openModal();return false;" class="nav-cta">Devis gratuit</a>
   </nav>
 
   <section class="hero">
@@ -602,5 +602,96 @@
     qupdate();
   </script>
 
+
+  <!-- MODAL FORMULAIRE CONTACT -->
+  <div id="contact-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);z-index:1000;align-items:center;justify-content:center;">
+    <div style="background:#111E15;border:0.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:48px;max-width:480px;width:90%;position:relative;">
+      <button onclick="closeModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#8A9E8A;font-size:24px;cursor:pointer;line-height:1;">×</button>
+      <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#1B5E3B;margin-bottom:12px;">Demande de devis</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:28px;color:#E8E4DC;margin-bottom:8px;">Qualifier mon projet</h2>
+      <p style="font-size:14px;color:#8A9E8A;margin-bottom:32px;line-height:1.6;">Renseignez vos coordonnées — nous revenons vers vous sous 48h.</p>
+      <form id="contact-form" onsubmit="handleSubmit(event)">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div>
+            <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Prénom *</label>
+            <input type="text" name="prenom" required placeholder="Antoine" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;">
+          </div>
+          <div>
+            <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Nom *</label>
+            <input type="text" name="nom" required placeholder="Dupont" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;">
+          </div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Téléphone *</label>
+          <input type="tel" name="telephone" required placeholder="06 12 34 56 78" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div>
+            <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Code postal *</label>
+            <input type="text" name="code_postal" required placeholder="38000" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;">
+          </div>
+          <div>
+            <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Email *</label>
+            <input type="email" name="email" required placeholder="vous@email.com" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;">
+          </div>
+        </div>
+        <input type="hidden" name="_subject" value="Nouvelle demande de devis — Les Pieux Horizon">
+        <input type="hidden" name="_next" value="https://www.les-pieux-horizon.com">
+        <button type="submit" style="width:100%;background:#1B5E3B;color:white;border:none;padding:14px;font-family:'Darker Grotesque',sans-serif;font-size:16px;font-weight:700;border-radius:2px;cursor:pointer;margin-top:8px;">Envoyer ma demande →</button>
+        <p style="font-size:12px;color:#8A9E8A;margin-top:12px;text-align:center;">Réponse sous 48h — 07 69 73 79 61</p>
+      </form>
+      <div id="form-success" style="display:none;text-align:center;padding:24px 0;">
+        <div style="font-size:40px;margin-bottom:16px;">✓</div>
+        <div style="font-size:18px;font-weight:700;color:#E8E4DC;margin-bottom:8px;">Demande envoyée !</div>
+        <div style="font-size:14px;color:#8A9E8A;">Nous revenons vers vous sous 48h.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      const modal = document.getElementById('contact-modal');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      const modal = document.getElementById('contact-modal');
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    async function handleSubmit(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const form = document.getElementById('contact-form');
+      const data = new FormData(form);
+      const btn = form.querySelector('button[type=submit]');
+      btn.textContent = 'Envoi en cours...';
+      btn.disabled = true;
+      try {
+        const response = await fetch('https://formspree.io/f/mlgzbezv', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+          setTimeout(closeModal, 3000);
+        } else {
+          btn.textContent = 'Envoyer ma demande →';
+          btn.disabled = false;
+          alert('Une erreur est survenue. Appelez-nous au 07 69 73 79 61');
+        }
+      } catch(err) {
+        btn.textContent = 'Envoyer ma demande →';
+        btn.disabled = false;
+        alert('Une erreur est survenue. Appelez-nous au 07 69 73 79 61');
+      }
+      return false;
+    }
+    document.getElementById('contact-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
 </body>
 </html>
