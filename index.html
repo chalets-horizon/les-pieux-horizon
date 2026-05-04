@@ -569,7 +569,7 @@
           <div class="q-tags">${tagsHtml}</div>
           <hr class="q-divider">
           <div class="q-cta">
-            <a href="mailto:a.ouzeau@gmail.com?subject=Demande de devis — ${encodeURIComponent(prompt)}" class="q-btn green">Envoyer ma demande</a>
+            <a href="#" onclick="openModal();return false;" class="q-btn green">Envoyer ma demande</a>
             <a href="tel:0769737961" class="q-btn ghost">Nous appeler</a>
           </div>
         </div>`;
@@ -581,7 +581,7 @@
           <hr class="q-divider">
           <div class="q-cta">
             <a href="tel:0769737961" class="q-btn blue">Être rappelé — 07 69 73 79 61</a>
-            <a href="mailto:a.ouzeau@gmail.com?subject=Projet spécifique — ${encodeURIComponent(prompt)}" class="q-btn ghost">Envoyer un mail</a>
+            <a href="#" onclick="openModal();return false;" class="q-btn ghost">Envoyer un mail</a>
           </div>
         </div>`;
       } else {
@@ -636,7 +636,7 @@
           </div>
         </div>
         <input type="hidden" name="_subject" value="Nouvelle demande de devis — Les Pieux Horizon">
-        <input type="hidden" name="_next" value="https://www.les-pieux-horizon.com">
+        
         <button type="submit" style="width:100%;background:#1B5E3B;color:white;border:none;padding:14px;font-family:'Darker Grotesque',sans-serif;font-size:16px;font-weight:700;border-radius:2px;cursor:pointer;margin-top:8px;">Envoyer ma demande →</button>
         <p style="font-size:12px;color:#8A9E8A;margin-top:12px;text-align:center;">Réponse sous 48h — 07 69 73 79 61</p>
       </form>
