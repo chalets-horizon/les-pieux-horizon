@@ -542,8 +542,8 @@
       const penteLabel = qgetlabel('pente-grid');
       const zoneLabel = qgetlabel('zone-grid');
       const surfStr = qhasSurface() ? ' de ' + s + ' m²' : '';
-      const prompt = sLabel + surfStr + ', sol ' + solLabel.toLowerCase() + ', pente ' + penteLabel.toLowerCase() + ', zone ' + zoneLabel.toLowerCase();
-      _lastPrompt = prompt;
+      const projectSummary = sLabel + surfStr + ', sol ' + solLabel.toLowerCase() + ', pente ' + penteLabel.toLowerCase() + ', zone ' + zoneLabel.toLowerCase();
+      _lastPrompt = projectSummary;
       const tagsHtml = flags.map(f => `<span class="q-tag ${f.c}">${f.t}</span>`).join('');
 
       let html = '';
@@ -571,7 +571,7 @@
           <div class="q-tags">${tagsHtml}</div>
           <hr class="q-divider">
           <div class="q-cta">
-            <a href="#" onclick="openModal('Projet : ' + _lastPrompt);return false;" class="q-btn green">Envoyer ma demande</a>
+            <a href="#" onclick="openModal(_lastPrompt ? 'Projet : ' + _lastPrompt : '');return false;" class="q-btn green">Envoyer ma demande</a>
             <a href="tel:0769737961" class="q-btn ghost">Nous appeler</a>
           </div>
         </div>`;
@@ -583,7 +583,7 @@
           <hr class="q-divider">
           <div class="q-cta">
             <a href="tel:0769737961" class="q-btn blue">Être rappelé — 07 69 73 79 61</a>
-            <a href="#" onclick="openModal('Projet : ' + _lastPrompt);return false;" class="q-btn ghost">Nous contacter</a>
+            <a href="#" onclick="openModal(_lastPrompt ? 'Projet : ' + _lastPrompt : '');return false;" class="q-btn ghost">Nous contacter</a>
           </div>
         </div>`;
       } else {
