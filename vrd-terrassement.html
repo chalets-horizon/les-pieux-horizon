@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VRD & Terrassement — Préparation de site | Les Pieux Horizon</title>
+  <meta name="description" content="Chalets Horizon prend en charge l'intégralité des VRD — eau, électricité, assainissement, eaux pluviales — et du terrassement. Un seul interlocuteur de la tranchée à la pose.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;600;700;900&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#0D1A12;--bg-2:#111E15;--text:#E8E4DC;--muted:#8A9E8A;--green:#1B5E3B;--green-dark:#134A2D;--border:rgba(255,255,255,0.08)}
+    body{font-family:'Darker Grotesque',sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+
+    nav{display:flex;align-items:center;padding:0;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1296px;margin:0 auto;padding:20px 48px}
+    .nav-logo{text-decoration:none;font-family:'Darker Grotesque',sans-serif;font-size:22px;font-weight:300;letter-spacing:0.18em;color:#E8E4DC;text-transform:uppercase}
+    .nav-links{display:flex;gap:32px;align-items:center}
+    .nav-links>a{font-size:14px;color:var(--muted);text-decoration:none;letter-spacing:0.05em;transition:color 0.2s}
+    .nav-links>a:hover{color:var(--text)}
+    .nav-drop{position:relative}
+    .nav-drop-trigger{font-size:14px;color:var(--muted);text-decoration:none;letter-spacing:0.05em;cursor:pointer;background:none;border:none;font-family:'Darker Grotesque',sans-serif;padding:0}
+    .nav-drop-trigger:hover{color:var(--text)}
+    .nav-drop-menu{display:none;position:absolute;top:calc(100% + 12px);left:0;background:var(--bg-2);border:0.5px solid var(--border);border-radius:4px;padding:8px 0;min-width:260px;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+    .nav-drop:hover .nav-drop-menu{display:block}
+    .nav-drop-menu a{display:block;padding:11px 20px;font-size:14px;color:var(--muted);text-decoration:none;transition:background 0.15s,color 0.15s}
+    .nav-drop-menu a:hover{background:rgba(27,94,59,0.12);color:var(--text)}
+    .nav-drop-menu .nav-drop-divider{border:none;border-top:0.5px solid var(--border);margin:4px 0}
+    .nav-cta{background:var(--green);color:white;border:none;padding:11px 22px;font-family:'Darker Grotesque',sans-serif;font-size:14px;font-weight:700;cursor:pointer;border-radius:2px;text-decoration:none;transition:background 0.2s}
+    .nav-cta:hover{background:var(--green-dark)}
+    @media(max-width:768px){.nav-links{display:none}.nav-inner{padding:16px 20px}}
+
+    .breadcrumb{padding:16px 48px;font-size:13px;color:var(--muted);border-bottom:0.5px solid var(--border)}
+    .breadcrumb a{color:var(--muted);text-decoration:none}
+    .breadcrumb span{margin:0 8px}
+
+    /* HERO */
+    .hero-wrap{background:var(--bg-2);border-bottom:0.5px solid var(--border)}
+    .hero{padding:80px 48px 60px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .hero-tag{display:inline-block;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);border:0.5px solid var(--green);padding:5px 14px;border-radius:2px;margin-bottom:24px}
+    .hero-title{font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,56px);font-weight:400;line-height:1.1;color:var(--text);margin-bottom:20px}
+    .hero-title em{font-style:italic;color:var(--green)}
+    .hero-sub{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:28px}
+    .hero-badge{display:block;background:rgba(27,94,59,0.15);border:0.5px solid var(--green);padding:10px 16px;border-radius:2px;font-size:13px;color:var(--green);font-weight:700;margin-bottom:10px}
+    .btn-primary{background:var(--green);color:white;border:none;padding:14px 28px;font-family:'Darker Grotesque',sans-serif;font-size:15px;font-weight:700;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;margin-right:12px;margin-top:16px;transition:background 0.2s}
+    .btn-primary:hover{background:var(--green-dark)}
+    .btn-ghost{background:transparent;color:var(--text);border:0.5px solid rgba(255,255,255,0.2);padding:14px 28px;font-family:'Darker Grotesque',sans-serif;font-size:15px;font-weight:600;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;margin-top:16px}
+    .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .hero-stat{text-align:center;padding:20px;background:var(--bg);border-radius:2px;border:0.5px solid var(--border)}
+    .hero-stat-val{font-size:28px;font-weight:900;color:var(--text);line-height:1}
+    .hero-stat-label{font-size:12px;color:var(--muted);margin-top:6px;letter-spacing:0.05em}
+
+    /* SECTIONS */
+    .section{padding:80px 48px}
+    .section.dark{background:var(--bg-2)}
+    .section-inner{max-width:1200px;margin:0 auto}
+    .section-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+    .section-title{font-family:'Playfair Display',serif;font-size:38px;color:var(--text);margin-bottom:16px;line-height:1.2}
+    .section-sub{font-size:16px;color:var(--muted);margin-bottom:48px;max-width:600px;line-height:1.7}
+
+    /* CARDS RÉSEAUX */
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .card{background:var(--bg);border:0.5px solid var(--border);border-radius:2px;padding:28px}
+    .card.dark-card{background:var(--bg-2)}
+    .card-icon{font-size:32px;margin-bottom:16px}
+    .card-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:10px}
+    .card-desc{font-size:14px;color:var(--muted);line-height:1.7}
+    .card-detail{font-size:13px;color:var(--muted);line-height:1.7;margin-top:10px;padding-top:10px;border-top:0.5px solid var(--border)}
+
+    /* PROCESSUS */
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+    .process-grid::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:0.5px;background:var(--green);opacity:0.4}
+    .process-step{text-align:center;padding:0 20px;position:relative}
+    .process-num{width:56px;height:56px;border-radius:50%;background:var(--green);color:white;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative;z-index:1}
+    .process-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px}
+    .process-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+    /* BLOC VISITE */
+    .visite-block{background:rgba(27,94,59,0.08);border:0.5px solid rgba(27,94,59,0.3);border-radius:4px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .visite-title{font-family:'Playfair Display',serif;font-size:32px;color:var(--text);margin-bottom:16px}
+    .visite-sub{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:24px}
+    .checklist{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .checklist li{font-size:14px;color:var(--muted);display:flex;gap:10px;align-items:flex-start}
+    .checklist li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+
+    /* CTA */
+    .cta-section{padding:100px 48px;text-align:center;border-top:0.5px solid var(--border)}
+    .cta-title{font-family:'Playfair Display',serif;font-size:48px;color:var(--text);margin-bottom:16px}
+    .cta-sub{font-size:17px;color:var(--muted);margin-bottom:36px}
+    .cta-phone{font-size:24px;font-weight:900;color:var(--green);letter-spacing:0.05em;margin-top:24px;display:block;text-decoration:none}
+
+    footer{padding:28px 48px;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid rgba(255,255,255,0.05);flex-wrap:wrap;gap:12px}
+    .footer-links{display:flex;gap:24px}
+    .footer-links a{font-size:12px;color:rgba(138,158,138,0.6);text-decoration:none}
+    .footer-copy{font-size:12px;color:rgba(138,158,138,0.4)}
+
+    @media(max-width:768px){
+      .hero,.section{padding-left:20px;padding-right:20px}
+      .hero{grid-template-columns:1fr;gap:40px}
+      .grid3,.grid2{grid-template-columns:1fr}
+      .process-grid{grid-template-columns:1fr 1fr;gap:32px}
+      .process-grid::before{display:none}
+      .visite-block{grid-template-columns:1fr}
+      footer{padding:20px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">LES PIEUX HORIZON</a>
+    <div class="nav-links">
+      <div class="nav-drop">
+        <button class="nav-drop-trigger">Nos prestations ▾</button>
+        <div class="nav-drop-menu">
+          <a href="weasyfix.html">Weasyfix — Structures légères</a>
+          <a href="vistech.html">Vistech — Structures lourdes</a>
+          <a href="vrd-terrassement.html">VRD & Terrassement</a>
+          <hr class="nav-drop-divider">
+          <a href="index.html#prestations">Voir toutes les prestations</a>
+        </div>
+      </div>
+      <a href="index.html#qualifier">Qualifier mon projet</a>
+      <a href="a-propos.html">À propos</a>
+    </div>
+    <a href="#" onclick="openModal('Demande VRD & Terrassement');return false;" class="nav-cta">Devis gratuit</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Accueil</a><span>›</span>
+  <a href="index.html#prestations">Nos prestations</a><span>›</span>
+  VRD & Terrassement
+</div>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="hero">
+    <div>
+      <div class="hero-tag">Préparation de site complète</div>
+      <h1 class="hero-title">Tout ce qu'on ne voit plus,<br>mais qui <em>change tout.</em></h1>
+      <p class="hero-sub">Eau, électricité, assainissement, eaux pluviales, terrassement — nous prenons en charge l'intégralité de la préparation de site. Un seul interlocuteur, de la première tranchée à la pose des fondations.</p>
+      <div class="hero-badge">✓ VRD + terrassement + fondations vissées — tout coordonné</div>
+      <div class="hero-badge" style="background:rgba(27,94,59,0.06);">⚡ Visite terrain gratuite — devis sous 48h</div>
+      <a href="#" onclick="openModal('Demande VRD & Terrassement');return false;" class="btn-primary">Demander un devis</a>
+      <a href="tel:0769737961" class="btn-ghost">07 69 73 79 61</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-val">A à Z</div><div class="hero-stat-label">Prise en charge complète</div></div>
+      <div class="hero-stat"><div class="hero-stat-val">1</div><div class="hero-stat-label">Seul interlocuteur</div></div>
+      <div class="hero-stat"><div class="hero-stat-val">30 min</div><div class="hero-stat-label">Visite terrain suffit</div></div>
+      <div class="hero-stat"><div class="hero-stat-val">0</div><div class="hero-stat-label">Reprise après pose</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- LES 4 RÉSEAUX -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Les réseaux</div>
+    <h2 class="section-title">Quatre réseaux, une seule coordination</h2>
+    <p class="section-sub">Chaque réseau a sa logique. Nous les concevons ensemble, en amont, pour que rien ne se croise et que tout tombe juste le jour de la pose.</p>
+    <div class="grid2" style="gap:16px;">
+
+      <div class="card">
+        <div class="card-icon">💧</div>
+        <div class="card-title">Eau potable</div>
+        <div class="card-desc">Un trajet court et direct depuis le compteur, protégé du gel, avec vanne d'arrêt accessible à l'intérieur. Nous choisissons le cheminement, la profondeur et les fourreaux.</div>
+        <div class="card-detail">Résultat : arrivée au millimètre au point technique du chalet — cuisine ou local technique. Pas de bricolage après coup, pas de fuite invisible sous le plancher.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <div class="card-title">Électricité</div>
+        <div class="card-desc">Calibrage réaliste de la puissance souscrite selon l'usage — chauffage, eau chaude, cuisson. Parcours propre, rayons doux, gaine adaptée, mise à la terre.</div>
+        <div class="card-detail">Bonus : pré-câblage des points utiles (terrasse, extérieurs) quand c'est pertinent. Longueur en attente côté chalet calculée au centimètre.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🚰</div>
+        <div class="card-title">Assainissement</div>
+        <div class="card-desc">Collectif ou non collectif (ANC) selon la parcelle. En collectif, branchement au réseau public avec vérification de pente gravitaire. En ANC, dimensionnement et implantation de la filière complète.</div>
+        <div class="card-detail">Coordination avec le SPANC jusqu'au contrôle de mise en service inclus. Vous gardez la vision d'ensemble, nous gérons la technique.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🌧</div>
+        <div class="card-title">Eaux pluviales</div>
+        <div class="card-desc">Circuit séparé des eaux usées — raccord EP, noue, puits d'infiltration selon le terrain. Pentes régulières, regards accessibles, eau éloignée des façades.</div>
+        <div class="card-detail">Discret le jour J, précieux dans dix ans. Le détail qui évite les infiltrations en sous-face et les problèmes de drainage autour de la structure.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TERRASSEMENT -->
+<section class="section dark">
+  <div class="section-inner">
+    <div class="section-label">Terrassement</div>
+    <h2 class="section-title">La préparation du sol, faite maison</h2>
+    <p class="section-sub">Nous réalisons nous-mêmes le terrassement — déblai, remblai, nivellement, drainage. Pas de sous-traitant à coordonner, pas de délai entre les intervenants.</p>
+    <div class="grid3">
+      <div class="card dark-card">
+        <div class="card-icon">⛏</div>
+        <div class="card-title">Déblai & remblai</div>
+        <div class="card-desc">Préparation de l'assiette du chalet selon la topographie du terrain. Évacuation des terres, apport de matériaux si nécessaire, compactage couche par couche.</div>
+      </div>
+      <div class="card dark-card">
+        <div class="card-icon">📐</div>
+        <div class="card-title">Nivellement</div>
+        <div class="card-desc">Mise à niveau du terrain avant pose des fondations vissées. Les fondations s'adaptent à la pente, mais un terrassement soigné simplifie et accélère la pose.</div>
+      </div>
+      <div class="card dark-card">
+        <div class="card-icon">🌊</div>
+        <div class="card-title">Drainage</div>
+        <div class="card-desc">Gestion des eaux de ruissellement autour de la structure. Drains, pentes de surface, collecte des eaux pluviales — pour que le sol reste stable dans le temps.</div>
+      </div>
+      <div class="card dark-card">
+        <div class="card-icon">🛣</div>
+        <div class="card-title">Accès & plateforme</div>
+        <div class="card-desc">Création ou amélioration de l'accès chantier. Plateforme de travail stable pour la pose des fondations et l'acheminement de la structure.</div>
+      </div>
+      <div class="card dark-card">
+        <div class="card-icon">🔌</div>
+        <div class="card-title">Réservations réseaux</div>
+        <div class="card-desc">Passages eau, électricité, EU/EP réservés à la bonne hauteur finie avant rebouchage. Aucune contre-pente, aucun percement improvisé après pose.</div>
+      </div>
+      <div class="card dark-card">
+        <div class="card-icon">📋</div>
+        <div class="card-title">Documentation complète</div>
+        <div class="card-desc">Photos et croquis côtés avant tout rebouchage. Vous conservez le plan exact de vos réseaux — sécurité pour l'avenir et signe de travail soigné.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COORDINATION FONDATIONS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">L'avantage clé</div>
+    <h2 class="section-title">VRD + fondations : tout tombe juste</h2>
+    <p class="section-sub">Le point critique d'un chantier en deux temps, c'est la coordination entre les réseaux et les fondations. En faisant les deux, on élimine ce risque.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px;">
+      <div style="background:rgba(226,75,74,0.06);border:0.5px solid rgba(226,75,74,0.2);border-radius:2px;padding:28px;">
+        <div style="font-size:15px;font-weight:700;color:#E24B4A;margin-bottom:16px;">❌ Avec deux intervenants séparés</div>
+        <div style="font-size:14px;color:var(--muted);line-height:1.8;">
+          Réseaux posés par une entreprise, fondations par une autre — la hauteur finie du plancher n'est pas la même pour les deux. Résultat : contre-pentes, percements improvisés, reprises coûteuses. Et entre les deux interventions, un délai qui décale tout le planning.
+        </div>
+      </div>
+      <div style="background:rgba(27,94,59,0.08);border:0.5px solid rgba(27,94,59,0.3);border-radius:2px;padding:28px;">
+        <div style="font-size:15px;font-weight:700;color:var(--green);margin-bottom:16px;">✓ Avec Les Pieux Horizon</div>
+        <div style="font-size:14px;color:var(--muted);line-height:1.8;">
+          Réseaux et fondations conçus ensemble, dès la visite terrain. Les passages sont réservés à la bonne hauteur, les pentes calculées en fonction du plancher fini. Résultat : une pose qui s'enchaîne sans temps mort et sans surprise.
+        </div>
+      </div>
+    </div>
+
+    <!-- PROCESSUS -->
+    <div class="section-label">Notre processus</div>
+    <h2 class="section-title" style="margin-bottom:48px;">De la visite à la pose en 4 étapes</h2>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div class="process-title">Visite terrain</div>
+        <div class="process-desc">30 à 45 minutes sur site. Accès, pentes, distances aux réseaux, emplacement exact. On repart avec photos, croquis coté et plan d'action. 90 % des inconnues levées.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div class="process-title">Devis complet</div>
+        <div class="process-desc">Devis détaillé VRD + terrassement + fondations sous 48h. Tracés courts, choix entre collectif et ANC, pas de réserve cachée.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div class="process-title">Exécution coordonnée</div>
+        <div class="process-desc">Terrassement, tranchées, réseaux, fondations vissées — dans le bon ordre, par la même équipe. Réservations vérifiées avant tout rebouchage.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <div class="process-title">Contrôle veille de pose</div>
+        <div class="process-desc">Vanne d'eau, câble d'alimentation, pentes EU vérifiées, regards accessibles, accès livraison dégagé. Terrain prêt à la date convenue.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISITE TERRAIN -->
+<section class="section dark">
+  <div class="section-inner">
+    <div class="visite-block">
+      <div>
+        <div class="section-label">Premier pas</div>
+        <h2 class="visite-title">La visite terrain : le raccourci vers un chantier serein</h2>
+        <p class="visite-sub">Rien ne remplace une rencontre sur site. En 30 à 45 minutes, on valide ensemble les points clés — et on repart avec un plan d'action clair.</p>
+        <a href="#" onclick="openModal('Demande visite terrain VRD');return false;" class="btn-primary">Planifier une visite</a>
+        <a href="tel:0769737961" class="btn-ghost">07 69 73 79 61</a>
+      </div>
+      <div>
+        <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:16px;">Ce qu'on vérifie ensemble</div>
+        <ul class="checklist">
+          <li>Parcours des réseaux — eau, élec, EU, EP</li>
+          <li>Hauteur finie du plancher selon le terrain</li>
+          <li>Gestion des eaux pluviales</li>
+          <li>Accès de livraison et zone de grutage</li>
+          <li>Collectif ou ANC selon la parcelle</li>
+          <li>Distances aux compteurs et aux points de raccordement</li>
+        </ul>
+        <div style="margin-top:24px;font-size:14px;font-weight:700;color:var(--text);margin-bottom:16px;">Ce qu'il nous faut pour démarrer</div>
+        <ul class="checklist">
+          <li>3 ou 4 photos du terrain</li>
+          <li>Distances approximatives aux réseaux si connues</li>
+          <li>Votre fenêtre de pose souhaitée</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUE VOUS GAGNEZ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Les bénéfices</div>
+    <h2 class="section-title">Ce que vous gagnez</h2>
+    <div class="grid3">
+      <div class="card">
+        <div class="card-icon">📅</div>
+        <div class="card-title">Planning fiable</div>
+        <div class="card-desc">Pas d'allers-retours entre intervenants, pas de surprise la semaine de pose. Un seul planning, tenu par une seule équipe.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">💶</div>
+        <div class="card-title">Budget maîtrisé</div>
+        <div class="card-desc">Tracés courts, bons choix entre collectif et ANC, pas de reprises. Le devis est complet dès le départ — pas de "ça s'est ajouté en cours de route".</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏡</div>
+        <div class="card-title">Résultat durable</div>
+        <div class="card-desc">Réseaux accessibles, eaux pluviales bien gérées, chalet au sec. Ce qu'on ne voit plus une fois la structure posée, mais qui change tout sur la durée de vie et le confort.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="cta-title">Prêt à lancer les raccordements ?</h2>
+  <p class="cta-sub">Envoyez-nous vos photos et la surface visée — on revient vers vous avec un parcours de réseaux clair et un devis complet.</p>
+  <div>
+    <a href="#" onclick="openModal('Demande VRD & Terrassement — page dédiée');return false;" class="btn-primary">Demander un devis</a>
+    <a href="tel:0769737961" class="btn-ghost">Nous appeler</a>
+  </div>
+  <a href="tel:0769737961" class="cta-phone">07 69 73 79 61</a>
+  <p style="font-size:13px;color:var(--muted);margin-top:16px;">Isère, Savoie, Haute-Savoie, Drôme, Ardèche · Réponse sous 2h</p>
+</section>
+
+<footer>
+  <span style="font-family:'Darker Grotesque',sans-serif;font-size:16px;font-weight:300;letter-spacing:0.12em;color:rgba(232,228,220,0.4);text-transform:uppercase;">LES PIEUX HORIZON</span>
+  <div class="footer-links">
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2025 Les Pieux Horizon — Chalets Horizon SAS</div>
+</footer>
+
+<!-- MODAL FORMULAIRE CONTACT -->
+<div id="contact-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);z-index:1000;align-items:center;justify-content:center;">
+  <div style="background:#111E15;border:0.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:48px;max-width:480px;width:90%;position:relative;max-height:90vh;overflow-y:auto;">
+    <button onclick="closeModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#8A9E8A;font-size:28px;cursor:pointer;line-height:1;">×</button>
+    <div id="form-container">
+      <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#1B5E3B;margin-bottom:12px;">Demande de devis</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:26px;color:#E8E4DC;margin-bottom:8px;">Vos coordonnées</h2>
+      <p style="font-size:14px;color:#8A9E8A;margin-bottom:28px;line-height:1.6;">Nous revenons vers vous sous 48h.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+        <div><label style="font-size:12px;color:#8A9E8A;display:block;margin-bottom:6px;">Prénom *</label><input id="f-prenom" type="text" required placeholder="Antoine" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;box-sizing:border-box;"></div>
+        <div><label style="font-size:12px;color:#8A9E8A;display:block;margin-bottom:6px;">Nom *</label><input id="f-nom" type="text" required placeholder="Dupont" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;box-sizing:border-box;"></div>
+      </div>
+      <div style="margin-bottom:12px;"><label style="font-size:12px;color:#8A9E8A;display:block;margin-bottom:6px;">Téléphone *</label><input id="f-tel" type="tel" required placeholder="06 12 34 56 78" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;box-sizing:border-box;"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+        <div><label style="font-size:12px;color:#8A9E8A;display:block;margin-bottom:6px;">Code postal *</label><input id="f-cp" type="text" required placeholder="38000" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;box-sizing:border-box;"></div>
+        <div><label style="font-size:12px;color:#8A9E8A;display:block;margin-bottom:6px;">Email *</label><input id="f-email" type="email" required placeholder="vous@email.com" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;box-sizing:border-box;"></div>
+      </div>
+      <button id="submit-btn" onclick="submitForm()" style="width:100%;background:#1B5E3B;color:white;border:none;padding:14px;font-family:'Darker Grotesque',sans-serif;font-size:16px;font-weight:700;border-radius:2px;cursor:pointer;">Envoyer ma demande →</button>
+      <p style="font-size:12px;color:#8A9E8A;margin-top:12px;text-align:center;">Réponse sous 48h — 07 69 73 79 61</p>
+    </div>
+    <div id="form-success" style="display:none;text-align:center;padding:24px 0;">
+      <div style="font-size:48px;margin-bottom:16px;">✓</div>
+      <div style="font-size:20px;font-weight:700;color:#E8E4DC;margin-bottom:8px;">Demande envoyée !</div>
+      <div style="font-size:14px;color:#8A9E8A;">Nous revenons vers vous sous 48h.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var _projectInfo = '';
+  function openModal(projectInfo) {
+    _projectInfo = projectInfo || '';
+    document.getElementById('contact-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    document.getElementById('form-container').style.display = 'block';
+    document.getElementById('form-success').style.display = 'none';
+    var btn = document.getElementById('submit-btn');
+    if(btn){ btn.textContent = 'Envoyer ma demande →'; btn.disabled = false; }
+  }
+  function closeModal() {
+    document.getElementById('contact-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  async function submitForm() {
+    var prenom = document.getElementById('f-prenom').value.trim();
+    var nom = document.getElementById('f-nom').value.trim();
+    var tel = document.getElementById('f-tel').value.trim();
+    var cp = document.getElementById('f-cp').value.trim();
+    var email = document.getElementById('f-email').value.trim();
+    if(!prenom || !nom || !tel || !cp || !email) { alert('Veuillez remplir tous les champs.'); return; }
+    var btn = document.getElementById('submit-btn');
+    btn.textContent = 'Envoi en cours...'; btn.disabled = true;
+    var body = new FormData();
+    body.append('prenom', prenom); body.append('nom', nom);
+    body.append('telephone', tel); body.append('code_postal', cp);
+    body.append('email', email);
+    if(_projectInfo) body.append('projet', _projectInfo);
+    body.append('_subject', 'Nouvelle demande — Les Pieux Horizon');
+    try {
+      var response = await fetch('https://formspree.io/f/mlgzbezv', { method: 'POST', body: body, headers: { 'Accept': 'application/json' } });
+      if(response.ok) {
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+        setTimeout(closeModal, 3000);
+      } else { btn.textContent = 'Envoyer ma demande →'; btn.disabled = false; alert('Erreur. Appelez-nous au 07 69 73 79 61'); }
+    } catch(err) { btn.textContent = 'Envoyer ma demande →'; btn.disabled = false; alert('Erreur. Appelez-nous au 07 69 73 79 61'); }
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    var modal = document.getElementById('contact-modal');
+    if(modal) modal.addEventListener('click', function(e){ if(e.target === this) closeModal(); });
+  });
+</script>
+
+</body>
+</html>
