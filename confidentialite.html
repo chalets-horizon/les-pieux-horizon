@@ -41,11 +41,17 @@
   <div>
     <a href="index.html" style="text-decoration:none;font-family:'Darker Grotesque',sans-serif;font-size:22px;font-weight:300;letter-spacing:0.18em;color:#E8E4DC;text-transform:uppercase;">LES PIEUX HORIZON</a>
     <div class="nav-links">
-      <a href="index.html#prestations">Nos prestations</a>
-      <a href="index.html#zone">Zone d'intervention</a>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-trigger">Nos solutions ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="weasyfix.html">Weasyfix — Structures légères</a>
+          <a href="vistech.html">Vistech — Structures lourdes</a>
+        </div>
+      </div>
       <a href="index.html#qualifier">Qualifier mon projet</a>
+      <a href="a-propos.html">À propos</a>
     </div>
-    <a href="index.html#qualifier" class="nav-cta">Devis gratuit</a>
+    <a href="#" onclick="openModal('Demande via bouton Devis gratuit');return false;" class="nav-cta">Devis gratuit</a>
   </div>
 </nav>
 
