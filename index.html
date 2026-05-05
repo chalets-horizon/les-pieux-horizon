@@ -26,13 +26,8 @@
     body { font-family: 'Darker Grotesque', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
 
     /* NAV */
-    nav { display: flex; align-items: center; justify-content: space-between; padding: 0; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; }
     .logo-main { font-size: 18px; font-weight: 900; letter-spacing: 0.04em; color: var(--text); text-transform: uppercase; display: block; }
     .logo-sub { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
-    .nav-links { display: flex; gap: 32px; }
-    .nav-links a { font-size: 14px; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-cta { background: var(--green); color: white; border: none; padding: 11px 22px; font-family: 'Darker Grotesque', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.05em; cursor: pointer; border-radius: 2px; text-decoration: none; transition: background 0.2s; }
     .nav-cta:hover { background: var(--green-dark); }
 
     /* HERO */
@@ -169,27 +164,45 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      nav { padding: 16px 20px; }
-      .nav-links { display: none; }
       .hero, .problem, .solution, .qualifier, .paths, .zone, .cta-section { padding-left: 20px; padding-right: 20px; }
       .solution-grid, .paths-grid { grid-template-columns: 1fr; }
       .zone-inner { grid-template-columns: 1fr; gap: 40px; }
       .hero-stats { gap: 28px; }
       footer { padding: 20px; flex-direction: column; align-items: flex-start; }
     }
+  
+    nav { display:flex; align-items:center; padding:0; border-bottom:0.5px solid var(--border); position:sticky; top:0; background:var(--bg); z-index:100; }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; width:100%; max-width:1296px; margin:0 auto; padding:20px 48px; }
+    .nav-logo { text-decoration:none; font-family:'Darker Grotesque',sans-serif; font-size:22px; font-weight:300; letter-spacing:0.18em; color:#E8E4DC; text-transform:uppercase; }
+    .nav-links { display:flex; gap:32px; align-items:center; }
+    .nav-links > a { font-size:14px; color:var(--muted); text-decoration:none; letter-spacing:0.05em; transition:color 0.2s; }
+    .nav-links > a:hover { color:var(--text); }
+    .nav-drop { position:relative; }
+    .nav-drop-trigger { font-size:14px; color:var(--muted); text-decoration:none; letter-spacing:0.05em; cursor:pointer; background:none; border:none; font-family:'Darker Grotesque',sans-serif; padding:0; }
+    .nav-drop-trigger:hover { color:var(--text); }
+    .nav-drop-menu { display:none; position:absolute; top:calc(100% + 12px); left:0; background:var(--bg-2); border:0.5px solid var(--border); border-radius:4px; padding:8px 0; min-width:260px; z-index:200; box-shadow:0 8px 32px rgba(0,0,0,0.5); }
+    .nav-drop:hover .nav-drop-menu { display:block; }
+    .nav-drop-menu a { display:block; padding:11px 20px; font-size:14px; color:var(--muted); text-decoration:none; transition:background 0.15s, color 0.15s; }
+    .nav-drop-menu a:hover { background:rgba(27,94,59,0.12); color:var(--text); }
+    .nav-drop-menu .nav-drop-divider { border:none; border-top:0.5px solid var(--border); margin:4px 0; }
+    .nav-cta { background:var(--green); color:white; border:none; padding:11px 22px; font-family:'Darker Grotesque',sans-serif; font-size:14px; font-weight:700; cursor:pointer; border-radius:2px; text-decoration:none; transition:background 0.2s; }
+    .nav-cta:hover { background:var(--green-dark, #134A2D); }
+    @media(max-width:768px) { .nav-links { display:none; } .nav-inner { padding:16px 20px; } }
   </style>
 </head>
 <body>
 
   <nav>
-  <div>
-    <a href="index.html" style="text-decoration:none;font-family:'Darker Grotesque',sans-serif;font-size:22px;font-weight:300;letter-spacing:0.18em;color:#E8E4DC;text-transform:uppercase;">LES PIEUX HORIZON</a>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">LES PIEUX HORIZON</a>
     <div class="nav-links">
-      <div class="nav-dropdown">
-        <a href="#" class="nav-dropdown-trigger">Nos solutions ▾</a>
-        <div class="nav-dropdown-menu">
+      <div class="nav-drop">
+        <button class="nav-drop-trigger">Nos prestations ▾</button>
+        <div class="nav-drop-menu">
           <a href="weasyfix.html">Weasyfix — Structures légères</a>
           <a href="vistech.html">Vistech — Structures lourdes</a>
+          <hr class="nav-drop-divider">
+          <a href="index.html#prestations">Voir toutes les prestations</a>
         </div>
       </div>
       <a href="index.html#qualifier">Qualifier mon projet</a>
@@ -254,20 +267,39 @@
       <div class="section-label">Notre approche</div>
       <h2 class="solution-title">Le spécialiste du pieu vissé en zone alpine</h2>
       <div class="solution-grid">
-        <a href="weasyfix.html" class="solution-card">
+        <a href="weasyfix.html" class="solution-card" style="border:1.5px solid rgba(27,94,59,0.4);position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);"></div>
           <div class="solution-num">01 — WEASYFIX</div>
           <div class="solution-name">Structures légères</div>
           <div class="solution-desc">Terrasses, pergolas, carports, studios de jardin, clôtures, panneaux solaires. Pieux de <strong>55 cm à 175 cm</strong> — charge recommandée 750 kg/vis (DTU 51.4).</div>
           <div class="solution-badge">Poseur référent — 07, 26, 38, 73</div>
-          <span class="solution-card-arrow">Découvrir la solution →</span>
+          <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:13px;color:var(--green);font-weight:700;">Découvrir →</span>
+            <span style="font-size:11px;color:var(--muted);background:rgba(27,94,59,0.1);padding:4px 10px;border-radius:2px;">Cliquez pour en savoir plus</span>
+          </div>
         </a>
-        <a href="vistech.html" class="solution-card">
+        <a href="vistech.html" class="solution-card" style="border:1.5px solid rgba(27,94,59,0.4);position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);"></div>
           <div class="solution-num">02 — VISTECH</div>
           <div class="solution-name">Structures lourdes</div>
           <div class="solution-desc">Chalets, maisons ossature bois, constructions avec plancher, jacuzzis, conteneurs. Pieux hydrauliques de <strong>2 m à 30 m</strong> — pour les terrains que Weasyfix ne peut pas couvrir.</div>
           <div class="solution-badge">ATec CSTB en cours</div>
-          <span class="solution-card-arrow">Découvrir la solution →</span>
+          <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:13px;color:var(--green);font-weight:700;">Découvrir →</span>
+            <span style="font-size:11px;color:var(--muted);background:rgba(27,94,59,0.1);padding:4px 10px;border-radius:2px;">Cliquez pour en savoir plus</span>
+          </div>
         </a>
+        <div class="solution-card" style="border:1.5px solid rgba(27,94,59,0.4);position:relative;overflow:hidden;cursor:pointer;" onclick="openModal("Demande offre clé en main — terrassement + VRD + fondations vissées")">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);"></div>
+          <div class="solution-num">03 — CLÉ EN MAIN</div>
+          <div class="solution-name">Préparation de site complète</div>
+          <div class="solution-desc">Terrassement, VRD et fondations vissées coordonnés en une seule intervention. Un seul interlocuteur depuis le premier coup de pelle jusqu'à la pose des fondations — sans rupture de chantier.</div>
+          <div class="solution-badge">Devis sur mesure</div>
+          <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:13px;color:var(--green);font-weight:700;">Demander un devis →</span>
+            <span style="font-size:11px;color:var(--muted);background:rgba(27,94,59,0.1);padding:4px 10px;border-radius:2px;">Sur devis personnalisé</span>
+          </div>
+        </div>
         <div class="solution-card">
           <div class="solution-num">03 — EXPERTISE</div>
           <div class="solution-name">Dimensionnement inclus</div>
