@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) avec Consent Mode -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18281633129"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    // Consentement refusé par défaut — RGPD
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
     gtag('js', new Date());
     gtag('config', 'AW-18281633129');
   </script>
@@ -849,5 +856,47 @@
 })();
 </script>
 
+
+<!-- BANDEAU COOKIES RGPD -->
+<div id="lph-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0D1A12;border-top:0.5px solid rgba(255,255,255,0.12);padding:16px 24px;z-index:9500;box-shadow:0 -4px 24px rgba(0,0,0,0.4);">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:280px;font-family:'Darker Grotesque',sans-serif;font-size:14px;color:#B8C4B8;line-height:1.5;">
+      Ce site utilise des cookies de mesure d'audience et publicitaires (Google) pour améliorer votre expérience. Vous pouvez accepter ou refuser. <a href="confidentialite.html" style="color:#4ADE80;text-decoration:underline;">En savoir plus</a>
+    </div>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button onclick="lphCookieChoice(false)" style="background:transparent;border:0.5px solid rgba(255,255,255,0.25);color:#E8E4DC;padding:10px 20px;font-family:'Darker Grotesque',sans-serif;font-size:14px;font-weight:600;border-radius:4px;cursor:pointer;">Refuser</button>
+      <button onclick="lphCookieChoice(true)" style="background:#1B5E3B;border:none;color:white;padding:10px 20px;font-family:'Darker Grotesque',sans-serif;font-size:14px;font-weight:700;border-radius:4px;cursor:pointer;">Accepter</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  function getChoice(){ try { return document.cookie.split('; ').find(function(r){return r.indexOf('lph_cookie_consent=')===0;}); } catch(e){ return null; } }
+  function applyConsent(granted){
+    if(typeof gtag === 'function'){
+      gtag('consent', 'update', {
+        'ad_storage': granted ? 'granted' : 'denied',
+        'ad_user_data': granted ? 'granted' : 'denied',
+        'ad_personalization': granted ? 'granted' : 'denied',
+        'analytics_storage': granted ? 'granted' : 'denied'
+      });
+    }
+  }
+  window.lphCookieChoice = function(granted){
+    var d = new Date(); d.setMonth(d.getMonth()+6);
+    document.cookie = 'lph_cookie_consent=' + (granted?'granted':'denied') + '; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+    applyConsent(granted);
+    var b = document.getElementById('lph-cookie-banner'); if(b) b.style.display='none';
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    var choice = getChoice();
+    if(!choice){
+      var b = document.getElementById('lph-cookie-banner'); if(b) b.style.display='block';
+    } else if(choice.indexOf('granted')>-1){
+      applyConsent(true);
+    }
+  });
+})();
+</script>
 </body>
 </html>
