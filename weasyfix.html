@@ -31,19 +31,19 @@
   <title>Fondations Weasyfix — Poseur référent 07, 26, 38, 73 | Les Pieux Horizon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;600;700;900&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bg: #0D1A12;
-      --bg-2: #111E15;
-      --text: #E8E4DC;
-      --muted: #8A9E8A;
+      --bg: #EDF1EA;
+      --bg-2: #E2E9DE;
+      --text: #17251C;
+      --muted: #56685A;
       --green: #1B5E3B;
       --green-dark: #134A2D;
-      --border: rgba(255,255,255,0.08);
+      --border: rgba(26,46,31,0.12);
     }
-    body { font-family: 'Darker Grotesque', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
 
     /* NAV */
 
@@ -56,8 +56,8 @@
     /* HERO */
     .hero { padding: 80px 48px 60px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .hero-tag { display: inline-block; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); border: 0.5px solid var(--green); padding: 5px 14px; border-radius: 2px; margin-bottom: 24px; }
-    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 4vw, 56px); font-weight: 400; line-height: 1.1; color: var(--text); margin-bottom: 20px; }
-    .hero-title em { font-style: italic; color: var(--green); }
+    .hero-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(36px, 4vw, 56px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; color: var(--text); margin-bottom: 20px; }
+    .hero-title em { font-style: normal; color: var(--green); }
     .hero-sub { font-size: 17px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
     .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(27,94,59,0.15); border: 0.5px solid var(--green); padding: 10px 16px; border-radius: 2px; font-size: 13px; color: var(--green); font-weight: 700; margin-bottom: 16px; }
     .hero-visual { background: var(--bg-2); border: 0.5px solid var(--border); border-radius: 4px; padding: 40px; }
@@ -65,15 +65,15 @@
     .hero-stat { text-align: center; padding: 20px; background: var(--bg); border-radius: 2px; border: 0.5px solid var(--border); }
     .hero-stat-val { font-size: 32px; font-weight: 900; color: var(--text); line-height: 1; }
     .hero-stat-label { font-size: 12px; color: var(--muted); margin-top: 6px; letter-spacing: 0.05em; }
-    .btn-primary { background: var(--green); color: white; border: none; padding: 14px 28px; font-family: 'Darker Grotesque', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; border-radius: 2px; text-decoration: none; display: inline-block; margin-right: 12px; }
-    .btn-ghost { background: transparent; color: var(--text); border: 0.5px solid rgba(255,255,255,0.2); padding: 14px 28px; font-family: 'Darker Grotesque', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; border-radius: 2px; text-decoration: none; display: inline-block; }
+    .btn-primary { background: var(--green); color: white; border: none; padding: 14px 28px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; border-radius: 2px; text-decoration: none; display: inline-block; margin-right: 12px; }
+    .btn-ghost { background: transparent; color: var(--text); border: 0.5px solid rgba(26,46,31,0.2); padding: 14px 28px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; border-radius: 2px; text-decoration: none; display: inline-block; }
 
     /* SECTION COMMUNE */
     .section { padding: 80px 48px; }
     .section.dark { background: var(--bg-2); }
     .section-inner { max-width: 1200px; margin: 0 auto; }
     .section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
-    .section-title { font-family: 'Playfair Display', serif; font-size: 38px; color: var(--text); margin-bottom: 16px; line-height: 1.2; }
+    .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 38px; color: var(--text); margin-bottom: 16px; line-height: 1.2; }
     .section-sub { font-size: 16px; color: var(--muted); margin-bottom: 48px; max-width: 600px; line-height: 1.7; }
 
     /* AVANTAGES */
@@ -122,12 +122,12 @@
 
     /* CTA */
     .cta-section { padding: 100px 48px; text-align: center; border-top: 0.5px solid var(--border); }
-    .cta-title { font-family: 'Playfair Display', serif; font-size: 48px; color: var(--text); margin-bottom: 16px; }
+    .cta-title { font-family: 'Space Grotesk', sans-serif; font-size: 48px; color: var(--text); margin-bottom: 16px; }
     .cta-sub { font-size: 17px; color: var(--muted); margin-bottom: 36px; }
     .cta-phone { font-size: 24px; font-weight: 900; color: var(--green); letter-spacing: 0.05em; margin-top: 24px; display: block; text-decoration: none; }
 
     /* FOOTER */
-    footer { padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 12px; }
+    footer { padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid rgba(26,46,31,0.05); flex-wrap: wrap; gap: 12px; }
     .footer-links { display: flex; gap: 24px; }
     .footer-links a { font-size: 12px; color: rgba(138,158,138,0.6); text-decoration: none; }
     .footer-copy { font-size: 12px; color: rgba(138,158,138,0.4); }
@@ -142,19 +142,19 @@
   
     nav { display:flex; align-items:center; padding:0; border-bottom:0.5px solid var(--border); position:sticky; top:0; background:var(--bg); z-index:100; }
     .nav-inner { display:flex; align-items:center; justify-content:space-between; width:100%; max-width:1296px; margin:0 auto; padding:20px 48px; }
-    .nav-logo { text-decoration:none; font-family:'Darker Grotesque',sans-serif; font-size:22px; font-weight:300; letter-spacing:0.18em; color:#E8E4DC; text-transform:uppercase; }
+    .nav-logo { text-decoration:none; font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:600; letter-spacing:0.04em; color:var(--text); text-transform:uppercase; }
     .nav-links { display:flex; gap:32px; align-items:center; }
     .nav-links > a { font-size:14px; color:var(--muted); text-decoration:none; letter-spacing:0.05em; transition:color 0.2s; }
     .nav-links > a:hover { color:var(--text); }
     .nav-drop { position:relative; }
-    .nav-drop-trigger { font-size:14px; color:var(--muted); text-decoration:none; letter-spacing:0.05em; cursor:pointer; background:none; border:none; font-family:'Darker Grotesque',sans-serif; padding:0; }
+    .nav-drop-trigger { font-size:14px; color:var(--muted); text-decoration:none; letter-spacing:0.05em; cursor:pointer; background:none; border:none; font-family:'Inter',sans-serif; padding:0; }
     .nav-drop-trigger:hover { color:var(--text); }
     .nav-drop-menu { display:none; position:absolute; top:calc(100% + 12px); left:0; background:var(--bg-2); border:0.5px solid var(--border); border-radius:4px; padding:8px 0; min-width:260px; z-index:200; box-shadow:0 8px 32px rgba(0,0,0,0.5); }
     .nav-drop:hover .nav-drop-menu { display:block; }
     .nav-drop-menu a { display:block; padding:11px 20px; font-size:14px; color:var(--muted); text-decoration:none; transition:background 0.15s, color 0.15s; }
     .nav-drop-menu a:hover { background:rgba(27,94,59,0.12); color:var(--text); }
     .nav-drop-menu .nav-drop-divider { border:none; border-top:0.5px solid var(--border); margin:4px 0; }
-    .nav-cta { background:var(--green); color:white; border:none; padding:11px 22px; font-family:'Darker Grotesque',sans-serif; font-size:14px; font-weight:700; cursor:pointer; border-radius:2px; text-decoration:none; transition:background 0.2s; }
+    .nav-cta { background:var(--green); color:white; border:none; padding:11px 22px; font-family:'Inter',sans-serif; font-size:14px; font-weight:700; cursor:pointer; border-radius:2px; text-decoration:none; transition:background 0.2s; }
     .nav-cta:hover { background:var(--green-dark, #134A2D); }
     @media(max-width:768px) { .nav-links { display:none; } .nav-inner { padding:16px 20px; } }
   </style>
@@ -196,7 +196,7 @@
       <div>
         <div class="hero-tag">Poseur référent — 07, 26, 38, 73</div>
         <h1 class="hero-title">La fondation vissée <em>légère</em> pour toutes vos constructions extérieures</h1>
-        <p class="hero-sub">Le système Weasyfix remplace la dalle béton par des vis vissées mécaniquement dans le sol — de 55 cm à 175 cm de profondeur selon le terrain. Pas de béton, pas d'excavation, pas d'attente. Une journée de pose, une structure prête à monter.</p>
+        <p class="hero-sub">Nous remplaçons la dalle béton par des pieux vissés mécaniquement dans le sol, de 55 cm à 175 cm de profondeur selon votre terrain. Pas de béton, pas d'excavation, pas d'attente. Une journée de pose, une structure prête à monter.</p>
         <div class="hero-badge" style="margin-bottom:8px;">✓ Poseur référent Weasyfix — départements 07, 26, 38, 73</div><br>
         <div class="hero-badge" style="background:rgba(27,94,59,0.08);margin-bottom:16px;">⚡ Weasyfix 55–175 cm · Vistech 2–30 m — toutes profondeurs couvertes</div>
         <a href="index.html#qualifier" class="btn-primary">Qualifier mon projet</a>
@@ -220,7 +220,7 @@
     <div class="section-inner">
       <div class="section-label">Pourquoi Weasyfix</div>
       <h2 class="section-title">Six raisons de choisir les fondations vissées</h2>
-      <p class="section-sub">Weasyfix a réinventé la fondation pour constructions extérieures — sans béton, sans engin lourd, sans délai de séchage.</p>
+      <p class="section-sub">Nous avons choisi le pieu vissé Weasyfix parce qu'il règle la plupart des problèmes d'une fondation classique : pas de béton, pas d'engin lourd, pas de délai de séchage.</p>
       <div class="avantages-grid">
         <div class="avantage-card">
           <div class="avantage-icon">⚡</div>
@@ -325,32 +325,32 @@
       <p class="section-sub">Weasyfix a développé l'ensemble des composants pour que chaque élément soit compatible avec les autres — vis, connecteurs, outillage, profilés, fixations.</p>
       <div class="produits-grid">
         <div class="produit-card">
-          <div class="produit-num">01 — FONDATIONS</div>
+          <div class="produit-num">FONDATIONS</div>
           <div class="produit-name">Vis de fondation & embases</div>
           <div class="produit-desc">Pieux de 55 cm à 175 cm de profondeur selon la nature du sol et la profondeur de gel. Charge recommandée 750 kg par vis avec marge de sécurité (norme NF P 94-150-1, DTU 51.4).</div>
         </div>
         <div class="produit-card">
-          <div class="produit-num">02 — CONNECTEURS</div>
+          <div class="produit-num">CONNECTEURS</div>
           <div class="produit-name">Connecteurs réglables</div>
           <div class="produit-desc">Solidarisent les vis de fondation avec tout type de structures en permettant des réglages larges — hauteur, inclinaison, niveau. La clé de la précision de pose, même sur terrain en pente.</div>
         </div>
         <div class="produit-card">
-          <div class="produit-num">03 — OUTILLAGE</div>
+          <div class="produit-num">OUTILLAGE</div>
           <div class="produit-name">Outillage de pose</div>
           <div class="produit-desc">Garantit un travail rapide, adapté aux circonstances, dans le respect de la santé des utilisateurs. Adaptateur pneumatique ou hydraulique selon les contextes de chantier.</div>
         </div>
         <div class="produit-card">
-          <div class="produit-num">04 — PROFILÉS</div>
+          <div class="produit-num">PROFILÉS</div>
           <div class="produit-name">Profilés acier</div>
           <div class="produit-desc">Une gamme de profilés acier pour compléter ou remplacer avantageusement les structures bois. Compatibles avec l'ensemble du système Weasyfix.</div>
         </div>
         <div class="produit-card">
-          <div class="produit-num">05 — FIXATIONS</div>
+          <div class="produit-num">FIXATIONS</div>
           <div class="produit-name">Fixations & assemblage</div>
           <div class="produit-desc">L'ensemble des produits qui permettent de fixer les composants Weasyfix entre eux — boulons, vis, connecteurs. Normes qualité WEASYFIX très exigeantes.</div>
         </div>
         <div class="produit-card">
-          <div class="produit-num">06 — ACCESSOIRES</div>
+          <div class="produit-num">ACCESSOIRES</div>
           <div class="produit-name">Accessoires</div>
           <div class="produit-desc">Assurent une liberté créative et garantissent la compatibilité entre les éléments constructifs. Pour chaque type de projet, une solution complète économique et efficace.</div>
         </div>
@@ -433,7 +433,7 @@
     <div class="section-inner">
       <div class="section-label">Garanties & certifications</div>
       <h2 class="section-title">Ce qui vous protège</h2>
-      <p class="section-sub">Weasyfix est un système certifié. Nous intervenons en conformité avec toutes les règles techniques et réglementaires.</p>
+      <p class="section-sub">Weasyfix est un système certifié, et nous posons dans le respect des règles techniques et réglementaires. C'est la base : une fondation, ça ne se bricole pas.</p>
       <div class="certif-grid">
         <div class="certif-card">
           <div class="certif-icon">📋</div>
@@ -533,33 +533,39 @@
     <div class="section-inner">
       <div class="section-label">Vous êtes bricoleur ?</div>
       <h2 class="section-title">Je pose moi-même — on vous équipe</h2>
-      <p class="section-sub">Vous avez les compétences, l'envie de faire vous-même et le temps. On vous fournit le matériel, les produits et le support technique à distance. Vous posez, on est joignables si besoin.</p>
+      <p class="section-sub">Vous avez les compétences, l'envie de faire vous-même et le temps ? On vous fournit le matériel, les produits et le support technique à distance. Vous posez, on reste joignables si besoin.</p>
 
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;">
 
         <div class="solution-card">
-          <div class="solution-num">01 — PRODUITS</div>
-          <div class="solution-name">Vente de vis Weasyfix</div>
-          <div class="solution-desc">Vis de fondation, connecteurs, platines, accessoires — la gamme complète Weasyfix. Vous commandez selon votre calepinage, on livre sur votre chantier. Pas besoin de se déplacer.</div>
+          <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;">
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:600;color:var(--green);line-height:1;">1</span>
+            <span style="font-size:19px;font-weight:700;color:var(--text);">Les produits</span>
+          </div>
+          <div class="solution-desc">Vis de fondation, connecteurs, platines, accessoires : toute la gamme Weasyfix. Vous commandez selon votre calepinage, on livre directement sur votre chantier. Pas besoin de vous déplacer.</div>
         </div>
 
         <div class="solution-card">
-          <div class="solution-num">02 — MATÉRIEL</div>
-          <div class="solution-name">Location de visseuse</div>
-          <div class="solution-desc">Livraison de la visseuse sur votre site, vous posez à votre rythme, vous nous la retournez. Accès à nos tutoriels vidéo pour la prise en main. Simple, rapide, sans formation obligatoire.</div>
+          <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;">
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:600;color:var(--green);line-height:1;">2</span>
+            <span style="font-size:19px;font-weight:700;color:var(--text);">Le matériel</span>
+          </div>
+          <div class="solution-desc">On vous livre la visseuse sur site, vous posez à votre rythme, vous nous la retournez. Nos tutoriels vidéo vous accompagnent pour la prise en main. Simple, rapide, sans formation obligatoire.</div>
         </div>
 
         <div class="solution-card">
-          <div class="solution-num">03 — SUPPORT</div>
-          <div class="solution-name">Accompagnement à distance</div>
-          <div class="solution-desc">Avant la pose, on valide votre calepinage et on vous confirme les bons types de vis. Pendant la pose, support téléphonique et visio disponible. Vous n'êtes jamais seul face à un problème.</div>
+          <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;">
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:600;color:var(--green);line-height:1;">3</span>
+            <span style="font-size:19px;font-weight:700;color:var(--text);">Le support</span>
+          </div>
+          <div class="solution-desc">Avant la pose, on valide votre calepinage et on confirme les bons types de vis. Pendant la pose, on reste joignables par téléphone et en visio. Vous n'êtes jamais seul face à une difficulté.</div>
         </div>
 
       </div>
 
       <div style="background:rgba(27,94,59,0.08);border:0.5px solid rgba(27,94,59,0.3);border-radius:4px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
         <div>
-          <div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:12px;">Ce qu'on vous demande avant de commencer</div>
+          <div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:12px;">Ce que l'on vous demande avant de commencer</div>
           <div style="font-size:14px;color:var(--muted);line-height:1.8;">
             ✓ Votre calepinage ou plan de pose<br>
             ✓ La nature de votre sol<br>
@@ -601,7 +607,7 @@
   </section>
 
   <footer>
-    <span style="font-family:'Darker Grotesque',sans-serif;font-size:16px;font-weight:900;letter-spacing:0.12em;color:rgba(232,228,220,0.4);text-transform:uppercase;">LES PIEUX HORIZON</span>
+    <span style="font-family:'Inter',sans-serif;font-size:16px;font-weight:900;letter-spacing:0.12em;color:rgba(26,46,31,0.4);text-transform:uppercase;">LES PIEUX HORIZON</span>
       </div>
       </div>
     <div class="footer-links">
@@ -616,46 +622,46 @@
 
   <!-- MODAL FORMULAIRE CONTACT -->
   <div id="contact-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);z-index:1000;align-items:center;justify-content:center;">
-    <div style="background:#111E15;border:0.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:48px;max-width:480px;width:90%;position:relative;max-height:90vh;overflow-y:auto;">
+    <div style="background:#FFFFFF;border:0.5px solid rgba(26,46,31,0.12);border-radius:8px;padding:48px;max-width:480px;width:90%;position:relative;max-height:90vh;overflow-y:auto;">
       <button onclick="closeModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#8A9E8A;font-size:28px;cursor:pointer;line-height:1;">×</button>
 
       <!-- FORMULAIRE -->
       <div id="form-container">
         <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#1B5E3B;margin-bottom:12px;">Demande de devis</div>
-        <h2 style="font-family:'Playfair Display',serif;font-size:26px;color:#E8E4DC;margin-bottom:8px;">Vos coordonnées</h2>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:26px;color:var(--text);margin-bottom:8px;">Vos coordonnées</h2>
         <p style="font-size:14px;color:#8A9E8A;margin-bottom:28px;line-height:1.6;">Nous revenons vers vous sous 48h.</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
           <div>
             <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Prénom *</label>
-            <input id="f-prenom" type="text" required placeholder="Antoine" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;box-sizing:border-box;">
+            <input id="f-prenom" type="text" required placeholder="Antoine" style="width:100%;background:#F5F1E8;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
           </div>
           <div>
             <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Nom *</label>
-            <input id="f-nom" type="text" required placeholder="Dupont" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;box-sizing:border-box;">
+            <input id="f-nom" type="text" required placeholder="Dupont" style="width:100%;background:#F5F1E8;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
           </div>
         </div>
         <div style="margin-bottom:12px;">
           <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Téléphone *</label>
-          <input id="f-tel" type="tel" required placeholder="06 12 34 56 78" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;box-sizing:border-box;">
+          <input id="f-tel" type="tel" required placeholder="06 12 34 56 78" style="width:100%;background:#F5F1E8;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
           <div>
             <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Code postal *</label>
-            <input id="f-cp" type="text" required placeholder="38000" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;box-sizing:border-box;">
+            <input id="f-cp" type="text" required placeholder="38000" style="width:100%;background:#F5F1E8;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
           </div>
           <div>
             <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Email *</label>
-            <input id="f-email" type="email" required placeholder="vous@email.com" style="width:100%;background:#0D1A12;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;padding:10px 14px;font-family:'Darker Grotesque',sans-serif;font-size:15px;color:#E8E4DC;outline:none;box-sizing:border-box;">
+            <input id="f-email" type="email" required placeholder="vous@email.com" style="width:100%;background:#F5F1E8;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
           </div>
         </div>
-        <button id="submit-btn" onclick="submitForm()" style="width:100%;background:#1B5E3B;color:white;border:none;padding:14px;font-family:'Darker Grotesque',sans-serif;font-size:16px;font-weight:700;border-radius:2px;cursor:pointer;">Envoyer ma demande →</button>
+        <button id="submit-btn" onclick="submitForm()" style="width:100%;background:#1B5E3B;color:white;border:none;padding:14px;font-family:'Inter',sans-serif;font-size:16px;font-weight:700;border-radius:2px;cursor:pointer;">Envoyer ma demande →</button>
         <p style="font-size:12px;color:#8A9E8A;margin-top:12px;text-align:center;">Réponse sous 48h — 07 69 73 79 61</p>
       </div>
 
       <!-- SUCCÈS -->
       <div id="form-success" style="display:none;text-align:center;padding:24px 0;">
         <div style="font-size:48px;margin-bottom:16px;">✓</div>
-        <div style="font-size:20px;font-weight:700;color:#E8E4DC;margin-bottom:8px;">Demande envoyée !</div>
+        <div style="font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px;">Demande envoyée !</div>
         <div style="font-size:14px;color:#8A9E8A;">Nous revenons vers vous sous 48h.</div>
       </div>
     </div>
@@ -740,23 +746,23 @@
   #lph-chat-btn { position:fixed; bottom:24px; right:24px; width:60px; height:60px; border-radius:50%; background:#1B5E3B; border:none; cursor:pointer; z-index:9000; box-shadow:0 4px 20px rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; transition:transform 0.2s; }
   #lph-chat-btn:hover { transform:scale(1.08); }
   #lph-chat-btn svg { width:28px; height:28px; }
-  #lph-chat-badge { position:absolute; top:-4px; right:-4px; width:14px; height:14px; background:#E24B4A; border-radius:50%; border:2px solid #0D1A12; }
-  #lph-chat-window { position:fixed; bottom:96px; right:24px; width:370px; max-width:calc(100vw - 32px); height:540px; max-height:calc(100vh - 140px); background:#111E15; border:0.5px solid rgba(255,255,255,0.1); border-radius:12px; box-shadow:0 12px 48px rgba(0,0,0,0.5); z-index:9001; display:none; flex-direction:column; overflow:hidden; font-family:'Darker Grotesque',sans-serif; }
+  #lph-chat-badge { position:absolute; top:-4px; right:-4px; width:14px; height:14px; background:#E24B4A; border-radius:50%; border:2px solid #EDF1EA; }
+  #lph-chat-window { position:fixed; bottom:96px; right:24px; width:370px; max-width:calc(100vw - 32px); height:540px; max-height:calc(100vh - 140px); background:#FFFFFF; border:0.5px solid rgba(26,46,31,0.12); border-radius:12px; box-shadow:0 12px 48px rgba(26,46,31,0.18); z-index:9001; display:none; flex-direction:column; overflow:hidden; font-family:'Inter',sans-serif; }
   #lph-chat-window.open { display:flex; }
-  #lph-chat-header { background:#0D1A12; padding:16px 20px; display:flex; align-items:center; justify-content:space-between; border-bottom:0.5px solid rgba(255,255,255,0.08); }
-  #lph-chat-header-title { font-size:15px; font-weight:700; color:#E8E4DC; display:flex; align-items:center; gap:8px; }
+  #lph-chat-header { background:#E2E9DE; padding:16px 20px; display:flex; align-items:center; justify-content:space-between; border-bottom:0.5px solid rgba(26,46,31,0.08); }
+  #lph-chat-header-title { font-size:15px; font-weight:700; color:var(--text); display:flex; align-items:center; gap:8px; }
   #lph-chat-header-title::before { content:''; width:8px; height:8px; border-radius:50%; background:#4ADE80; display:inline-block; }
   #lph-chat-header-sub { font-size:11px; color:#8A9E8A; margin-top:2px; }
   #lph-chat-close { background:none; border:none; color:#8A9E8A; font-size:22px; cursor:pointer; line-height:1; padding:4px; }
   #lph-chat-body { flex:1; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:12px; }
-  .lph-msg-bot { background:#1B5E3B1A; border:0.5px solid rgba(27,94,59,0.3); border-radius:10px 10px 10px 2px; padding:12px 14px; font-size:14px; color:#E8E4DC; line-height:1.5; max-width:88%; align-self:flex-start; white-space:pre-wrap; }
+  .lph-msg-bot { background:rgba(27,94,59,0.08); border:0.5px solid rgba(27,94,59,0.2); border-radius:10px 10px 10px 2px; padding:12px 14px; font-size:14px; color:var(--text); line-height:1.5; max-width:88%; align-self:flex-start; white-space:pre-wrap; }
   .lph-msg-user { background:#1B5E3B; border-radius:10px 10px 2px 10px; padding:10px 14px; font-size:14px; color:white; max-width:80%; align-self:flex-end; font-weight:600; white-space:pre-wrap; }
   .lph-typing { display:flex; gap:4px; padding:14px; align-self:flex-start; }
   .lph-typing span { width:7px; height:7px; border-radius:50%; background:#8A9E8A; animation:lphBlink 1.2s infinite; }
   .lph-typing span:nth-child(2){ animation-delay:0.2s; } .lph-typing span:nth-child(3){ animation-delay:0.4s; }
   @keyframes lphBlink { 0%,60%,100%{opacity:0.3;} 30%{opacity:1;} }
-  #lph-chat-input-wrap { padding:12px; border-top:0.5px solid rgba(255,255,255,0.08); display:flex; gap:8px; }
-  #lph-chat-input { flex:1; background:#0D1A12; border:0.5px solid rgba(255,255,255,0.15); border-radius:8px; padding:10px 14px; font-size:14px; color:#E8E4DC; outline:none; font-family:'Darker Grotesque',sans-serif; resize:none; max-height:80px; }
+  #lph-chat-input-wrap { padding:12px; border-top:0.5px solid rgba(26,46,31,0.08); display:flex; gap:8px; }
+  #lph-chat-input { flex:1; background:#E2E9DE; border:0.5px solid rgba(26,46,31,0.15); border-radius:8px; padding:10px 14px; font-size:14px; color:var(--text); outline:none; font-family:'Inter',sans-serif; resize:none; max-height:80px; }
   #lph-chat-input:focus { border-color:#1B5E3B; }
   #lph-chat-send { background:#1B5E3B; border:none; border-radius:8px; width:42px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
   #lph-chat-send:disabled { opacity:0.4; cursor:default; }
@@ -858,14 +864,14 @@
 
 
 <!-- BANDEAU COOKIES RGPD -->
-<div id="lph-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0D1A12;border-top:0.5px solid rgba(255,255,255,0.12);padding:16px 24px;z-index:9500;box-shadow:0 -4px 24px rgba(0,0,0,0.4);">
+<div id="lph-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#E2E9DE;border-top:0.5px solid rgba(26,46,31,0.12);padding:16px 24px;z-index:9500;box-shadow:0 -4px 24px rgba(0,0,0,0.4);">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-    <div style="flex:1;min-width:280px;font-family:'Darker Grotesque',sans-serif;font-size:14px;color:#B8C4B8;line-height:1.5;">
+    <div style="flex:1;min-width:280px;font-family:'Inter',sans-serif;font-size:14px;color:#56685A;line-height:1.5;">
       Ce site utilise des cookies de mesure d'audience et publicitaires (Google) pour améliorer votre expérience. Vous pouvez accepter ou refuser. <a href="confidentialite.html" style="color:#4ADE80;text-decoration:underline;">En savoir plus</a>
     </div>
     <div style="display:flex;gap:10px;flex-shrink:0;">
-      <button onclick="lphCookieChoice(false)" style="background:transparent;border:0.5px solid rgba(255,255,255,0.25);color:#E8E4DC;padding:10px 20px;font-family:'Darker Grotesque',sans-serif;font-size:14px;font-weight:600;border-radius:4px;cursor:pointer;">Refuser</button>
-      <button onclick="lphCookieChoice(true)" style="background:#1B5E3B;border:none;color:white;padding:10px 20px;font-family:'Darker Grotesque',sans-serif;font-size:14px;font-weight:700;border-radius:4px;cursor:pointer;">Accepter</button>
+      <button onclick="lphCookieChoice(false)" style="background:transparent;border:0.5px solid rgba(26,46,31,0.25);color:var(--text);padding:10px 20px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;border-radius:4px;cursor:pointer;">Refuser</button>
+      <button onclick="lphCookieChoice(true)" style="background:#1B5E3B;border:none;color:white;padding:10px 20px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;border-radius:4px;cursor:pointer;">Accepter</button>
     </div>
   </div>
 </div>
