@@ -533,6 +533,26 @@
     }
 
     var _lastPrompt = "";
+    // Journal du qualificateur : chaque qualification est envoyée au Worker (sans coordonnées),
+    // après une interaction du visiteur, avec un délai pour ne pas envoyer à chaque clic.
+    window._qualifId = 'q' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+    var _qTouched = false, _qTimer = null;
+    document.addEventListener('DOMContentLoaded', function(){
+      var q = document.getElementById('qualifier');
+      if(q) q.addEventListener('click', function(){ _qTouched = true; }, true);
+      var sl = document.getElementById('surface-slider');
+      if(sl) sl.addEventListener('input', function(){ _qTouched = true; });
+    });
+    function qlog() {
+      if(!_qTouched || !window._lastQualif) return;
+      clearTimeout(_qTimer);
+      _qTimer = setTimeout(function(){
+        try {
+          var payload = Object.assign({ id: window._qualifId, page: location.href }, window._lastQualif);
+          fetch('https://chatbot-pieux-horizon.a-ouzeau.workers.dev/qualif', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload), keepalive: true }).catch(function(){});
+        } catch(e) {}
+      }, 2500);
+    }
     function qupdate() {
       const s = parseInt(document.getElementById('surface-slider').value);
       document.getElementById('surface-val').textContent = s;
@@ -546,6 +566,9 @@
       const surfStr = qhasSurface() ? ' de ' + s + ' m²' : '';
       const projectSummary = sLabel + surfStr + ', sol ' + solLabel.toLowerCase() + ', pente ' + penteLabel.toLowerCase() + ', zone ' + zoneLabel.toLowerCase();
       _lastPrompt = projectSummary;
+      const verdict = qstate.stabilise === 'non' ? 'Sol non stabilisé' : qstate.plan === 'non' ? 'Pas de plan' : score <= 1 ? 'Projet standard' : score <= 3 ? 'Projet avec spécificités' : 'Projet complexe';
+      window._lastQualif = { structure: sLabel, surface: qhasSurface() ? s : '', sol: solLabel, pente: penteLabel, zone: zoneLabel, stabilise: qstate.stabilise, plan: qstate.plan, verdict: verdict, tags: flags.map(f => f.t) };
+      qlog();
       const tagsHtml = flags.map(f => `<span class="q-tag ${f.c}">${f.t}</span>`).join('');
 
       let html = '';
@@ -661,6 +684,10 @@
 
     function openModal(projectInfo) {
       _projectInfo = projectInfo || '';
+      // Si le visiteur a utilisé le qualificateur, on joint toujours son résultat à la demande
+      if (typeof _qTouched !== 'undefined' && _qTouched && typeof _lastPrompt === 'string' && _lastPrompt && _projectInfo.indexOf(_lastPrompt) === -1) {
+        _projectInfo = 'Projet : ' + _lastPrompt + (window._lastQualif && window._lastQualif.verdict ? ' — ' + window._lastQualif.verdict : '') + (_projectInfo ? ' (' + _projectInfo + ')' : '');
+      }
       document.getElementById('contact-modal').style.display = 'flex';
       document.body.style.overflow = 'hidden';
       document.getElementById('form-container').style.display = 'block';
@@ -704,7 +731,7 @@
         fetch('https://chatbot-pieux-horizon.a-ouzeau.workers.dev/form', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ prenom: prenom, nom: nom, telephone: tel, code_postal: cp, email: email, projet: _projectInfo || '', page: location.href }),
+          body: JSON.stringify({ prenom: prenom, nom: nom, telephone: tel, code_postal: cp, email: email, projet: _projectInfo || '', page: location.href, qualif: (window._lastQualif || null), qualifId: (window._qualifId || '') }),
           keepalive: true
         }).catch(function(){});
       } catch(e) {}

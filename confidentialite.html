@@ -178,6 +178,137 @@
   <div class="footer-copy">© 2025 Les Pieux Horizon — Chalets Horizon SAS</div>
 </footer>
 
+  <!-- MODAL FORMULAIRE CONTACT -->
+  <div id="contact-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);z-index:1000;align-items:center;justify-content:center;">
+    <div style="background:#FFFFFF;border:0.5px solid rgba(26,46,31,0.12);border-radius:8px;padding:48px;max-width:480px;width:90%;position:relative;max-height:90vh;overflow-y:auto;">
+      <button onclick="closeModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#8A9E8A;font-size:28px;cursor:pointer;line-height:1;">×</button>
+
+      <!-- FORMULAIRE -->
+      <div id="form-container">
+        <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#1B5E3B;margin-bottom:12px;">Demande de devis</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:26px;color:var(--text);margin-bottom:8px;">Vos coordonnées</h2>
+        <p style="font-size:14px;color:#8A9E8A;margin-bottom:28px;line-height:1.6;">Nous revenons vers vous sous 48h.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div>
+            <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Prénom *</label>
+            <input id="f-prenom" type="text" required placeholder="Antoine" style="width:100%;background:#F5F1E8;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
+          </div>
+          <div>
+            <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Nom *</label>
+            <input id="f-nom" type="text" required placeholder="Dupont" style="width:100%;background:#F5F1E8;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
+          </div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Téléphone *</label>
+          <input id="f-tel" type="tel" required placeholder="06 12 34 56 78" style="width:100%;background:#F5F1E8;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+          <div>
+            <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Code postal *</label>
+            <input id="f-cp" type="text" required placeholder="38000" style="width:100%;background:#F5F1E8;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
+          </div>
+          <div>
+            <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Email *</label>
+            <input id="f-email" type="email" required placeholder="vous@email.com" style="width:100%;background:#F5F1E8;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
+          </div>
+        </div>
+        <button id="submit-btn" onclick="submitForm()" style="width:100%;background:#1B5E3B;color:white;border:none;padding:14px;font-family:'Inter',sans-serif;font-size:16px;font-weight:700;border-radius:2px;cursor:pointer;">Envoyer ma demande →</button>
+        <p style="font-size:12px;color:#8A9E8A;margin-top:12px;text-align:center;">Réponse sous 48h — 07 69 73 79 61</p>
+      </div>
+
+      <!-- SUCCÈS -->
+      <div id="form-success" style="display:none;text-align:center;padding:24px 0;">
+        <div style="font-size:48px;margin-bottom:16px;">✓</div>
+        <div style="font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px;">Demande envoyée !</div>
+        <div style="font-size:14px;color:#8A9E8A;">Nous revenons vers vous sous 48h.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var _projectInfo = '';
+
+    function openModal(projectInfo) {
+      _projectInfo = projectInfo || '';
+      document.getElementById('contact-modal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      document.getElementById('form-container').style.display = 'block';
+      document.getElementById('form-success').style.display = 'none';
+      var btn = document.getElementById('submit-btn');
+      if(btn){ btn.textContent = 'Envoyer ma demande →'; btn.disabled = false; }
+    }
+
+    function closeModal() {
+      document.getElementById('contact-modal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    async function submitForm() {
+      var prenom = document.getElementById('f-prenom').value.trim();
+      var nom = document.getElementById('f-nom').value.trim();
+      var tel = document.getElementById('f-tel').value.trim();
+      var cp = document.getElementById('f-cp').value.trim();
+      var email = document.getElementById('f-email').value.trim();
+
+      if(!prenom || !nom || !tel || !cp || !email) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      var btn = document.getElementById('submit-btn');
+      btn.textContent = 'Envoi en cours...';
+      btn.disabled = true;
+
+      var body = new FormData();
+      body.append('prenom', prenom);
+      body.append('nom', nom);
+      body.append('telephone', tel);
+      body.append('code_postal', cp);
+      body.append('email', email);
+      if(_projectInfo) body.append('projet', _projectInfo);
+      body.append('_subject', 'Nouvelle demande — Les Pieux Horizon');
+
+      // Copie de la demande vers HubSpot via le Worker (en parallèle, ne bloque pas l'email)
+      try {
+        fetch('https://chatbot-pieux-horizon.a-ouzeau.workers.dev/form', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prenom: prenom, nom: nom, telephone: tel, code_postal: cp, email: email, projet: _projectInfo || '', page: location.href, qualif: (window._lastQualif || null), qualifId: (window._qualifId || '') }),
+          keepalive: true
+        }).catch(function(){});
+      } catch(e) {}
+
+      try {
+        var response = await fetch('https://formspree.io/f/mlgzbezv', {
+          method: 'POST',
+          body: body,
+          headers: { 'Accept': 'application/json' }
+        });
+        if(response.ok) {
+          document.getElementById('form-container').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+          setTimeout(closeModal, 3000);
+        } else {
+          btn.textContent = 'Envoyer ma demande →';
+          btn.disabled = false;
+          alert('Erreur lors de l\'envoi. Appelez-nous au 07 69 73 79 61');
+        }
+      } catch(err) {
+        btn.textContent = 'Envoyer ma demande →';
+        btn.disabled = false;
+        alert('Erreur lors de l\'envoi. Appelez-nous au 07 69 73 79 61');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      var modal = document.getElementById('contact-modal');
+      if(modal) {
+        modal.addEventListener('click', function(e){
+          if(e.target === this) closeModal();
+        });
+      }
+    });
+  </script>
 <!-- CHATBOT IA LES PIEUX HORIZON -->
 <style>
   #lph-chat-btn { position:fixed; bottom:24px; right:24px; width:60px; height:60px; border-radius:50%; background:#1B5E3B; border:none; cursor:pointer; z-index:9000; box-shadow:0 4px 20px rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; transition:transform 0.2s; }

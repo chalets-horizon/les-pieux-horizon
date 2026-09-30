@@ -506,6 +506,16 @@
       if(_projectInfo) body.append('projet', _projectInfo);
       body.append('_subject', 'Nouvelle demande — Les Pieux Horizon');
 
+      // Copie de la demande vers HubSpot via le Worker (en parallèle, ne bloque pas l'email)
+      try {
+        fetch('https://chatbot-pieux-horizon.a-ouzeau.workers.dev/form', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prenom: prenom, nom: nom, telephone: tel, code_postal: cp, email: email, projet: _projectInfo || '', page: location.href, qualif: (window._lastQualif || null), qualifId: (window._qualifId || '') }),
+          keepalive: true
+        }).catch(function(){});
+      } catch(e) {}
+
       try {
         var response = await fetch('https://formspree.io/f/mlgzbezv', {
           method: 'POST',
