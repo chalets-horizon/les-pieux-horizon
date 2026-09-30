@@ -579,7 +579,10 @@
           <div class="q-result-body">Un sol remblayé ou modifié depuis moins de 18 mois n'offre pas une portance suffisante. Contactez-nous pour évaluer les options selon votre calendrier de projet.</div>
           <div class="q-tags"><span class="q-tag red">sol non stabilisé</span></div>
           <hr class="q-divider">
-          <div class="q-cta"><a href="tel:0769737961" class="q-btn red">Nous appeler — 07 69 73 79 61</a></div>
+          <div class="q-cta">
+            <a href="#" onclick="openModal(_lastPrompt ? 'Projet : ' + _lastPrompt + ' — sol non stabilisé' : 'Sol non stabilisé');return false;" class="q-btn red">Envoyer ma demande</a>
+            <a href="tel:0769737961" class="q-btn ghost">Nous appeler — 07 69 73 79 61</a>
+          </div>
         </div>`;
       } else if (qstate.plan === 'non') {
         html = `<div class="q-result contact">
@@ -587,7 +590,10 @@
           <div class="q-result-body">Le calepinage de votre structure est indispensable pour établir un devis fiable. Appelez-nous, nous vous guidons pour préparer les éléments nécessaires.</div>
           <div class="q-tags">${tagsHtml}</div>
           <hr class="q-divider">
-          <div class="q-cta"><a href="tel:0769737961" class="q-btn amber">Nous appeler — 07 69 73 79 61</a></div>
+          <div class="q-cta">
+            <a href="#" onclick="openModal(_lastPrompt ? 'Projet : ' + _lastPrompt + ' — pas de plan' : 'Pas de plan');return false;" class="q-btn amber">Envoyer ma demande</a>
+            <a href="tel:0769737961" class="q-btn ghost">Nous appeler — 07 69 73 79 61</a>
+          </div>
         </div>`;
       } else if (score <= 1) {
         html = `<div class="q-result ok">
