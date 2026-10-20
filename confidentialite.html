@@ -340,6 +340,10 @@
   #lph-chat-input:focus { border-color:#1B5E3B; }
   #lph-chat-send { background:#1B5E3B; border:none; border-radius:8px; width:42px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
   #lph-chat-send:disabled { opacity:0.4; cursor:default; }
+  #lph-chat-attach { background:#fff; border:0.5px solid rgba(26,46,31,0.2); border-radius:8px; width:42px; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#1B5E3B; }
+  #lph-chat-attach:disabled { opacity:0.4; cursor:default; }
+  #lph-chat-attach svg { width:18px; height:18px; }
+  .lph-msg-sys { align-self:center; font-size:12px; color:#8A9E8A; text-align:center; max-width:90%; }
   #lph-chat-send svg { width:18px; height:18px; }
   @media(max-width:480px){ #lph-chat-window { right:16px; bottom:88px; width:calc(100vw - 32px); } #lph-chat-btn { right:16px; bottom:16px; } }
 </style>
@@ -364,6 +368,10 @@
   <div id="lph-chat-body"></div>
   <div id="lph-chat-input-wrap">
     <textarea id="lph-chat-input" rows="1" placeholder="Écrivez votre message..." onkeydown="lphKey(event)"></textarea>
+    <input type="file" id="lph-chat-file" accept="image/jpeg,image/png,image/heic,image/heif,image/webp,application/pdf" style="display:none" onchange="lphUpload(this)">
+    <button id="lph-chat-attach" type="button" title="Joindre une photo, un plan ou un croquis (JPG, PNG, PDF, 10 Mo max)" onclick="document.getElementById('lph-chat-file').click()">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
     <button id="lph-chat-send" onclick="lphSend()">
       <svg viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
@@ -374,6 +382,7 @@
 (function(){
   var WORKER_URL = 'https://chatbot-pieux-horizon.a-ouzeau.workers.dev';
   var body=null, opened=false, history=[], busy=false;
+  var convId=(function(){ var a=new Uint8Array(8); try{ crypto.getRandomValues(a); }catch(e){ for(var i=0;i<8;i++) a[i]=Math.floor(Math.random()*256); } var h=''; for(var i=0;i<8;i++) h+=('0'+a[i].toString(16)).slice(-2); return h; })();
 
   window.lphTeaserHide = function(){
     var t=document.getElementById('lph-chat-teaser'); if(t) t.classList.remove('show');
@@ -422,6 +431,33 @@
   }
   function hideTyping(){ var t=document.getElementById('lph-typing'); if(t) t.remove(); }
 
+  function sysMsg(text){
+    var d=document.createElement('div'); d.className='lph-msg-sys'; d.textContent=text;
+    body.appendChild(d); body.scrollTop=body.scrollHeight;
+  }
+  window.lphUpload = async function(inp){
+    var f=inp.files && inp.files[0]; inp.value='';
+    if(!f || busy) return;
+    if(f.size>10*1024*1024){ sysMsg('Fichier trop lourd : 10 Mo maximum.'); return; }
+    busy=true; document.getElementById('lph-chat-attach').disabled=true; document.getElementById('lph-chat-send').disabled=true;
+    sysMsg('Envoi de « '+f.name+' »…');
+    try{
+      var fd=new FormData(); fd.append('convId',convId); fd.append('fichier',f,f.name);
+      var res=await fetch(WORKER_URL+'/upload',{method:'POST',body:fd});
+      var data=await res.json();
+      if(!data.ok){ sysMsg(data.error||'Envoi impossible.'); }
+      else {
+        sysMsg('« '+data.name+' » bien reçu.');
+        busy=false; document.getElementById('lph-chat-attach').disabled=false; document.getElementById('lph-chat-send').disabled=false;
+        var input=document.getElementById('lph-chat-input');
+        input.value='Je viens de déposer le fichier « '+data.name+' » (photo du terrain, plan ou croquis).';
+        await lphSend();
+        return;
+      }
+    }catch(e){ sysMsg('Envoi impossible pour le moment : vous pouvez envoyer le fichier à contact@chalets-horizon.com.'); }
+    busy=false; document.getElementById('lph-chat-attach').disabled=false; document.getElementById('lph-chat-send').disabled=false;
+  };
+
   window.lphSend = async function(){
     if(busy) return;
     var input=document.getElementById('lph-chat-input');
@@ -437,7 +473,7 @@
       var res=await fetch(WORKER_URL,{
         method:'POST',
         headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({messages:history})
+        body:JSON.stringify({messages:history, convId:convId})
       });
       var data=await res.json();
       hideTyping();
