@@ -378,7 +378,7 @@
 <!-- CTA -->
 <section class="cta-section">
   <h2 class="cta-title">On construit sans béton.<br>Parlons de votre projet.</h2>
-  <p class="cta-sub">Visite terrain gratuite, devis sous 48h, réponse sous 2h.</p>
+  <p class="cta-sub">Chiffrage estimatif en ligne, visite terrain intégrée au chiffrage, devis sous 48h.</p>
   <div>
     <a href="index.html#qualifier" class="btn-primary">Qualifier mon projet</a>
     <a href="tel:0769737961" class="btn-ghost">Nous appeler</a>
@@ -537,6 +537,12 @@
   #lph-chat-btn { position:fixed; bottom:24px; right:24px; width:60px; height:60px; border-radius:50%; background:#1B5E3B; border:none; cursor:pointer; z-index:9000; box-shadow:0 4px 20px rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; transition:transform 0.2s; }
   #lph-chat-btn:hover { transform:scale(1.08); }
   #lph-chat-btn svg { width:28px; height:28px; }
+  #lph-chat-teaser { position:fixed; bottom:34px; right:96px; max-width:250px; background:#fff; color:#1A2E1F; border:0.5px solid rgba(26,46,31,0.15); border-radius:12px; padding:12px 34px 12px 14px; font-size:13px; line-height:1.45; box-shadow:0 6px 24px rgba(26,46,31,0.14); z-index:9998; cursor:pointer; display:none; font-family:'Inter',system-ui,sans-serif; }
+  #lph-chat-teaser.show { display:block; animation:lphTeaserIn .35s ease; }
+  #lph-chat-teaser b { color:#1B5E3B; }
+  #lph-chat-teaser-x { position:absolute; top:6px; right:8px; background:none; border:none; color:#8A9E8A; font-size:18px; line-height:1; cursor:pointer; padding:2px 4px; }
+  @keyframes lphTeaserIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+  @media(max-width:480px){ #lph-chat-teaser { right:88px; bottom:26px; max-width:calc(100vw - 120px); } }
   #lph-chat-badge { position:absolute; top:-4px; right:-4px; width:14px; height:14px; background:#E24B4A; border-radius:50%; border:2px solid #EDF1EA; }
   #lph-chat-window { position:fixed; bottom:96px; right:24px; width:370px; max-width:calc(100vw - 32px); height:540px; max-height:calc(100vh - 140px); background:#FFFFFF; border:0.5px solid rgba(26,46,31,0.12); border-radius:12px; box-shadow:0 12px 48px rgba(26,46,31,0.18); z-index:9001; display:none; flex-direction:column; overflow:hidden; font-family:'Inter',sans-serif; }
   #lph-chat-window.open { display:flex; }
@@ -561,6 +567,10 @@
   @media(max-width:480px){ #lph-chat-window { right:16px; bottom:88px; width:calc(100vw - 32px); } #lph-chat-btn { right:16px; bottom:16px; } }
 </style>
 
+<div id="lph-chat-teaser" role="button" onclick="lphToggle()">
+  <button id="lph-chat-teaser-x" aria-label="Fermer" onclick="event.stopPropagation();lphTeaserHide()">×</button>
+  Bonjour, je suis <b>Fernand</b>. Un projet de terrasse ? Décrivez-le-moi, je vous prépare un chiffrage estimatif en quelques minutes.
+</div>
 <button id="lph-chat-btn" onclick="lphToggle()">
   <span id="lph-chat-badge"></span>
   <svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -569,8 +579,8 @@
 <div id="lph-chat-window">
   <div id="lph-chat-header">
     <div>
-      <div id="lph-chat-header-title">Assistant Les Pieux Horizon</div>
-      <div id="lph-chat-header-sub">En ligne · Réponse sous 24h</div>
+      <div id="lph-chat-header-title">Fernand</div>
+      <div id="lph-chat-header-sub">Assistant Les Pieux Horizon · en ligne</div>
     </div>
     <button id="lph-chat-close" onclick="lphToggle()">×</button>
   </div>
@@ -588,15 +598,30 @@
   var WORKER_URL = 'https://chatbot-pieux-horizon.a-ouzeau.workers.dev';
   var body=null, opened=false, history=[], busy=false;
 
+  window.lphTeaserHide = function(){
+    var t=document.getElementById('lph-chat-teaser'); if(t) t.classList.remove('show');
+    try{ sessionStorage.setItem('lphTeaser','1'); }catch(e){}
+  };
+  (function teaserTry(n){
+    setTimeout(function(){
+      var seen=false; try{ seen=!!sessionStorage.getItem('lphTeaser'); }catch(e){}
+      if(opened || seen) return;
+      var cb=document.getElementById('lph-cookie-banner');
+      if(cb && cb.style.display!=='none' && n<12){ teaserTry(n+1); return; } // on attend la fermeture du bandeau cookies (jusqu'à 1 min)
+      var t=document.getElementById('lph-chat-teaser'); if(t) t.classList.add('show');
+    }, n===0 ? 7000 : 5000);
+  })(0);
+
   window.lphToggle = function(){
     var win=document.getElementById('lph-chat-window');
     var badge=document.getElementById('lph-chat-badge');
+    var teaser=document.getElementById('lph-chat-teaser'); if(teaser){ teaser.classList.remove('show'); try{ sessionStorage.setItem('lphTeaser','1'); }catch(e){} }
     opened=!opened;
     win.classList.toggle('open',opened);
     if(badge) badge.style.display='none';
     if(opened && !body){
       body=document.getElementById('lph-chat-body');
-      botMsg("Bonjour 👋 Je suis l'assistant de Les Pieux Horizon. Je peux vous renseigner sur les fondations vissées et vous orienter vers le bon contact. Quel est votre projet ?");
+      botMsg("Bonjour, je suis Fernand, l'assistant de Les Pieux Horizon. Décrivez-moi votre projet : pour une terrasse, je peux vous préparer un chiffrage estimatif ; pour le reste, je vous oriente vers le bon interlocuteur. Quel est votre projet ?");
     }
     if(opened) setTimeout(function(){ document.getElementById('lph-chat-input').focus(); },100);
   };
