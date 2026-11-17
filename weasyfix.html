@@ -200,7 +200,7 @@
         <div class="hero-badge" style="margin-bottom:8px;">✓ Poseur référent Weasyfix — départements 07, 26, 38, 73</div><br>
         <div class="hero-badge" style="background:rgba(27,94,59,0.08);margin-bottom:16px;">⚡ Weasyfix 55–175 cm · Vistech 2–30 m — toutes profondeurs couvertes</div>
         <a href="index.html#qualifier" class="btn-primary">Qualifier mon projet</a>
-        <a href="tel:0769737961" class="btn-ghost">07 69 73 79 61</a>
+        <a href="tel:0423330323" class="btn-ghost">04 23 33 03 23</a>
       </div>
       <div style="position:relative;border-radius:4px;overflow:hidden;">
         <img src="weasyfix-pose.jpg" alt="Pose de vis Weasyfix sur terrain en pente — zone alpine" style="width:100%;height:480px;object-fit:cover;object-position:center 40%;display:block;">
@@ -587,7 +587,7 @@
       </div>
 
       <div style="text-align:center;margin-top:40px;">
-        <a href="tel:0769737961" class="btn-primary">Préparer ma commande — 07 69 73 79 61</a>
+        <a href="tel:0423330323" class="btn-primary">Préparer ma commande — 04 23 33 03 23</a>
         <a href="index.html#qualifier" class="btn-ghost" style="margin-left:12px;">Qualifier mon projet</a>
       </div>
 
@@ -600,9 +600,9 @@
     <p class="cta-sub">Transmettez-nous votre calepinage — on revient vers vous avec un devis précis sous 48h.</p>
     <div>
       <a href="index.html#qualifier" class="btn-primary">Qualifier mon projet</a>
-      <a href="tel:0769737961" class="btn-ghost">Nous appeler</a>
+      <a href="tel:0423330323" class="btn-ghost">Nous appeler</a>
     </div>
-    <a href="tel:0769737961" class="cta-phone">07 69 73 79 61</a>
+    <a href="tel:0423330323" class="cta-phone">04 23 33 03 23</a>
     <p style="font-size:13px;color:var(--muted);margin-top:16px;">Zones 07 — 26 — 38 — 73 · L'Albenc, Isère · Réponse sous 2h</p>
   </section>
 
@@ -655,7 +655,7 @@
           </div>
         </div>
         <button id="submit-btn" onclick="submitForm()" style="width:100%;background:#1B5E3B;color:white;border:none;padding:14px;font-family:'Inter',sans-serif;font-size:16px;font-weight:700;border-radius:2px;cursor:pointer;">Envoyer ma demande →</button>
-        <p style="font-size:12px;color:#8A9E8A;margin-top:12px;text-align:center;">Réponse sous 48h — 07 69 73 79 61</p>
+        <p style="font-size:12px;color:#8A9E8A;margin-top:12px;text-align:center;">Réponse sous 48h — 04 23 33 03 23</p>
       </div>
 
       <!-- SUCCÈS -->
@@ -733,12 +733,12 @@
         } else {
           btn.textContent = 'Envoyer ma demande →';
           btn.disabled = false;
-          alert('Erreur lors de l\'envoi. Appelez-nous au 07 69 73 79 61');
+          alert('Erreur lors de l\'envoi. Appelez-nous au 04 23 33 03 23');
         }
       } catch(err) {
         btn.textContent = 'Envoyer ma demande →';
         btn.disabled = false;
-        alert('Erreur lors de l\'envoi. Appelez-nous au 07 69 73 79 61');
+        alert('Erreur lors de l\'envoi. Appelez-nous au 04 23 33 03 23');
       }
     }
 
@@ -919,12 +919,12 @@
       });
       var data=await res.json();
       hideTyping();
-      var reply=data.reply || "Désolé, une erreur est survenue. Appelez-nous au 07 69 73 79 61.";
+      var reply=data.reply || "Désolé, une erreur est survenue. Appelez-nous au 04 23 33 03 23.";
       botMsg(reply);
       history.push({role:'assistant', content:reply});
     }catch(e){
       hideTyping();
-      botMsg("Désolé, une erreur est survenue. Appelez-nous au 07 69 73 79 61.");
+      botMsg("Désolé, une erreur est survenue. Appelez-nous au 04 23 33 03 23.");
     }
     busy=false;
     document.getElementById('lph-chat-send').disabled=false;

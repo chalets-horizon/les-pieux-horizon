@@ -170,7 +170,7 @@
       <div class="hero-badge">VRD + terrassement + fondations vissées — tout coordonné</div>
       <div class="hero-badge" style="background:rgba(27,94,59,0.06);">Visite terrain et devis sous 48h</div>
       <a href="#" onclick="openModal('Demande VRD & Terrassement');return false;" class="btn-primary">Demander un devis</a>
-      <a href="tel:0769737961" class="btn-ghost">07 69 73 79 61</a>
+      <a href="tel:0423330323" class="btn-ghost">04 23 33 03 23</a>
     </div>
     <div style="position:relative;border-radius:4px;overflow:hidden;">
       <img src="vrd-terrassement.jpg" alt="Mini-pelle terrassement zone alpine — Les Pieux Horizon" style="width:100%;height:480px;object-fit:cover;object-position:center 60%;display:block;">
@@ -328,7 +328,7 @@
         <h2 class="visite-title">La visite terrain : le raccourci vers un chantier serein</h2>
         <p class="visite-sub">Rien ne remplace une rencontre sur site. En 30 à 45 minutes, on valide ensemble les points clés — et on repart avec un plan d'action clair.</p>
         <a href="#" onclick="openModal('Demande visite terrain VRD');return false;" class="btn-primary">Planifier une visite</a>
-        <a href="tel:0769737961" class="btn-ghost">07 69 73 79 61</a>
+        <a href="tel:0423330323" class="btn-ghost">04 23 33 03 23</a>
       </div>
       <div>
         <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:16px;">Ce qu'on vérifie ensemble</div>
@@ -382,9 +382,9 @@
   <p class="cta-sub">Envoyez-nous vos photos et la surface visée — on revient vers vous avec un parcours de réseaux clair et un devis complet.</p>
   <div>
     <a href="#" onclick="openModal('Demande VRD & Terrassement — page dédiée');return false;" class="btn-primary">Demander un devis</a>
-    <a href="tel:0769737961" class="btn-ghost">Nous appeler</a>
+    <a href="tel:0423330323" class="btn-ghost">Nous appeler</a>
   </div>
-  <a href="tel:0769737961" class="cta-phone">07 69 73 79 61</a>
+  <a href="tel:0423330323" class="cta-phone">04 23 33 03 23</a>
   <p style="font-size:13px;color:var(--muted);margin-top:16px;">Isère, Savoie, Haute-Savoie, Drôme, Ardèche · Réponse sous 2h</p>
 </section>
 
@@ -415,7 +415,7 @@
         <div><label style="font-size:12px;color:#8A9E8A;display:block;margin-bottom:6px;">Email *</label><input id="f-email" type="email" required placeholder="vous@email.com" style="width:100%;background:#F5F1E8;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;"></div>
       </div>
       <button id="submit-btn" onclick="submitForm()" style="width:100%;background:#1B5E3B;color:white;border:none;padding:14px;font-family:'Inter',sans-serif;font-size:16px;font-weight:700;border-radius:2px;cursor:pointer;">Envoyer ma demande →</button>
-      <p style="font-size:12px;color:#8A9E8A;margin-top:12px;text-align:center;">Réponse sous 48h — 07 69 73 79 61</p>
+      <p style="font-size:12px;color:#8A9E8A;margin-top:12px;text-align:center;">Réponse sous 48h — 04 23 33 03 23</p>
     </div>
     <div id="form-success" style="display:none;text-align:center;padding:24px 0;">
       <div style="font-size:48px;margin-bottom:16px;">✓</div>
@@ -470,8 +470,8 @@
         document.getElementById('form-container').style.display = 'none';
         document.getElementById('form-success').style.display = 'block';
         setTimeout(closeModal, 3000);
-      } else { btn.textContent = 'Envoyer ma demande →'; btn.disabled = false; alert('Erreur. Appelez-nous au 07 69 73 79 61'); }
-    } catch(err) { btn.textContent = 'Envoyer ma demande →'; btn.disabled = false; alert('Erreur. Appelez-nous au 07 69 73 79 61'); }
+      } else { btn.textContent = 'Envoyer ma demande →'; btn.disabled = false; alert('Erreur. Appelez-nous au 04 23 33 03 23'); }
+    } catch(err) { btn.textContent = 'Envoyer ma demande →'; btn.disabled = false; alert('Erreur. Appelez-nous au 04 23 33 03 23'); }
   }
   document.addEventListener('DOMContentLoaded', function(){
     var modal = document.getElementById('contact-modal');
@@ -647,12 +647,12 @@
       });
       var data=await res.json();
       hideTyping();
-      var reply=data.reply || "Désolé, une erreur est survenue. Appelez-nous au 07 69 73 79 61.";
+      var reply=data.reply || "Désolé, une erreur est survenue. Appelez-nous au 04 23 33 03 23.";
       botMsg(reply);
       history.push({role:'assistant', content:reply});
     }catch(e){
       hideTyping();
-      botMsg("Désolé, une erreur est survenue. Appelez-nous au 07 69 73 79 61.");
+      botMsg("Désolé, une erreur est survenue. Appelez-nous au 04 23 33 03 23.");
     }
     busy=false;
     document.getElementById('lph-chat-send').disabled=false;

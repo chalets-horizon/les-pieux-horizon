@@ -115,7 +115,7 @@
     SIRET : 978 225 225 00017<br>
     Siège social : 294 Grande Rue, 38470 L'Albenc, France<br>
     Représentant légal : Anthony Ouzeau, Président<br>
-    Téléphone : 07 69 73 79 61<br>
+    Téléphone : 04 23 33 03 23<br>
     Email : <a href="mailto:contact@chalets-horizon.com">contact@chalets-horizon.com</a>
   </p>
 
@@ -144,7 +144,7 @@
   <p>Les présentes mentions légales sont soumises au droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
 
   <h2>Contact</h2>
-  <p>Pour toute question relative au site ou à son contenu, vous pouvez nous contacter à l'adresse suivante : <a href="mailto:contact@chalets-horizon.com">contact@chalets-horizon.com</a> ou par téléphone au 07 69 73 79 61.</p>
+  <p>Pour toute question relative au site ou à son contenu, vous pouvez nous contacter à l'adresse suivante : <a href="mailto:contact@chalets-horizon.com">contact@chalets-horizon.com</a> ou par téléphone au 04 23 33 03 23.</p>
 </div>
 
 <footer>
@@ -191,7 +191,7 @@
           </div>
         </div>
         <button id="submit-btn" onclick="submitForm()" style="width:100%;background:#1B5E3B;color:white;border:none;padding:14px;font-family:'Inter',sans-serif;font-size:16px;font-weight:700;border-radius:2px;cursor:pointer;">Envoyer ma demande →</button>
-        <p style="font-size:12px;color:#8A9E8A;margin-top:12px;text-align:center;">Réponse sous 48h — 07 69 73 79 61</p>
+        <p style="font-size:12px;color:#8A9E8A;margin-top:12px;text-align:center;">Réponse sous 48h — 04 23 33 03 23</p>
       </div>
 
       <!-- SUCCÈS -->
@@ -269,12 +269,12 @@
         } else {
           btn.textContent = 'Envoyer ma demande →';
           btn.disabled = false;
-          alert('Erreur lors de l\'envoi. Appelez-nous au 07 69 73 79 61');
+          alert('Erreur lors de l\'envoi. Appelez-nous au 04 23 33 03 23');
         }
       } catch(err) {
         btn.textContent = 'Envoyer ma demande →';
         btn.disabled = false;
-        alert('Erreur lors de l\'envoi. Appelez-nous au 07 69 73 79 61');
+        alert('Erreur lors de l\'envoi. Appelez-nous au 04 23 33 03 23');
       }
     }
 
@@ -455,12 +455,12 @@
       });
       var data=await res.json();
       hideTyping();
-      var reply=data.reply || "Désolé, une erreur est survenue. Appelez-nous au 07 69 73 79 61.";
+      var reply=data.reply || "Désolé, une erreur est survenue. Appelez-nous au 04 23 33 03 23.";
       botMsg(reply);
       history.push({role:'assistant', content:reply});
     }catch(e){
       hideTyping();
-      botMsg("Désolé, une erreur est survenue. Appelez-nous au 07 69 73 79 61.");
+      botMsg("Désolé, une erreur est survenue. Appelez-nous au 04 23 33 03 23.");
     }
     busy=false;
     document.getElementById('lph-chat-send').disabled=false;
