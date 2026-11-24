@@ -1,13 +1,1017 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="robots" content="noindex,nofollow">
-<meta http-equiv="refresh" content="0; url=https://chatbot-pieux-horizon.a-ouzeau.workers.dev/login">
-<title>Back-office – Les Pieux Horizon</title>
-<script>location.replace('https://chatbot-pieux-horizon.a-ouzeau.workers.dev/login');</script>
+  <!-- Google tag (gtag.js) avec Consent Mode -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18281633129"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    // Consentement refusé par défaut — RGPD
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+    gtag('js', new Date());
+    gtag('config', 'AW-18281633129');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Spécialiste fondations vissées en zone alpine. Poseur référent Weasyfix, franchise Vistech. Terrasses, chalets, ERP, VRD. Devis gratuit sous 48h — 04 23 33 03 23.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.les-pieux-horizon.com/">
+  <meta property="og:title" content="Les Pieux Horizon — Fondations vissées sans béton | Isère, Savoie, Drôme, Ardèche">
+  <meta property="og:description" content="Spécialiste fondations vissées en zone alpine. Poseur référent Weasyfix, franchise Vistech. Terrasses, chalets, ERP, VRD. Devis gratuit sous 48h — 04 23 33 03 23.">
+  <meta property="og:url" content="https://www.les-pieux-horizon.com/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Les Pieux Horizon">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="keywords" content="fondations vissées, pieux vissés, fondation sans béton, Weasyfix, Vistech, Isère, Savoie, Drôme, Ardèche, terrasse sans béton, fondation chalet">
+  <title>Les Pieux Horizon — Fondations vissées sans béton | Isère, Savoie, Drôme, Ardèche</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #EDF1EA;
+      --bg-2: #E2E9DE;
+      --text: #17251C;
+      --muted: #56685A;
+      --green: #1B5E3B;
+      --green-dark: #134A2D;
+      --green-light: rgba(27,94,59,0.08);
+      --border: rgba(26,46,31,0.12);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    .logo-main { font-size: 18px; font-weight: 900; letter-spacing: 0.04em; color: var(--text); text-transform: uppercase; display: block; }
+    .logo-sub { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+    .nav-cta:hover { background: var(--green-dark); }
+
+    /* HERO */
+    .hero { padding: 80px 48px; position: relative; overflow: hidden; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .hero::before { content: ''; position: absolute; top: -100px; right: -80px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(74,140,92,0.1) 0%, transparent 70%); pointer-events: none; }
+    .hero-tag { display: inline-block; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); border: 0.5px solid var(--green); padding: 5px 14px; border-radius: 2px; margin-bottom: 28px; }
+    .hero-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(44px, 5.5vw, 72px); font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; color: var(--text); margin-bottom: 20px; }
+    .hero-title em { font-style: normal; color: var(--green); }
+    .hero-sub { font-size: 19px; color: var(--muted); max-width: 560px; margin-bottom: 44px; line-height: 1.65; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 80px; }
+    .btn-primary { background: var(--green); color: white; border: none; padding: 16px 32px; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.03em; cursor: pointer; border-radius: 2px; text-decoration: none; display: inline-block; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--green-dark); }
+    .btn-ghost { background: transparent; color: var(--text); border: 0.5px solid rgba(26,46,31,0.25); padding: 16px 32px; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; border-radius: 2px; text-decoration: none; display: inline-block; transition: border-color 0.2s; }
+    .btn-ghost:hover { border-color: rgba(26,46,31,0.4); }
+    .hero-stats { display: flex; gap: 32px; padding-top: 48px; border-top: 0.5px solid var(--border); flex-wrap: nowrap; }
+    .stat-val { font-size: 32px; font-weight: 900; color: var(--text); line-height: 1; }
+    .stat-label { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; margin-top: 6px; }
+
+    /* SECTION LABELS */
+    .section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+
+    /* PROBLÈME */
+    .problem { padding: 80px 48px; background: var(--bg-2); }
+    .problem-inner { max-width: 1200px; margin: 0 auto; }
+    .problem-title { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-bottom: 36px; }
+    .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: rgba(26,46,31,0.06); border: 0.5px solid rgba(26,46,31,0.06); }
+    .problem-item { background: var(--bg-2); padding: 32px 28px; }
+    .problem-icon { font-size: 32px; margin-bottom: 16px; }
+    .problem-text { font-size: 17px; font-weight: 600; color: var(--text); line-height: 1.4; }
+    .problem-answer { font-size: 14px; color: var(--green); margin-top: 10px; font-weight: 600; }
+
+    /* SOLUTION */
+    .solution { padding: 80px 48px; }
+    .solution-inner { max-width: 1200px; margin: 0 auto; }
+    .solution-title { font-family: 'Space Grotesk', sans-serif; font-size: 40px; color: var(--text); margin-bottom: 48px; max-width: 520px; line-height: 1.2; }
+    .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .solution-card { background: var(--bg-2); border: 0.5px solid var(--border); padding: 28px; border-radius: 2px; text-decoration: none; display: block; transition: border-color 0.2s, background 0.2s; }
+    .solution-card:hover { border-color: var(--green); background: rgba(27,94,59,0.08); }
+    .solution-card-arrow { font-size: 13px; color: var(--green); font-weight: 700; margin-top: 16px; display: block; }
+    .solution-num { font-size: 12px; color: var(--green); letter-spacing: 0.12em; margin-bottom: 14px; font-weight: 700; text-transform: uppercase; }
+    .solution-name { font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .solution-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
+    .solution-badge { display: inline-block; font-size: 11px; color: var(--green); border: 0.5px solid var(--green); padding: 4px 10px; border-radius: 2px; margin-top: 16px; letter-spacing: 0.05em; }
+
+    /* QUALIFICATEUR */
+    .qualifier { padding: 80px 48px; background: var(--bg-2); }
+    .qualifier-inner { max-width: 1200px; margin: 0 auto; }
+    .qualifier-title { font-family: 'Space Grotesk', sans-serif; font-size: 40px; color: var(--text); margin-bottom: 12px; }
+    .qualifier-sub { font-size: 16px; color: var(--muted); margin-bottom: 48px; }
+    .q-title { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 10px; }
+    .q-section { margin-bottom: 28px; }
+    .q-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+    .q-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .q-card { background: var(--bg); border: 0.5px solid rgba(26,46,31,0.1); border-radius: 2px; padding: 14px 16px; cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+    .q-card:hover { border-color: rgba(26,46,31,0.25); }
+    .q-card.sel { border: 1.5px solid var(--green); background: rgba(74,140,92,0.1); }
+    .q-card.sel-no { border: 1.5px solid #E24B4A; background: rgba(226,75,74,0.08); }
+    .q-card.sel-warn { border: 1.5px solid #BA7517; background: rgba(186,117,23,0.08); }
+    .q-card-label { font-size: 13px; font-weight: 700; color: var(--text); margin: 0 0 3px; }
+    .q-card-sub { font-size: 12px; color: var(--muted); margin: 0; }
+    .q-card.sel .q-card-label { color: var(--green); }
+    .q-card.sel-no .q-card-label { color: #E24B4A; }
+    .q-card.sel-warn .q-card-label { color: #BA7517; }
+    .q-result { border-radius: 4px; padding: 24px 28px; margin-top: 32px; }
+    .q-result.ok { background: rgba(74,140,92,0.1); border: 0.5px solid rgba(74,140,92,0.4); }
+    .q-result.info { background: rgba(24,95,165,0.1); border: 0.5px solid rgba(24,95,165,0.4); }
+    .q-result.warn { background: rgba(186,117,23,0.1); border: 0.5px solid rgba(186,117,23,0.4); }
+    .q-result.block { background: rgba(226,75,74,0.08); border: 0.5px solid rgba(226,75,74,0.3); }
+    .q-result.contact { background: rgba(186,117,23,0.1); border: 0.5px solid rgba(186,117,23,0.4); }
+    .q-result-title { font-size: 18px; font-weight: 700; margin: 0 0 8px; }
+    .q-result.ok .q-result-title { color: var(--green); }
+    .q-result.info .q-result-title { color: #5BA3D4; }
+    .q-result.warn .q-result-title { color: #EF9F27; }
+    .q-result.block .q-result-title { color: #E24B4A; }
+    .q-result.contact .q-result-title { color: #EF9F27; }
+    .q-result-body { font-size: 14px; margin: 0 0 16px; line-height: 1.65; color: var(--muted); }
+    .q-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+    .q-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; }
+    .q-tag.green { background: rgba(74,140,92,0.15); color: var(--green); }
+    .q-tag.amber { background: rgba(186,117,23,0.15); color: #EF9F27; }
+    .q-tag.blue { background: rgba(24,95,165,0.15); color: #5BA3D4; }
+    .q-tag.red { background: rgba(226,75,74,0.1); color: #E24B4A; }
+    .q-divider { border: none; border-top: 0.5px solid rgba(26,46,31,0.08); margin: 16px 0; }
+    .q-cta { display: flex; gap: 10px; flex-wrap: wrap; }
+    .q-btn { padding: 10px 20px; border-radius: 2px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; text-decoration: none; display: inline-block; transition: background 0.2s; }
+    .q-btn.green { background: var(--green); color: white; border: none; }
+    .q-btn.green:hover { background: var(--green-dark); }
+    .q-btn.amber { background: #BA7517; color: white; border: none; }
+    .q-btn.blue { background: #185FA5; color: white; border: none; }
+    .q-btn.red { background: #A32D2D; color: white; border: none; }
+    .q-btn.ghost { background: transparent; color: var(--text); border: 0.5px solid rgba(26,46,31,0.2); }
+    .q-btn.ghost:hover { border-color: rgba(26,46,31,0.35); }
+    #surface-section { transition: opacity 0.2s; }
+
+    /* CHEMINS */
+    .paths { padding: 80px 48px; }
+    .paths-inner { max-width: 1200px; margin: 0 auto; }
+    .paths-title { font-family: 'Space Grotesk', sans-serif; font-size: 40px; color: var(--text); margin-bottom: 36px; }
+    .paths-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .path { border: 0.5px solid rgba(26,46,31,0.1); padding: 32px 28px; border-radius: 2px; transition: border-color 0.2s; }
+    .path:hover { border-color: rgba(74,140,92,0.5); }
+    .path.featured { border-color: var(--green); background: rgba(74,140,92,0.06); }
+    .path-title { font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .path-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
+    .path-arrow { font-size: 14px; color: var(--green); font-weight: 700; text-decoration: none; }
+
+    /* ZONE */
+    .zone { padding: 80px 48px; background: var(--bg-2); }
+    .zone-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .zone-title { font-family: 'Space Grotesk', sans-serif; font-size: 36px; color: var(--text); margin-bottom: 20px; line-height: 1.2; }
+    .zone-text { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; }
+    .depts { display: flex; flex-wrap: wrap; gap: 8px; }
+    .dept { background: rgba(74,140,92,0.12); border: 0.5px solid var(--green); color: var(--green); padding: 7px 16px; font-size: 13px; font-weight: 700; border-radius: 2px; }
+    .zone-visual { background: var(--bg); border: 0.5px solid var(--border); border-radius: 4px; padding: 32px; }
+    .zone-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 0.5px solid rgba(26,46,31,0.05); }
+    .zone-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .zone-city { font-size: 15px; font-weight: 600; color: var(--text); }
+    .zone-dept { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .zone-time { font-size: 14px; color: var(--green); font-weight: 700; }
+
+    /* CTA */
+    .cta-section { padding: 100px 48px; text-align: center; border-top: 0.5px solid var(--border); }
+    .cta-title { font-family: 'Space Grotesk', sans-serif; font-size: 52px; color: var(--text); margin-bottom: 16px; line-height: 1.1; }
+    .cta-sub { font-size: 18px; color: var(--muted); margin-bottom: 36px; }
+    .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta-phone { font-size: 26px; font-weight: 900; color: var(--green); letter-spacing: 0.05em; margin-top: 28px; display: block; }
+
+    /* FOOTER */
+    footer { padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid rgba(26,46,31,0.05); flex-wrap: wrap; gap: 12px; }
+    .footer-logo { font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: 0.05em; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 12px; color: rgba(138,158,138,0.6); text-decoration: none; }
+    .footer-copy { font-size: 12px; color: rgba(138,158,138,0.4); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero, .problem, .solution, .qualifier, .paths, .zone, .cta-section { padding-left: 20px; padding-right: 20px; }
+      .solution-grid, .paths-grid { grid-template-columns: 1fr; }
+      .zone-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-stats { gap: 28px; }
+      footer { padding: 20px; flex-direction: column; align-items: flex-start; }
+    }
+  
+    nav { display:flex; align-items:center; padding:0; border-bottom:0.5px solid var(--border); position:sticky; top:0; background:var(--bg); z-index:100; }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; width:100%; max-width:1296px; margin:0 auto; padding:20px 48px; }
+    .nav-logo { text-decoration:none; font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:500; letter-spacing:0.08em; color:var(--text); text-transform:uppercase; }
+    .nav-links { display:flex; gap:32px; align-items:center; }
+    .nav-links > a { font-size:14px; color:var(--muted); text-decoration:none; letter-spacing:0.05em; transition:color 0.2s; }
+    .nav-links > a:hover { color:var(--text); }
+    .nav-drop { position:relative; }
+    .nav-drop-trigger { font-size:14px; color:var(--muted); text-decoration:none; letter-spacing:0.05em; cursor:pointer; background:none; border:none; font-family:'Inter',sans-serif; padding:0; }
+    .nav-drop-trigger:hover { color:var(--text); }
+    .nav-drop-menu { display:none; position:absolute; top:calc(100% + 12px); left:0; background:var(--bg-2); border:0.5px solid var(--border); border-radius:4px; padding:8px 0; min-width:260px; z-index:200; box-shadow:0 8px 32px rgba(0,0,0,0.5); }
+    .nav-drop::after { content:''; position:absolute; left:0; right:0; top:100%; height:16px; }
+    .nav-drop:hover .nav-drop-menu, .nav-drop.open .nav-drop-menu { display:block; }
+    .nav-drop-menu a { display:block; padding:11px 20px; font-size:14px; color:var(--muted); text-decoration:none; transition:background 0.15s, color 0.15s; }
+    .nav-drop-menu a:hover { background:rgba(27,94,59,0.12); color:var(--text); }
+    .nav-drop-menu .nav-drop-divider { border:none; border-top:0.5px solid var(--border); margin:4px 0; }
+    .nav-cta { background:var(--green); color:white; border:none; padding:11px 22px; font-family:'Inter',sans-serif; font-size:14px; font-weight:700; cursor:pointer; border-radius:2px; text-decoration:none; transition:background 0.2s; }
+    .nav-cta:hover { background:var(--green-dark, #134A2D); }
+    @media(max-width:768px) { .nav-links { display:none; } .nav-inner { padding:16px 20px; } }
+  </style>
 </head>
 <body>
-<p><a href="https://chatbot-pieux-horizon.a-ouzeau.workers.dev/login">Accéder au back-office</a></p>
+
+  <nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">LES PIEUX HORIZON</a>
+    <div class="nav-links">
+      <div class="nav-drop">
+        <button class="nav-drop-trigger">Nos prestations ▾</button>
+        <div class="nav-drop-menu">
+          <a href="weasyfix.html">Weasyfix — Structures légères</a>
+          <a href="vistech.html">Vistech — Structures lourdes</a>
+          <a href="vrd-terrassement.html">VRD & Terrassement</a>
+          <hr class="nav-drop-divider">
+          <a href="index.html#prestations">Voir toutes les prestations</a>
+        </div>
+      </div>
+      <a href="index.html#qualifier">Qualifier mon projet</a>
+      <a href="a-propos.html">À propos</a>
+    </div>
+    <a href="#" onclick="openModal('Demande via bouton Devis gratuit');return false;" class="nav-cta">Devis gratuit</a>
+  </div>
+</nav>
+
+  <section class="hero">
+    <div>
+      <div class="hero-tag">Constructeur bois sans béton — zone alpine</div>
+      <h1 class="hero-title">Construire<br>sans <em>laisser de trace.</em></h1>
+      <p class="hero-sub">Nous posons des fondations vissées qui respectent votre terrain : sans béton, sans excavation, en une seule journée. Notre conviction, c'est que l'on peut bâtir solide sans abîmer ce qui nous entoure. En Isère, Savoie, Haute-Savoie, Drôme et Ardèche.</p>
+      <div class="hero-actions">
+        <a href="#qualifier" class="btn-primary">Qualifier mon projet</a>
+        <a href="#prestations" class="btn-ghost">Découvrir la solution</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-val">1 jour</div><div class="stat-label">Durée de pose</div></div>
+        <div><div class="stat-val">5 dép.</div><div class="stat-label">Zone couverte</div></div>
+        <div><div class="stat-val">0 béton</div><div class="stat-label">Sans excavation</div></div>
+        <div><div class="stat-val">48h</div><div class="stat-label">Délai de devis</div></div>
+      </div>
+    </div>
+    <div style="position:relative;">
+      <img src="weasyfix-ponton.jpg" alt="Ponton bois sur l'eau en forêt — construire sans laisser de trace" style="width:100%;height:560px;object-fit:cover;border-radius:4px;display:block;">
+      <div style="position:absolute;bottom:16px;left:16px;background:rgba(13,26,18,0.85);backdrop-filter:blur(4px);padding:10px 16px;border-radius:2px;font-size:12px;color:var(--muted);letter-spacing:0.05em;">Ponton & kiosque bois en forêt — terrain naturel préservé</div>
+    </div>
+  </section>
+
+  <section class="problem">
+    <div class="problem-inner">
+      <div class="problem-title">Ce que l'on entend souvent</div>
+      <div class="problem-grid">
+        <div class="problem-item">
+          <div class="problem-text">« Mon terrain est en pente, on m'a dit qu'une dalle béton était impossible. »</div>
+          <div class="problem-answer">On pose sur pente, même à 30 % de dénivelé. Le pieu s'adapte au sol, pas l'inverse.</div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-text">« Je ne veux pas voir mon jardin retourné par les engins. »</div>
+          <div class="problem-answer">Zéro excavation. On visse, on ne creuse pas. Votre terrain reste comme il est.</div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-text">« Mon accès est trop étroit pour une toupie ou une bétonnière. »</div>
+          <div class="problem-answer">Notre matériel est léger et passe là où le béton ne passe pas.</div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-text">« Je ne peux pas attendre des semaines de séchage. »</div>
+          <div class="problem-answer">Fondation posée le matin, structure montée l'après-midi. Pas de temps mort.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="solution" id="prestations">
+    <div class="solution-inner">
+      <div class="section-label">Notre approche</div>
+      <h2 class="solution-title">Le spécialiste du pieu vissé en zone alpine</h2>
+      <div class="solution-grid">
+        <a href="weasyfix.html" class="solution-card" style="border:1.5px solid rgba(27,94,59,0.4);position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);"></div>
+          <div class="solution-num">Weasyfix</div>
+          <div class="solution-name">Structures légères</div>
+          <div class="solution-desc">Terrasses, pergolas, carports, studios de jardin, clôtures, panneaux solaires. Pieux de <strong>55 cm à 175 cm</strong> — charge recommandée 750 kg/vis (DTU 51.4).</div>
+          <div class="solution-badge">Poseur référent — 07, 26, 38, 73</div>
+          <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:13px;color:var(--green);font-weight:700;">Découvrir →</span>
+            <span style="font-size:11px;color:var(--muted);background:rgba(27,94,59,0.1);padding:4px 10px;border-radius:2px;">Cliquez pour en savoir plus</span>
+          </div>
+        </a>
+        <a href="vistech.html" class="solution-card" style="border:1.5px solid rgba(27,94,59,0.4);position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);"></div>
+          <div class="solution-num">Vistech</div>
+          <div class="solution-name">Structures lourdes</div>
+          <div class="solution-desc">Chalets, maisons ossature bois, constructions avec plancher, jacuzzis, conteneurs. Pieux hydrauliques de <strong>2 m à 30 m</strong> — pour les terrains que Weasyfix ne peut pas couvrir.</div>
+          <div class="solution-badge">ATec CSTB en cours</div>
+          <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:13px;color:var(--green);font-weight:700;">Découvrir →</span>
+            <span style="font-size:11px;color:var(--muted);background:rgba(27,94,59,0.1);padding:4px 10px;border-radius:2px;">Cliquez pour en savoir plus</span>
+          </div>
+        </a>
+        <a href="vrd-terrassement.html" class="solution-card" style="border:1.5px solid rgba(27,94,59,0.4);position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);"></div>
+          <div class="solution-num">Clé en main</div>
+          <div class="solution-name">Préparation de site complète</div>
+          <div class="solution-desc">Terrassement, VRD et fondations vissées coordonnés en une seule intervention. Un seul interlocuteur depuis le premier coup de pelle jusqu'à la pose des fondations.</div>
+          <div class="solution-badge">Devis sur mesure</div>
+          <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:13px;color:var(--green);font-weight:700;">Découvrir →</span>
+            <span style="font-size:11px;color:var(--muted);background:rgba(27,94,59,0.1);padding:4px 10px;border-radius:2px;">Cliquez pour en savoir plus</span>
+          </div>
+        </a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="qualifier" id="qualifier">
+    <div class="qualifier-inner">
+      <div class="section-label">Qualification de projet</div>
+      <h2 class="qualifier-title">Quel est votre projet ?</h2>
+      <p class="qualifier-sub">Répondez à quelques questions — on vous indique la marche à suivre.</p>
+
+      <div class="q-section">
+        <p class="q-title">Type de structure</p>
+        <div class="q-grid" id="struct-grid">
+          <div class="q-card sel" data-val="terrasse-bois" data-surface="1" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Terrasse bois</p><p class="q-card-sub">pin, douglas, mélèze</p></div>
+          <div class="q-card" data-val="terrasse-composite" data-surface="1" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Terrasse composite</p><p class="q-card-sub">lames composites</p></div>
+          <div class="q-card" data-val="terrasse-gres" data-surface="1" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Terrasse grès cérame</p><p class="q-card-sub">sur structure acier</p></div>
+          <div class="q-card" data-val="pergola" data-surface="1" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Pergola / carport</p><p class="q-card-sub">structure légère</p></div>
+          <div class="q-card" data-val="construction-plancher" data-surface="1" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Construction avec plancher</p><p class="q-card-sub">chalets, studios, MOB</p></div>
+          <div class="q-card" data-val="construction-sans-plancher" data-surface="1" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Construction sans plancher</p><p class="q-card-sub">abris ouverts, préaux</p></div>
+          <div class="q-card" data-val="jacuzzi" data-surface="0" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Jacuzzi / conteneur</p><p class="q-card-sub">charge ponctuelle lourde</p></div>
+          <div class="q-card" data-val="solaire" data-surface="0" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Panneaux solaires</p><p class="q-card-sub">structure au sol</p></div>
+          <div class="q-card" data-val="cloture" data-surface="0" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Clôture</p><p class="q-card-sub">panneaux rigides, bois</p></div>
+          <div class="q-card" data-val="poteau" data-surface="0" onclick="qsel(this,'struct-grid')"><p class="q-card-label">Poteau isolé</p><p class="q-card-sub">portail, enseigne, éclairage</p></div>
+        </div>
+      </div>
+
+      <div class="q-section" id="surface-section">
+        <p class="q-title">Surface au sol</p>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <input type="range" min="4" max="300" value="20" step="1" id="surface-slider" oninput="qupdate()" style="flex:1;accent-color:#4A8C5C;">
+          <span style="font-size:28px;font-weight:900;color:var(--green);min-width:50px;" id="surface-val">20</span>
+          <span style="font-size:15px;color:#8A9E8A;">m²</span>
+        </div>
+      </div>
+
+      <div class="q-section">
+        <p class="q-title">Nature du sol</p>
+        <div class="q-grid" id="sol-grid">
+          <div class="q-card sel" data-val="normal" onclick="qsel(this,'sol-grid')"><p class="q-card-label">Terre / limon</p><p class="q-card-sub">sol standard</p></div>
+          <div class="q-card" data-val="argile" onclick="qsel(this,'sol-grid')"><p class="q-card-label">Argile</p><p class="q-card-sub">sol plastique</p></div>
+          <div class="q-card" data-val="sable" onclick="qsel(this,'sol-grid')"><p class="q-card-label">Sable / remblai</p><p class="q-card-sub">portance réduite</p></div>
+          <div class="q-card" data-val="rocher" onclick="qsel(this,'sol-grid')"><p class="q-card-label">Rocher / grave</p><p class="q-card-sub">sol dur</p></div>
+        </div>
+      </div>
+
+      <div class="q-section">
+        <p class="q-title">Le sol est-il stabilisé depuis au moins 18 mois ?</p>
+        <div class="q-grid-2" id="stabilise-grid">
+          <div class="q-card sel" data-val="oui" onclick="qbin(this,'stabilise-grid','oui')"><p class="q-card-label">Oui</p><p class="q-card-sub">sol naturel ou remblai ancien</p></div>
+          <div class="q-card" data-val="non" onclick="qbin(this,'stabilise-grid','non')"><p class="q-card-label">Non / je ne sais pas</p><p class="q-card-sub">remblai récent ou incertain</p></div>
+        </div>
+      </div>
+
+      <div class="q-section">
+        <p class="q-title">Déclivité du terrain</p>
+        <div class="q-grid" id="pente-grid">
+          <div class="q-card sel" data-val="plat" onclick="qsel(this,'pente-grid')"><p class="q-card-label">Plat</p><p class="q-card-sub">0 à 5 %</p></div>
+          <div class="q-card" data-val="legere" onclick="qsel(this,'pente-grid')"><p class="q-card-label">Légère</p><p class="q-card-sub">5 à 15 %</p></div>
+          <div class="q-card" data-val="forte" onclick="qsel(this,'pente-grid')"><p class="q-card-label">Forte</p><p class="q-card-sub">15 à 30 %</p></div>
+          <div class="q-card" data-val="extreme" onclick="qsel(this,'pente-grid')"><p class="q-card-label">Très forte</p><p class="q-card-sub">30 %+</p></div>
+        </div>
+      </div>
+
+      <div class="q-section">
+        <p class="q-title">Zone</p>
+        <div class="q-grid" id="zone-grid">
+          <div class="q-card sel" data-val="plaine" onclick="qsel(this,'zone-grid')"><p class="q-card-label">Plaine / vallée</p><p class="q-card-sub">26, 07, 38 bas</p></div>
+          <div class="q-card" data-val="mi-altitude" onclick="qsel(this,'zone-grid')"><p class="q-card-label">Mi-altitude</p><p class="q-card-sub">400 à 1000 m</p></div>
+          <div class="q-card" data-val="altitude" onclick="qsel(this,'zone-grid')"><p class="q-card-label">Altitude</p><p class="q-card-sub">1000 m et plus</p></div>
+        </div>
+      </div>
+
+      <div class="q-section">
+        <p class="q-title">Avez-vous un plan ou un calepinage de votre structure ?</p>
+        <div class="q-grid-2" id="plan-grid">
+          <div class="q-card sel" data-val="oui" onclick="qbin(this,'plan-grid','oui')"><p class="q-card-label">Oui, je l'ai</p><p class="q-card-sub">plan, notice, croquis coté</p></div>
+          <div class="q-card" data-val="non" onclick="qbin(this,'plan-grid','non')"><p class="q-card-label">Non, pas encore</p><p class="q-card-sub">projet en cours de définition</p></div>
+        </div>
+      </div>
+
+      <div id="q-result"></div>
+    </div>
+  </section>
+
+  <section class="paths">
+    <div class="paths-inner">
+      <h2 class="paths-title">Trois façons de travailler avec nous</h2>
+      <div class="paths-grid">
+        <div class="path featured">
+          <div class="path-title">Je fais poser</div>
+          <div class="path-desc">Visite terrain, dimensionnement, fourniture et pose clé en main. Devis sous 48h sur transmission du calepinage.</div>
+          <a href="#qualifier" class="path-arrow">Qualifier mon projet →</a>
+        </div>
+        <div class="path">
+          <div class="path-title">Je pose moi-même</div>
+          <div class="path-desc">Location de visseuse, vente de vis Weasyfix, guide de pose. Livraison sur zone 07-26-38-73-74.</div>
+          <a href="tel:0423330323" class="path-arrow">Nous appeler →</a>
+        </div>
+        <div class="path">
+          <div class="path-title">Je suis professionnel</div>
+          <div class="path-desc">Fabricants, distributeurs, paysagistes, piscinistes. Partenariats pose et prescription sur toute la France.</div>
+          <a href="tel:0423330323" class="path-arrow">Nous contacter →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="zone" id="zone">
+    <div class="zone-inner">
+      <div>
+        <div class="section-label">Zone d'intervention</div>
+        <h2 class="zone-title">Du fond de vallée aux terrains d'altitude</h2>
+        <p class="zone-text">Nous intervenons sur 5 départements alpins et rhodaniens. Terrains plats, en pente, en altitude, accès difficiles — c'est notre quotidien depuis L'Albenc en Isère.</p>
+        <div class="depts">
+          <span class="dept">38 — Isère</span>
+          <span class="dept">73 — Savoie</span>
+          <span class="dept">74 — Haute-Savoie</span>
+          <span class="dept">26 — Drôme</span>
+          <span class="dept">07 — Ardèche</span>
+        </div>
+      </div>
+      <div class="zone-visual">
+        <div class="zone-item"><div><div class="zone-city">Grenoble</div><div class="zone-dept">Isère — 38</div></div><div class="zone-time">30 min</div></div>
+        <div class="zone-item"><div><div class="zone-city">Chambéry</div><div class="zone-dept">Savoie — 73</div></div><div class="zone-time">45 min</div></div>
+        <div class="zone-item"><div><div class="zone-city">Annecy</div><div class="zone-dept">Haute-Savoie — 74</div></div><div class="zone-time">1h</div></div>
+        <div class="zone-item"><div><div class="zone-city">Valence</div><div class="zone-dept">Drôme — 26</div></div><div class="zone-time">1h</div></div>
+        <div class="zone-item"><div><div class="zone-city">Privas</div><div class="zone-dept">Ardèche — 07</div></div><div class="zone-time">1h15</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2 class="cta-title">Votre projet en 48h.</h2>
+    <p class="cta-sub">Décrivez votre projet à Fernand, notre assistant : pour une terrasse, il vous prépare un chiffrage estimatif en quelques minutes ; sinon, on revient vers vous rapidement.</p>
+    <div class="cta-actions">
+      <a href="#" onclick="lphToggle();return false;" class="btn-primary">Parler à Fernand</a>
+      <a href="#qualifier" class="btn-ghost">Qualifier mon projet</a>
+      <a href="tel:0423330323" class="btn-ghost">Nous appeler</a>
+    </div>
+    <a href="tel:0423330323" class="cta-phone">04 23 33 03 23</a>
+  </section>
+
+  <footer>
+    <span style="font-family:'Inter',sans-serif;font-size:16px;font-weight:900;letter-spacing:0.12em;color:rgba(26,46,31,0.4);text-transform:uppercase;">LES PIEUX HORIZON</span>
+      </div>
+      </div>
+    <div class="footer-links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Politique de confidentialité</a>
+    </div>
+    <div class="footer-copy">© 2025 Les Pieux Horizon — Chalets Horizon SAS</div>
+  </footer>
+
+  <script>
+    const qstate = { stabilise: 'oui', plan: 'oui' };
+
+    function qsel(el, gridId) {
+      document.getElementById(gridId).querySelectorAll('.q-card').forEach(c => c.classList.remove('sel','sel-no','sel-warn'));
+      el.classList.add('sel');
+      const hasSurf = el.dataset.surface === '1';
+      document.getElementById('surface-section').style.display = hasSurf ? 'block' : 'none';
+      qupdate();
+    }
+
+    function qbin(el, gridId, val) {
+      document.getElementById(gridId).querySelectorAll('.q-card').forEach(c => c.classList.remove('sel','sel-no','sel-warn'));
+      const key = gridId === 'stabilise-grid' ? 'stabilise' : 'plan';
+      qstate[key] = val;
+      if (val === 'oui') el.classList.add('sel');
+      else if (key === 'stabilise') el.classList.add('sel-no');
+      else el.classList.add('sel-warn');
+      qupdate();
+    }
+
+    function qgetval(gridId) {
+      const s = document.getElementById(gridId).querySelector('.sel,.sel-no,.sel-warn');
+      return s ? s.dataset.val : '';
+    }
+
+    function qgetlabel(gridId) {
+      const s = document.getElementById(gridId).querySelector('.sel,.sel-no,.sel-warn');
+      return s ? s.querySelector('.q-card-label').textContent : '';
+    }
+
+    function qhasSurface() {
+      const s = document.getElementById('struct-grid').querySelector('.sel');
+      return s ? s.dataset.surface === '1' : true;
+    }
+
+    function qualify() {
+      const struct = qgetval('struct-grid');
+      const sol = qgetval('sol-grid');
+      const pente = qgetval('pente-grid');
+      const zone = qgetval('zone-grid');
+      const s = parseInt(document.getElementById('surface-slider').value);
+      const flags = [];
+      let score = 0;
+
+      if (sol === 'rocher') { score += 3; flags.push({ t: 'sol rocheux', c: 'amber' }); }
+      if (sol === 'sable') { score += 2; flags.push({ t: 'sol sableux', c: 'amber' }); }
+      if (sol === 'argile') { score += 1; flags.push({ t: 'sol argileux', c: 'amber' }); }
+      if (pente === 'extreme') { score += 3; flags.push({ t: 'pente > 30 %', c: 'amber' }); }
+      if (pente === 'forte') { score += 2; flags.push({ t: 'pente forte', c: 'amber' }); }
+      if (pente === 'legere') { score += 1; flags.push({ t: 'terrain en pente', c: 'blue' }); }
+      if (zone === 'altitude') { score += 1; flags.push({ t: 'zone altitude', c: 'blue' }); }
+      if (struct === 'construction-plancher') { score += 2; flags.push({ t: 'construction avec plancher', c: 'blue' }); }
+      if (struct === 'terrasse-gres') { score += 1; flags.push({ t: 'grès cérame / structure acier', c: 'blue' }); }
+      if (struct === 'jacuzzi') { score += 2; flags.push({ t: 'charge lourde ponctuelle', c: 'amber' }); }
+      if (qhasSurface() && s > 40) { score += 1; flags.push({ t: 'grande surface', c: 'blue' }); }
+      if (flags.length === 0) flags.push({ t: 'conditions standard', c: 'green' });
+      return { score, flags };
+    }
+
+    var _lastPrompt = "";
+    // Journal du qualificateur : chaque qualification est envoyée au Worker (sans coordonnées),
+    // après une interaction du visiteur, avec un délai pour ne pas envoyer à chaque clic.
+    window._qualifId = 'q' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+    var _qTouched = false, _qTimer = null;
+    document.addEventListener('DOMContentLoaded', function(){
+      var q = document.getElementById('qualifier');
+      if(q) q.addEventListener('click', function(){ _qTouched = true; }, true);
+      var sl = document.getElementById('surface-slider');
+      if(sl) sl.addEventListener('input', function(){ _qTouched = true; });
+    });
+    function qlog() {
+      if(!_qTouched || !window._lastQualif) return;
+      clearTimeout(_qTimer);
+      _qTimer = setTimeout(function(){
+        try {
+          var payload = Object.assign({ id: window._qualifId, page: location.href }, window._lastQualif);
+          fetch('https://chatbot-pieux-horizon.a-ouzeau.workers.dev/qualif', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload), keepalive: true }).catch(function(){});
+        } catch(e) {}
+      }, 2500);
+    }
+    function qupdate() {
+      const s = parseInt(document.getElementById('surface-slider').value);
+      document.getElementById('surface-val').textContent = s;
+
+      const { score, flags } = qualify();
+      const struct = qgetval('struct-grid');
+      const sLabel = qgetlabel('struct-grid');
+      const solLabel = qgetlabel('sol-grid');
+      const penteLabel = qgetlabel('pente-grid');
+      const zoneLabel = qgetlabel('zone-grid');
+      const surfStr = qhasSurface() ? ' de ' + s + ' m²' : '';
+      const projectSummary = sLabel + surfStr + ', sol ' + solLabel.toLowerCase() + ', pente ' + penteLabel.toLowerCase() + ', zone ' + zoneLabel.toLowerCase();
+      _lastPrompt = projectSummary;
+      const verdict = qstate.stabilise === 'non' ? 'Sol non stabilisé' : qstate.plan === 'non' ? 'Pas de plan' : score <= 1 ? 'Projet standard' : score <= 3 ? 'Projet avec spécificités' : 'Projet complexe';
+      window._lastQualif = { structure: sLabel, surface: qhasSurface() ? s : '', sol: solLabel, pente: penteLabel, zone: zoneLabel, stabilise: qstate.stabilise, plan: qstate.plan, verdict: verdict, tags: flags.map(f => f.t) };
+      qlog();
+      const tagsHtml = flags.map(f => `<span class="q-tag ${f.c}">${f.t}</span>`).join('');
+
+      let html = '';
+
+      if (qstate.stabilise === 'non') {
+        html = `<div class="q-result block">
+          <div class="q-result-title">Sol non stabilisé — intervention impossible</div>
+          <div class="q-result-body">Un sol remblayé ou modifié depuis moins de 18 mois n'offre pas une portance suffisante. Contactez-nous pour évaluer les options selon votre calendrier de projet.</div>
+          <div class="q-tags"><span class="q-tag red">sol non stabilisé</span></div>
+          <hr class="q-divider">
+          <div class="q-cta">
+            <a href="#" onclick="openModal(_lastPrompt ? 'Projet : ' + _lastPrompt + ' — sol non stabilisé' : 'Sol non stabilisé');return false;" class="q-btn red">Envoyer ma demande</a>
+            <a href="tel:0423330323" class="q-btn ghost">Nous appeler — 04 23 33 03 23</a>
+          </div>
+        </div>`;
+      } else if (qstate.plan === 'non') {
+        html = `<div class="q-result contact">
+          <div class="q-result-title">Pas de plan — contactez-nous d'abord</div>
+          <div class="q-result-body">Le calepinage de votre structure est indispensable pour établir un devis fiable. Appelez-nous, nous vous guidons pour préparer les éléments nécessaires.</div>
+          <div class="q-tags">${tagsHtml}</div>
+          <hr class="q-divider">
+          <div class="q-cta">
+            <a href="#" onclick="openModal(_lastPrompt ? 'Projet : ' + _lastPrompt + ' — pas de plan' : 'Pas de plan');return false;" class="q-btn amber">Envoyer ma demande</a>
+            <a href="tel:0423330323" class="q-btn ghost">Nous appeler — 04 23 33 03 23</a>
+          </div>
+        </div>`;
+      } else if (score <= 1) {
+        html = `<div class="q-result ok">
+          <div class="q-result-title">Projet standard — devis sous 48h</div>
+          <div class="q-result-body">Votre projet ne présente pas de complexité particulière. Envoyez-nous votre plan et nous revenons vers vous sous 48h.</div>
+          <div class="q-tags">${tagsHtml}</div>
+          <hr class="q-divider">
+          <div class="q-cta">
+            <a href="#" onclick="openModal(_lastPrompt ? 'Projet : ' + _lastPrompt : '');return false;" class="q-btn green">Envoyer ma demande</a>
+            <a href="tel:0423330323" class="q-btn ghost">Nous appeler</a>
+          </div>
+        </div>`;
+      } else if (score <= 3) {
+        html = `<div class="q-result info">
+          <div class="q-result-title">Projet avec spécificités — parlons-en</div>
+          <div class="q-result-body">Votre terrain présente quelques points d'attention. Transmettez-nous votre plan avec votre demande et nous revenons vers vous rapidement.</div>
+          <div class="q-tags">${tagsHtml}</div>
+          <hr class="q-divider">
+          <div class="q-cta">
+            <a href="#" onclick="openModal(_lastPrompt ? 'Projet : ' + _lastPrompt : '');return false;" class="q-btn blue">Envoyer ma demande</a>
+            <a href="tel:0423330323" class="q-btn ghost">Être rappelé — 04 23 33 03 23</a>
+          </div>
+        </div>`;
+      } else {
+        html = `<div class="q-result warn">
+          <div class="q-result-title">Projet complexe — visite terrain recommandée</div>
+          <div class="q-result-body">Votre terrain nécessite une visite préalable pour garantir un dimensionnement fiable et un prix sans mauvaise surprise.</div>
+          <div class="q-tags">${tagsHtml}</div>
+          <hr class="q-divider">
+          <div class="q-cta">
+            <a href="#" onclick="openModal(_lastPrompt ? 'Projet : ' + _lastPrompt : '');return false;" class="q-btn amber">Envoyer ma demande</a>
+            <a href="tel:0423330323" class="q-btn ghost">Planifier une visite — 04 23 33 03 23</a>
+          </div>
+        </div>`;
+      }
+
+      document.getElementById('q-result').innerHTML = html;
+    }
+
+    qupdate();
+  </script>
+
+
+  
+
+  <!-- MODAL FORMULAIRE CONTACT -->
+  <div id="contact-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);z-index:1000;align-items:center;justify-content:center;">
+    <div style="background:#FFFFFF;border:0.5px solid rgba(26,46,31,0.12);border-radius:8px;padding:48px;max-width:480px;width:90%;position:relative;max-height:90vh;overflow-y:auto;">
+      <button onclick="closeModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#8A9E8A;font-size:28px;cursor:pointer;line-height:1;">×</button>
+
+      <!-- FORMULAIRE -->
+      <div id="form-container">
+        <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#1B5E3B;margin-bottom:12px;">Demande de devis</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:26px;color:var(--text);margin-bottom:8px;">Vos coordonnées</h2>
+        <p style="font-size:14px;color:#8A9E8A;margin-bottom:28px;line-height:1.6;">Nous revenons vers vous sous 48h.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div>
+            <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Prénom *</label>
+            <input id="f-prenom" type="text" required placeholder="Antoine" style="width:100%;background:#E2E9DE;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
+          </div>
+          <div>
+            <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Nom *</label>
+            <input id="f-nom" type="text" required placeholder="Dupont" style="width:100%;background:#E2E9DE;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
+          </div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Téléphone *</label>
+          <input id="f-tel" type="tel" required placeholder="06 12 34 56 78" style="width:100%;background:#E2E9DE;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+          <div>
+            <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Code postal *</label>
+            <input id="f-cp" type="text" required placeholder="38000" style="width:100%;background:#E2E9DE;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
+          </div>
+          <div>
+            <label style="font-size:12px;color:#8A9E8A;letter-spacing:0.05em;display:block;margin-bottom:6px;">Email *</label>
+            <input id="f-email" type="email" required placeholder="vous@email.com" style="width:100%;background:#E2E9DE;border:0.5px solid rgba(26,46,31,0.2);border-radius:2px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);outline:none;box-sizing:border-box;">
+          </div>
+        </div>
+        <button id="submit-btn" onclick="submitForm()" style="width:100%;background:#1B5E3B;color:white;border:none;padding:14px;font-family:'Inter',sans-serif;font-size:16px;font-weight:700;border-radius:2px;cursor:pointer;">Envoyer ma demande →</button>
+        <p style="font-size:12px;color:#8A9E8A;margin-top:12px;text-align:center;">Réponse sous 48h — 04 23 33 03 23</p>
+      </div>
+
+      <!-- SUCCÈS -->
+      <div id="form-success" style="display:none;text-align:center;padding:24px 0;">
+        <div style="font-size:48px;margin-bottom:16px;">✓</div>
+        <div style="font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px;">Demande envoyée !</div>
+        <div style="font-size:14px;color:#8A9E8A;">Nous revenons vers vous sous 48h.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var _projectInfo = '';
+
+    function openModal(projectInfo) {
+      _projectInfo = projectInfo || '';
+      // Si le visiteur a utilisé le qualificateur, on joint toujours son résultat à la demande
+      if (typeof _qTouched !== 'undefined' && _qTouched && typeof _lastPrompt === 'string' && _lastPrompt && _projectInfo.indexOf(_lastPrompt) === -1) {
+        _projectInfo = 'Projet : ' + _lastPrompt + (window._lastQualif && window._lastQualif.verdict ? ' — ' + window._lastQualif.verdict : '') + (_projectInfo ? ' (' + _projectInfo + ')' : '');
+      }
+      document.getElementById('contact-modal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      document.getElementById('form-container').style.display = 'block';
+      document.getElementById('form-success').style.display = 'none';
+      var btn = document.getElementById('submit-btn');
+      if(btn){ btn.textContent = 'Envoyer ma demande →'; btn.disabled = false; }
+    }
+
+    function closeModal() {
+      document.getElementById('contact-modal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    async function submitForm() {
+      var prenom = document.getElementById('f-prenom').value.trim();
+      var nom = document.getElementById('f-nom').value.trim();
+      var tel = document.getElementById('f-tel').value.trim();
+      var cp = document.getElementById('f-cp').value.trim();
+      var email = document.getElementById('f-email').value.trim();
+
+      if(!prenom || !nom || !tel || !cp || !email) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      var btn = document.getElementById('submit-btn');
+      btn.textContent = 'Envoi en cours...';
+      btn.disabled = true;
+
+      var body = new FormData();
+      body.append('prenom', prenom);
+      body.append('nom', nom);
+      body.append('telephone', tel);
+      body.append('code_postal', cp);
+      body.append('email', email);
+      if(_projectInfo) body.append('projet', _projectInfo);
+      body.append('_subject', 'Nouvelle demande — Les Pieux Horizon');
+
+      // Copie de la demande vers HubSpot via le Worker (en parallèle, ne bloque pas l'email)
+      try {
+        fetch('https://chatbot-pieux-horizon.a-ouzeau.workers.dev/form', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prenom: prenom, nom: nom, telephone: tel, code_postal: cp, email: email, projet: _projectInfo || '', page: location.href, qualif: (window._lastQualif || null), qualifId: (window._qualifId || '') }),
+          keepalive: true
+        }).catch(function(){});
+      } catch(e) {}
+
+      try {
+        var response = await fetch('https://formspree.io/f/mlgzbezv', {
+          method: 'POST',
+          body: body,
+          headers: { 'Accept': 'application/json' }
+        });
+        if(response.ok) {
+          document.getElementById('form-container').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+          setTimeout(closeModal, 3000);
+        } else {
+          btn.textContent = 'Envoyer ma demande →';
+          btn.disabled = false;
+          alert('Erreur lors de l\'envoi. Appelez-nous au 04 23 33 03 23');
+        }
+      } catch(err) {
+        btn.textContent = 'Envoyer ma demande →';
+        btn.disabled = false;
+        alert('Erreur lors de l\'envoi. Appelez-nous au 04 23 33 03 23');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      var modal = document.getElementById('contact-modal');
+      if(modal) {
+        modal.addEventListener('click', function(e){
+          if(e.target === this) closeModal();
+        });
+      }
+    });
+  </script>
+<!-- CHATBOT IA LES PIEUX HORIZON -->
+<style>
+  #lph-chat-btn { position:fixed; bottom:24px; right:24px; width:60px; height:60px; border-radius:50%; background:#1B5E3B; border:none; cursor:pointer; z-index:9000; box-shadow:0 4px 20px rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; transition:transform 0.2s; }
+  #lph-chat-btn:hover { transform:scale(1.08); }
+  #lph-chat-btn svg { width:28px; height:28px; }
+  #lph-chat-teaser { position:fixed; bottom:34px; right:96px; max-width:250px; background:#fff; color:#1A2E1F; border:0.5px solid rgba(26,46,31,0.15); border-radius:12px; padding:12px 34px 12px 14px; font-size:13px; line-height:1.45; box-shadow:0 6px 24px rgba(26,46,31,0.14); z-index:9998; cursor:pointer; display:none; font-family:'Inter',system-ui,sans-serif; }
+  #lph-chat-teaser.show { display:block; animation:lphTeaserIn .35s ease; }
+  #lph-chat-teaser b { color:#1B5E3B; }
+  #lph-chat-teaser-x { position:absolute; top:6px; right:8px; background:none; border:none; color:#8A9E8A; font-size:18px; line-height:1; cursor:pointer; padding:2px 4px; }
+  @keyframes lphTeaserIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+  @media(max-width:480px){ #lph-chat-teaser { right:88px; bottom:26px; max-width:calc(100vw - 120px); } }
+  #lph-chat-badge { position:absolute; top:-4px; right:-4px; width:14px; height:14px; background:#E24B4A; border-radius:50%; border:2px solid #EDF1EA; }
+  #lph-chat-window { position:fixed; bottom:96px; right:24px; width:370px; max-width:calc(100vw - 32px); height:540px; max-height:calc(100vh - 140px); background:#FFFFFF; border:0.5px solid rgba(26,46,31,0.12); border-radius:12px; box-shadow:0 12px 48px rgba(26,46,31,0.18); z-index:9001; display:none; flex-direction:column; overflow:hidden; font-family:'Inter',sans-serif; }
+  #lph-chat-window.open { display:flex; }
+  #lph-chat-header { background:#E2E9DE; padding:16px 20px; display:flex; align-items:center; justify-content:space-between; border-bottom:0.5px solid rgba(26,46,31,0.08); }
+  #lph-chat-header-title { font-size:15px; font-weight:700; color:var(--text); display:flex; align-items:center; gap:8px; }
+  #lph-chat-header-title::before { content:''; width:8px; height:8px; border-radius:50%; background:#4ADE80; display:inline-block; }
+  #lph-chat-header-sub { font-size:11px; color:#8A9E8A; margin-top:2px; }
+  #lph-chat-close { background:none; border:none; color:#8A9E8A; font-size:22px; cursor:pointer; line-height:1; padding:4px; }
+  #lph-chat-body { flex:1; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:12px; }
+  .lph-msg-bot { background:rgba(27,94,59,0.08); border:0.5px solid rgba(27,94,59,0.2); border-radius:10px 10px 10px 2px; padding:12px 14px; font-size:14px; color:var(--text); line-height:1.5; max-width:88%; align-self:flex-start; white-space:pre-wrap; }
+  .lph-msg-user { background:#1B5E3B; border-radius:10px 10px 2px 10px; padding:10px 14px; font-size:14px; color:white; max-width:80%; align-self:flex-end; font-weight:600; white-space:pre-wrap; }
+  .lph-typing { display:flex; gap:4px; padding:14px; align-self:flex-start; }
+  .lph-typing span { width:7px; height:7px; border-radius:50%; background:#8A9E8A; animation:lphBlink 1.2s infinite; }
+  .lph-typing span:nth-child(2){ animation-delay:0.2s; } .lph-typing span:nth-child(3){ animation-delay:0.4s; }
+  @keyframes lphBlink { 0%,60%,100%{opacity:0.3;} 30%{opacity:1;} }
+  #lph-chat-input-wrap { padding:12px; border-top:0.5px solid rgba(26,46,31,0.08); display:flex; gap:8px; }
+  #lph-chat-input { flex:1; background:#E2E9DE; border:0.5px solid rgba(26,46,31,0.2); border-radius:8px; padding:10px 14px; font-size:14px; color:var(--text); outline:none; font-family:'Inter',sans-serif; resize:none; max-height:80px; }
+  #lph-chat-input:focus { border-color:#1B5E3B; }
+  #lph-chat-send { background:#1B5E3B; border:none; border-radius:8px; width:42px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  #lph-chat-send:disabled { opacity:0.4; cursor:default; }
+  #lph-chat-attach { background:#fff; border:0.5px solid rgba(26,46,31,0.2); border-radius:8px; width:42px; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#1B5E3B; }
+  #lph-chat-attach:disabled { opacity:0.4; cursor:default; }
+  #lph-chat-attach svg { width:18px; height:18px; }
+  .lph-msg-sys { align-self:center; font-size:12px; color:#8A9E8A; text-align:center; max-width:90%; }
+  #lph-chat-send svg { width:18px; height:18px; }
+  @media(max-width:480px){ #lph-chat-window { right:16px; bottom:88px; width:calc(100vw - 32px); } #lph-chat-btn { right:16px; bottom:16px; } }
+</style>
+
+<div id="lph-chat-teaser" role="button" onclick="lphToggle()">
+  <button id="lph-chat-teaser-x" aria-label="Fermer" onclick="event.stopPropagation();lphTeaserHide()">×</button>
+  Bonjour, je suis <b>Fernand</b>. Un projet de terrasse ? Décrivez-le-moi, je vous prépare un chiffrage estimatif en quelques minutes.
+</div>
+<button id="lph-chat-btn" onclick="lphToggle()">
+  <span id="lph-chat-badge"></span>
+  <svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<div id="lph-chat-window">
+  <div id="lph-chat-header">
+    <div>
+      <div id="lph-chat-header-title">Fernand</div>
+      <div id="lph-chat-header-sub">Assistant Les Pieux Horizon · en ligne</div>
+    </div>
+    <button id="lph-chat-close" onclick="lphToggle()">×</button>
+  </div>
+  <div id="lph-chat-body"></div>
+  <div id="lph-chat-input-wrap">
+    <textarea id="lph-chat-input" rows="1" placeholder="Écrivez votre message..." onkeydown="lphKey(event)"></textarea>
+    <input type="file" id="lph-chat-file" accept="image/jpeg,image/png,image/heic,image/heif,image/webp,application/pdf" style="display:none" onchange="lphUpload(this)">
+    <button id="lph-chat-attach" type="button" title="Joindre une photo, un plan ou un croquis (JPG, PNG, PDF, 10 Mo max)" onclick="document.getElementById('lph-chat-file').click()">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button id="lph-chat-send" onclick="lphSend()">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var WORKER_URL = 'https://chatbot-pieux-horizon.a-ouzeau.workers.dev';
+  var body=null, opened=false, history=[], busy=false;
+  var convId=(function(){ var a=new Uint8Array(8); try{ crypto.getRandomValues(a); }catch(e){ for(var i=0;i<8;i++) a[i]=Math.floor(Math.random()*256); } var h=''; for(var i=0;i<8;i++) h+=('0'+a[i].toString(16)).slice(-2); return h; })();
+
+  window.lphTeaserHide = function(){
+    var t=document.getElementById('lph-chat-teaser'); if(t) t.classList.remove('show');
+    try{ sessionStorage.setItem('lphTeaser','1'); }catch(e){}
+  };
+  (function teaserTry(n){
+    setTimeout(function(){
+      var seen=false; try{ seen=!!sessionStorage.getItem('lphTeaser'); }catch(e){}
+      if(opened || seen) return;
+      var cb=document.getElementById('lph-cookie-banner');
+      if(cb && cb.style.display!=='none' && n<12){ teaserTry(n+1); return; } // on attend la fermeture du bandeau cookies (jusqu'à 1 min)
+      var t=document.getElementById('lph-chat-teaser'); if(t) t.classList.add('show');
+    }, n===0 ? 7000 : 5000);
+  })(0);
+
+  window.lphToggle = function(){
+    var win=document.getElementById('lph-chat-window');
+    var badge=document.getElementById('lph-chat-badge');
+    var teaser=document.getElementById('lph-chat-teaser'); if(teaser){ teaser.classList.remove('show'); try{ sessionStorage.setItem('lphTeaser','1'); }catch(e){} }
+    opened=!opened;
+    win.classList.toggle('open',opened);
+    if(badge) badge.style.display='none';
+    if(opened && !body){
+      body=document.getElementById('lph-chat-body');
+      botMsg("Bonjour, je suis Fernand, l'assistant de Les Pieux Horizon. Décrivez-moi votre projet : pour une terrasse, je peux vous préparer un chiffrage estimatif ; pour le reste, je vous oriente vers le bon interlocuteur. Quel est votre projet ?");
+    }
+    if(opened) setTimeout(function(){ document.getElementById('lph-chat-input').focus(); },100);
+  };
+
+  window.lphKey = function(e){
+    if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); lphSend(); }
+  };
+
+  function botMsg(text){
+    var d=document.createElement('div'); d.className='lph-msg-bot'; d.textContent=text;
+    body.appendChild(d); body.scrollTop=body.scrollHeight;
+  }
+  function userMsg(text){
+    var d=document.createElement('div'); d.className='lph-msg-user'; d.textContent=text;
+    body.appendChild(d); body.scrollTop=body.scrollHeight;
+  }
+  function showTyping(){
+    var d=document.createElement('div'); d.className='lph-typing'; d.id='lph-typing';
+    d.innerHTML='<span></span><span></span><span></span>';
+    body.appendChild(d); body.scrollTop=body.scrollHeight;
+  }
+  function hideTyping(){ var t=document.getElementById('lph-typing'); if(t) t.remove(); }
+
+  function sysMsg(text){
+    var d=document.createElement('div'); d.className='lph-msg-sys'; d.textContent=text;
+    body.appendChild(d); body.scrollTop=body.scrollHeight;
+  }
+  window.lphUpload = async function(inp){
+    var f=inp.files && inp.files[0]; inp.value='';
+    if(!f || busy) return;
+    if(f.size>10*1024*1024){ sysMsg('Fichier trop lourd : 10 Mo maximum.'); return; }
+    busy=true; document.getElementById('lph-chat-attach').disabled=true; document.getElementById('lph-chat-send').disabled=true;
+    sysMsg('Envoi de « '+f.name+' »…');
+    try{
+      var fd=new FormData(); fd.append('convId',convId); fd.append('fichier',f,f.name);
+      var res=await fetch(WORKER_URL+'/upload',{method:'POST',body:fd});
+      var data=await res.json();
+      if(!data.ok){ sysMsg(data.error||'Envoi impossible.'); }
+      else {
+        sysMsg('« '+data.name+' » bien reçu.');
+        busy=false; document.getElementById('lph-chat-attach').disabled=false; document.getElementById('lph-chat-send').disabled=false;
+        var input=document.getElementById('lph-chat-input');
+        input.value='Je viens de déposer le fichier « '+data.name+' » (photo du terrain, plan ou croquis).';
+        await lphSend();
+        return;
+      }
+    }catch(e){ sysMsg('Envoi impossible pour le moment : vous pouvez envoyer le fichier à contact@chalets-horizon.com.'); }
+    busy=false; document.getElementById('lph-chat-attach').disabled=false; document.getElementById('lph-chat-send').disabled=false;
+  };
+
+  window.lphSend = async function(){
+    if(busy) return;
+    var input=document.getElementById('lph-chat-input');
+    var text=input.value.trim();
+    if(!text) return;
+    input.value='';
+    userMsg(text);
+    history.push({role:'user', content:text});
+    busy=true;
+    document.getElementById('lph-chat-send').disabled=true;
+    showTyping();
+    try{
+      var res=await fetch(WORKER_URL,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({messages:history, convId:convId})
+      });
+      var data=await res.json();
+      hideTyping();
+      var reply=data.reply || "Désolé, une erreur est survenue. Appelez-nous au 04 23 33 03 23.";
+      botMsg(reply);
+      history.push({role:'assistant', content:reply});
+    }catch(e){
+      hideTyping();
+      botMsg("Désolé, une erreur est survenue. Appelez-nous au 04 23 33 03 23.");
+    }
+    busy=false;
+    document.getElementById('lph-chat-send').disabled=false;
+    input.focus();
+  };
+})();
+</script>
+
+
+<!-- BANDEAU COOKIES RGPD -->
+<div id="lph-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0D1A12;border-top:0.5px solid rgba(26,46,31,0.12);padding:16px 24px;z-index:9500;box-shadow:0 -4px 24px rgba(0,0,0,0.4);">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:280px;font-family:'Inter',sans-serif;font-size:14px;color:#B8C4B8;line-height:1.5;">
+      Ce site utilise des cookies de mesure d'audience et publicitaires (Google) pour améliorer votre expérience. Vous pouvez accepter ou refuser. <a href="confidentialite.html" style="color:#4ADE80;text-decoration:underline;">En savoir plus</a>
+    </div>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button onclick="lphCookieChoice(false)" style="background:transparent;border:0.5px solid rgba(26,46,31,0.25);color:#E8E4DC;padding:10px 20px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;border-radius:4px;cursor:pointer;">Refuser</button>
+      <button onclick="lphCookieChoice(true)" style="background:#1B5E3B;border:none;color:white;padding:10px 20px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;border-radius:4px;cursor:pointer;">Accepter</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  function getChoice(){ try { return document.cookie.split('; ').find(function(r){return r.indexOf('lph_cookie_consent=')===0;}); } catch(e){ return null; } }
+  function applyConsent(granted){
+    if(typeof gtag === 'function'){
+      gtag('consent', 'update', {
+        'ad_storage': granted ? 'granted' : 'denied',
+        'ad_user_data': granted ? 'granted' : 'denied',
+        'ad_personalization': granted ? 'granted' : 'denied',
+        'analytics_storage': granted ? 'granted' : 'denied'
+      });
+    }
+  }
+  window.lphCookieChoice = function(granted){
+    var d = new Date(); d.setMonth(d.getMonth()+6);
+    document.cookie = 'lph_cookie_consent=' + (granted?'granted':'denied') + '; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+    applyConsent(granted);
+    var b = document.getElementById('lph-cookie-banner'); if(b) b.style.display='none';
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    var choice = getChoice();
+    if(!choice){
+      var b = document.getElementById('lph-cookie-banner'); if(b) b.style.display='block';
+    } else if(choice.indexOf('granted')>-1){
+      applyConsent(true);
+    }
+  });
+})();
+</script>
+
+  <script>
+  // Menu déroulant : reste ouvert 400 ms après la sortie de la souris, et s'ouvre au clic (tactile, clavier)
+  (function(){
+    document.querySelectorAll('.nav-drop').forEach(function(d){
+      var t; var trig = d.querySelector('.nav-drop-trigger');
+      d.addEventListener('mouseenter', function(){ clearTimeout(t); d.classList.add('open'); });
+      d.addEventListener('mouseleave', function(){ clearTimeout(t); t = setTimeout(function(){ d.classList.remove('open'); }, 400); });
+      if (trig) trig.addEventListener('click', function(e){ e.preventDefault(); d.classList.toggle('open'); });
+      document.addEventListener('click', function(e){ if (!d.contains(e.target)) d.classList.remove('open'); });
+    });
+  })();
+  </script>
 </body>
 </html>
